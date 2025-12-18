@@ -7,9 +7,9 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
         <div className="flex flex-col items-center md:items-start">
           <span className="text-3xl font-black tracking-tighter mb-4">
-            SLSV <span className="text-cyan-400">2026</span>
+            IMS <span className="text-cyan-400">2026</span>
           </span>
-          <p className="text-gray-500 text-sm">© 2026 Smart Living Silicon Valley. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">© 2026 Innovation & Monetization Summit. All rights reserved.</p>
         </div>
         
         <div className="flex items-center space-x-8">

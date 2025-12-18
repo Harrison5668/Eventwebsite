@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <span className="text-2xl font-black tracking-tighter">
-            SLSV <span className="text-cyan-400">2026</span>
+            IMS <span className="text-cyan-400">2026</span>
           </span>
         </div>
         

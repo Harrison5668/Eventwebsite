@@ -18,9 +18,9 @@ const Hero: React.FC = () => {
         </svg>
       </div>
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight">
-          Smart Living <span className="text-cyan-400">Silicon Valley 2026</span>
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight leading-none">
+          INNOVATION & <span className="text-cyan-400">MONETIZATION SUMMIT 2026</span>
         </h1>
         
         <p className="text-xl md:text-3xl font-bold text-cyan-400 mb-8 neon-glow">
