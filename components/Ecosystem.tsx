@@ -16,16 +16,86 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
   ];
 
   const cities = [
-    "AMTZ", "Amaravati", "Anyang", "Bengaluru", "Bhubaneswar", "Binh Duong New City", "Changsha Wanjiali", "Chennai", "China (Beijing)", "Chittagong", "Chongqing", "Coimbatore", "Colombo", "Daejeon", "Dandong", "Delhi-Gurgaon", "Devanahalli", "Dhaka", "Future City", "Fuzhou", "Guangzhou", "Guiyang", "Haikou", "Hangzhou", "Hinjawadi", "Hong Kong", "Hosur", "Hyderabad", "Indore", "Islamabad", "Jaipur", "Jakarta", "Jeju", "Jinzhong", "Karachi", "Kochi", "Kolkata", "Kuala Lumpur", "Kunming", "Macau", "Melbourne", "Metro Manila", "Mumbai", "Nagpur", "Nanjing", "Nanning", "Nansha", "Nashik", "New Delhi", "Ningbo", "Osaka", "Penang", "Perth", "Qingdao", "Quanzhou", "Seoul", "Shanghai", "Shenzhen", "Singapore", "Sydney", "Taipei", "Tokyo", "Wuhan", "Xi'an", "Xiamen", "Yangon", "Zhengzhou"
+    { en: "AMTZ", zh: "AMTZ" },
+    { en: "Amaravati", zh: "阿马拉瓦蒂" },
+    { en: "Anyang", zh: "安阳" },
+    { en: "Bengaluru", zh: "班加罗尔" },
+    { en: "Bhubaneswar", zh: "布巴内斯瓦尔" },
+    { en: "Binh Duong New City", zh: "平阳新城" },
+    { en: "Changsha Wanjiali", zh: "长沙万家丽" },
+    { en: "Chennai", zh: "钦奈" },
+    { en: "China (Beijing)", zh: "中国（北京）" },
+    { en: "Chittagong", zh: "吉大港" },
+    { en: "Chongqing", zh: "重庆" },
+    { en: "Coimbatore", zh: "哥印拜陀" },
+    { en: "Colombo", zh: "科伦坡" },
+    { en: "Daejeon", zh: "大田" },
+    { en: "Dandong", zh: "丹东" },
+    { en: "Delhi-Gurgaon", zh: "德里-古尔冈" },
+    { en: "Devanahalli", zh: "德瓦纳哈利" },
+    { en: "Dhaka", zh: "达卡" },
+    { en: "Future City", zh: "未来城" },
+    { en: "Fuzhou", zh: "福州" },
+    { en: "Guangzhou", zh: "广州" },
+    { en: "Guiyang", zh: "贵阳" },
+    { en: "Haikou", zh: "海口" },
+    { en: "Hangzhou", zh: "杭州" },
+    { en: "Hinjawadi", zh: "欣佳瓦迪" },
+    { en: "Hong Kong", zh: "香港" },
+    { en: "Hosur", zh: "霍苏尔" },
+    { en: "Hyderabad", zh: "海得拉巴" },
+    { en: "Indore", zh: "印多尔" },
+    { en: "Islamabad", zh: "伊斯兰堡" },
+    { en: "Jaipur", zh: "斋浦尔" },
+    { en: "Jakarta", zh: "雅加达" },
+    { en: "Jeju", zh: "济州" },
+    { en: "Jinzhong", zh: "晋中" },
+    { en: "Karachi", zh: "卡拉奇" },
+    { en: "Kochi", zh: "科钦" },
+    { en: "Kolkata", zh: "加尔各答" },
+    { en: "Kuala Lumpur", zh: "吉隆坡" },
+    { en: "Kunming", zh: "昆明" },
+    { en: "Macau", zh: "澳门" },
+    { en: "Melbourne", zh: "墨尔本" },
+    { en: "Metro Manila", zh: "马尼拉都会" },
+    { en: "Mumbai", zh: "孟买" },
+    { en: "Nagpur", zh: "那格浦尔" },
+    { en: "Nanjing", zh: "南京" },
+    { en: "Nanning", zh: "南宁" },
+    { en: "Nansha", zh: "南沙" },
+    { en: "Nashik", zh: "纳西克" },
+    { en: "New Delhi", zh: "新德里" },
+    { en: "Ningbo", zh: "宁波" },
+    { en: "Osaka", zh: "大阪" },
+    { en: "Penang", zh: "槟城" },
+    { en: "Perth", zh: "珀斯" },
+    { en: "Qingdao", zh: "青岛" },
+    { en: "Quanzhou", zh: "泉州" },
+    { en: "Seoul", zh: "首尔" },
+    { en: "Shanghai", zh: "上海" },
+    { en: "Shenzhen", zh: "深圳" },
+    { en: "Singapore", zh: "新加坡" },
+    { en: "Sydney", zh: "悉尼" },
+    { en: "Taipei", zh: "台北" },
+    { en: "Tokyo", zh: "东京" },
+    { en: "Wuhan", zh: "武汉" },
+    { en: "Xi'an", zh: "西安" },
+    { en: "Xiamen", zh: "厦门" },
+    { en: "Yangon", zh: "仰光" },
+    { en: "Zhengzhou", zh: "郑州" }
   ];
 
   const influencers = [
-    { name: 'Nathan Davis JR', fans: '16.7M Followers', img: 'https://picsum.photos/seed/nathan/100/100' },
-    { name: 'Michael Dimuccio', fans: '9.4M Followers', img: 'https://picsum.photos/seed/michael/100/100' },
-    { name: 'Shane Nagy', fans: '10.6M Followers', img: 'https://picsum.photos/seed/shane/100/100' },
-    { name: 'Swaggy Wolfdog', fans: '10.7M Followers', img: 'https://picsum.photos/seed/dog/100/100' },
-    { name: 'Fabio Farati', fans: '19M Followers', img: 'https://picsum.photos/seed/fabio/100/100' },
-    { name: 'Emmy', fans: '16M Followers', img: 'https://picsum.photos/seed/emmy/100/100' }
+    { name: 'Nathan Davis JR', img: '/mcn/nathan-davis-jr.jpeg' },
+    { name: 'Michael Dimuccio', img: '/mcn/michael-dimuccio.jpeg' },
+    { name: 'Shane Nagy', img: '/mcn/shane-nagy.jpeg' },
+    { name: 'Swaggy Wolfdog', img: '/mcn/swaggy-wolfdog.jpeg' },
+    { name: 'Fabio Farati', img: '/mcn/fabio-farati.jpeg' },
+    { name: 'Emmy Combs', img: '/mcn/emmy-combs.jpeg' },
+    { name: 'Tallia Storm', img: '/mcn/tallia-storm.jpeg' },
+    { name: 'Dayshawn Wilson', img: '/mcn/dayshawn-wilson.jpeg' },
+    { name: 'Martine Beerman', img: '/mcn/martine-beerman.jpg' },
+    { name: 'Matt Garry', img: '/mcn/matt-garry.jpeg' }
   ];
 
   return (
@@ -62,13 +132,15 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
           {/* City Grid */}
           <div className="bg-gold rounded-[2rem] overflow-hidden shadow-2xl">
             <div className="bg-black/10 p-4 border-b border-black/5">
-              <span className="text-xs font-black text-black/60 tracking-widest uppercase">LOCATIONS IN ASIA & THE PACIFIC</span>
+              <span className="text-xs font-black text-black/60 tracking-widest uppercase">
+                {lang === 'zh' ? '亚太地区城市' : 'LOCATIONS IN ASIA & THE PACIFIC'}
+              </span>
             </div>
             <div className="p-8 md:p-12">
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-4">
                 {cities.map((city, idx) => (
                   <div key={idx} className="text-black text-[11px] font-bold hover:text-white transition-colors cursor-default truncate">
-                    {city}
+                    {lang === 'zh' ? city.zh : city.en}
                   </div>
                 ))}
               </div>
@@ -139,14 +211,13 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
             <h3 className="text-2xl font-black mb-2">Master TV MCN</h3>
             <p className="text-gold text-[10px] font-bold tracking-widest uppercase mb-12">Partial list of influencers who attend our events</p>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {influencers.map((inf, i) => (
                 <div key={i} className="text-center group">
                   <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-gold/20 mb-4 group-hover:border-gold transition-all ring-4 ring-gold/0 group-hover:ring-gold/20">
                     <img src={inf.img} alt={inf.name} className="w-full h-full object-cover" />
                   </div>
-                  <h5 className="text-[11px] font-bold text-white mb-1">{inf.name}</h5>
-                  <p className="text-[9px] text-gold font-bold uppercase tracking-tighter">{inf.fans}</p>
+                  <h5 className="text-[11px] font-bold text-white">{inf.name}</h5>
                 </div>
               ))}
             </div>
