@@ -26,7 +26,7 @@ const App: React.FC = () => {
         <Hero t={t.hero} />
         <Agenda t={t.agenda} />
         <Speakers t={t.speakers} lang={lang} />
-        <Ecosystem t={t.ecosystem} />
+        <Ecosystem t={t.ecosystem} lang={lang} />
         <Sponsorship t={t.sponsorship} lang={lang} />
         <Partners t={t.partners} lang={lang} />
         <Ticketing t={t.ticketing} />

@@ -3,9 +3,10 @@ import React from 'react';
 
 interface Props {
   t: any;
+  lang: string;
 }
 
-const Ecosystem: React.FC<Props> = ({ t }) => {
+const Ecosystem: React.FC<Props> = ({ t, lang }) => {
   const regions = [
     { name: 'NORTH AMERICA', img: '🌎' },
     { name: 'LATIN AMERICA', img: '🌍' },
@@ -108,8 +109,8 @@ const Ecosystem: React.FC<Props> = ({ t }) => {
             {/* CSR Card */}
             <div className="flex flex-col">
               <h4 className="text-center text-xl font-black mb-8 border-b border-gold/30 pb-4 inline-block mx-auto min-w-[120px]">CSR</h4>
-              <div className="glass-card rounded-3xl overflow-hidden relative group flex flex-col h-[420px] p-5">
-                <p className="text-gray-300 text-[10px] leading-relaxed overflow-y-auto">
+              <div className="glass-card rounded-3xl overflow-hidden relative group flex flex-col h-[420px] p-6">
+                <p className={`text-gray-300 overflow-y-auto ${lang === 'zh' ? 'text-base leading-loose' : 'text-sm leading-relaxed'}`}>
                   {t.csrContent}
                 </p>
               </div>

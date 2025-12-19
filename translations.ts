@@ -70,7 +70,11 @@ export const translations = {
         title: '新时代展览',
         sub: '25年行业经验',
         desc: '拥有 25 年国际展览行业经验，提供全球顶级展会的最佳展位和交付，分享中国企业海外参展最佳实践指南。',
-        points: ['挖掘新客户，建立新渠道', '寻找新供应商，洞察产品', '消费电子·移动通信']
+        points: [
+          '专业领域：展会覆盖消费电子及配件、天线/基站、光通信、核心专网、网络设备、通信模组及物联网解决方案等领域。',
+          '展会资源：CES、MWC等全球顶级科技展中国合作代理, 市场覆盖欧盟、美国、巴西、墨西哥市场',
+          '客户口碑：成功服务珠三角5000+制造企业。以丰富经验、专业素养和客观分析，在出展业独树一帜，与客户共同成长。'
+        ]
       }
     },
     sponsorship: {
@@ -184,7 +188,11 @@ export const translations = {
         title: 'New Times Exhibition',
         sub: '25 Years Experience',
         desc: 'Securing the best global show booths and delivery, sharing practical guides for international trade shows.',
-        points: ['Establish new channels', 'Product insights', 'CE & Communication focus']
+        points: [
+          'Industry Focus: Extensive exhibition coverage across consumer electronics and accessories, antennas and base stations, optical communications, private core networks, network equipment, communication modules, and IoT solutions.',
+          'Exhibition Resources: Official China partner for leading global technology exhibitions including CES and MWC, with market reach across the EU, the United States, Brazil, and Mexico.',
+          'Client Track Record: Trusted by over 5,000 manufacturing enterprises in the Pearl River Delta. Known for deep industry experience, professional execution, and objective strategic insight, we stand out in international exhibitions and grow alongside our clients.'
+        ]
       }
     },
     sponsorship: {

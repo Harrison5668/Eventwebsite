@@ -8,7 +8,7 @@ interface Props {
 
 const Partners: React.FC<Props> = ({ t, lang }) => {
   return (
-    <section id="partners" className="py-32 px-6">
+    <section id="partners" className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-32">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">{t.title}</h2>
@@ -26,19 +26,13 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
                   <p className="hover:text-gold transition-colors cursor-default">全球企业社会责任基金会</p>
                   <p className="hover:text-gold transition-colors cursor-default">全球网红经济联盟</p>
                   <p className="hover:text-gold transition-colors cursor-default">GPTDAO</p>
-                  <p className="hover:text-gold transition-colors cursor-default">AI 101 Labs</p>
-                  <p className="hover:text-gold transition-colors cursor-default">新时代展览</p>
-                  <p className="hover:text-gold transition-colors cursor-default">RWAWA</p>
                 </>
               ) : (
                 <>
                   <p className="hover:text-gold transition-colors cursor-default">APAC World Trade Group</p>
-                  <p className="hover:text-gold transition-colors cursor-default">Global CSR Foundation (GCSRF)</p>
+                  <p className="hover:text-gold transition-colors cursor-default">Global CSR Foundation</p>
                   <p className="hover:text-gold transition-colors cursor-default">Master TV MCN</p>
                   <p className="hover:text-gold transition-colors cursor-default">GPTDAO</p>
-                  <p className="hover:text-gold transition-colors cursor-default">AI 101 Labs</p>
-                  <p className="hover:text-gold transition-colors cursor-default">New Times Exhibition</p>
-                  <p className="hover:text-gold transition-colors cursor-default">RWAWA</p>
                 </>
               )}
             </div>
@@ -50,11 +44,17 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
               {lang === 'zh' ? (
                 <>
                   <p className="hover:text-gold transition-colors cursor-default">法拉第未来</p>
+                  <p className="hover:text-gold transition-colors cursor-default">AI 101 Labs</p>
+                  <p className="hover:text-gold transition-colors cursor-default">新时代展览</p>
+                  <p className="hover:text-gold transition-colors cursor-default">RWAWA</p>
                   <p className="hover:text-gold transition-colors cursor-default">AI Reinvent Ventures</p>
                 </>
               ) : (
                 <>
                   <p className="hover:text-gold transition-colors cursor-default">Faraday Future</p>
+                  <p className="hover:text-gold transition-colors cursor-default">AI 101 Labs</p>
+                  <p className="hover:text-gold transition-colors cursor-default">New Times Exhibition</p>
+                  <p className="hover:text-gold transition-colors cursor-default">RWAWA</p>
                   <p className="hover:text-gold transition-colors cursor-default">AI Reinvent Ventures</p>
                 </>
               )}
@@ -64,9 +64,21 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
           <div>
             <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase">{t.communityPartners}</h4>
             <div className="grid grid-cols-2 gap-4 text-gray-500 text-[10px] font-bold uppercase tracking-tight">
-              <span>EntreConnect</span><span>OnePiece Labs</span>
-              <span>Bitslabs</span><span>Taro</span><span>UpHonest Scout</span>
-              <span>Weshine</span><span>Founder Club</span><span>AGI House</span>
+              {lang === 'zh' ? (
+                <>
+                  <span>美中硅谷商会</span><span>AI机器人联盟</span>
+                  <span>吃块披萨实验室</span><span>SEAMATE</span>
+                  <span>EntreConnect</span><span>Weshine</span>
+                  <span>Taro</span><span>UpHonest Scout</span>
+                </>
+              ) : (
+                <>
+                  <span>US China Chamber of Commerce (Silicon Valley)</span><span>AI Robotics Alliance</span>
+                  <span>OnePiece Labs</span><span>SEAMATE</span>
+                  <span>EntreConnect</span><span>Weshine</span>
+                  <span>Taro</span><span>UpHonest Scout</span>
+                </>
+              )}
             </div>
           </div>
         </div>

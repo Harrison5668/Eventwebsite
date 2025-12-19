@@ -9,39 +9,15 @@ interface Props {
 const Speakers: React.FC<Props> = ({ t, lang }) => {
   const [activeBio, setActiveBio] = useState<string | null>(null);
 
-  // Speaker data with full bios as provided
+  // Speaker data with full bios as provided - ordered as requested
   const speakers = [
     { 
-      name: lang === 'zh' ? '张红梅' : 'Diana Zhang', 
-      title: lang === 'zh' ? '亚太世界贸易商务联盟副会长' : 'Vice President, APAC World Trade Group', 
-      bio: lang === 'zh' 
-        ? '张红梅女士，现任亚太世界贸易商务联盟副会长，是长期活跃于美国硅谷的投资人。她曾联合创办北京大学公益孵化器与北大未名天使基金，现担任美国华人专家会常务理事、美国飞虎文化交流协会执行会长、亚太世贸商务联盟副会长及杭州世贸中心董事长，致力于推动中美商业交流、资本合作与跨国项目落地。' 
-        : 'Diana Zhang currently serves as Vice President of APAC World Trade Group and is a long-term active investor in Silicon Valley. She co-founded the Peking University Public Welfare Incubator and the PKU Weiming Angel Fund. She also serves as Executive Director of the Chinese American Experts Association, Executive President of the Flying Tigers Cultural Exchange Association, Vice President of APAC World Trade Group, and Chairwoman of Hangzhou World Trade Center. She is dedicated to promoting business exchanges, capital cooperation, and cross-border project implementation between China and the United States.',
-      img: '/images/diana-zhang.jpg' 
-    },
-    { 
-      name: lang === 'zh' ? '赵兢' : 'Jing Zhao Cesarone', 
-      title: lang === 'zh' ? '全球 CSR 基金会创始人' : 'Founder & CEO, Global CSR Foundation', 
+      name: lang === 'zh' ? '蔡继军' : 'Jijun Cai', 
+      title: lang === 'zh' ? 'GPTDAO联合发起人' : 'Co-founder, GPTDAO & Founder, FlowGen', 
       bio: lang === 'zh'
-        ? '赵兢女士是全球CSR基金会创始人兼首席执行官，联合国世界妇女组织全球女性领导力峰会主席，拥有三十年跨文化战略、可持续发展与NGO管理经验。她曾获 NAWBO 女性企业成就奖和中华文化基金会全球成就奖，长期推动教育、可持续发展、气候行动等领域的国际合作，并成功搭建中美企业界、政策界高层交流的桥梁。'
-        : 'Jing Zhao Cesarone is the Founder and CEO of the Global CSR Foundation and Chair of the UN Women\'s Global Women Leadership Summit. She has over 30 years of experience in cross-cultural strategy, sustainable development, and NGO management. She has received the NAWBO Women\'s Achievement Award and the Global Achievement Award from the Chinese Culture Foundation. She has long promoted international cooperation in education, sustainability, and climate action, successfully bridging high-level exchanges between businesses and policymakers in China and the U.S.',
-      img: '/images/jing-zhao.jpg' 
-    },
-    { 
-      name: lang === 'zh' ? '杨依依' : 'Elaine Yang', 
-      title: lang === 'zh' ? 'AI 101 Labs 创始人' : 'Founder, AI 101 Labs', 
-      bio: lang === 'zh'
-        ? 'Elaine Yang 为 AI 101 Labs 创始人，同时是活跃于 AI × Web3 × RWA 的早期投资人，担任 Waterdrip Capital 投资合伙人与 AI101 Labs GP。她为多家领先的区块链与人工智能项目担任顾问，深耕 AI 研究、GTM 策略与生态建设，并创立 AI & Web3 KOL 机构，专注内容增长与社区生态联动。'
-        : 'Elaine Yang is the Founder of AI 101 Labs and an early investor active in AI × Web3 × RWA projects. She is an Investment Partner at Waterdrip Capital and GP at AI 101 Labs. Elaine advises multiple leading blockchain and AI projects, focusing on AI research, GTM strategy, and ecosystem building. She also founded an AI & Web3 KOL agency, specializing in content growth and community-ecosystem synergy.',
-      img: '/images/elaine-yang.jpg' 
-    },
-    { 
-      name: lang === 'zh' ? '林哲冰' : 'Zhebing Lin', 
-      title: lang === 'zh' ? 'Magic Ice Cube 创始人' : 'Founder, Magic Ice Cube', 
-      bio: lang === 'zh'
-        ? '林哲冰是 Magic Ice Cube 创始人，将其打造为总部位于洛杉矶的跨国贸易平台，并在四年内实现 3.5 亿美元营收。他入选胡润 Under 30，现兼任世界精英领袖联盟主席、中美国际经济合作联盟青委主席、蓝源民族产业研究院副院长、国际潮青联合会副会长、美国粤港澳大湾区企业家总商会委员，以及 G20 青年企业家联盟菁英人才，专注全球贸易创新与国际商业合作。'
-        : 'Zhebing Lin founded Magic Ice Cube, building it into a Los Angeles-based multinational trading platform with $350 million in revenue within four years. He was listed on Hurun Under 30 and currently serves as Chairman of the World Elite Leaders Alliance, Chair of the Young Committee of the China-U.S. International Economic Cooperation Alliance, Vice President of the International Chaoqing Federation, Vice President of the U.S. Guangdong-Hong Kong-Macao Bay Area Entrepreneurs Chamber, and G20 Young Entrepreneurs Elite. He focuses on global trade innovation and international business cooperation.',
-      img: '/images/ice-lin.png' 
+        ? 'FlowGen 创始人，GPTDAO 联创、连续创业者，拥有十年以上市场、产品与技术经验。早年在硅谷从事 iOS 开发与产品管理，先后主导多平台应用、社交增长工具及融资撮合平台的研发与落地。2023 年在加州帕洛阿尔托共同创办全球最大的生成式AI社区品牌GPTDAO，在硅谷和旧金山多次成功举办了全球最大的生成式AI峰会；随后创立FlowGen，以 AI 替代营销团队，帮助企业与创作者实现 100倍降本增效，致力于用技术创新重塑组织效率与商业模式。'
+        : 'Jijun Cai is a serial entrepreneur with over 10 years of experience in marketing, product, and technology. He previously worked in Silicon Valley on iOS development and product management, leading multi-platform applications, social growth tools, and financing matchmaking platforms. In 2023, he co-founded GPTDAO in Palo Alto, creating the largest generative AI community brand globally, and successfully hosted multiple large-scale generative AI summits in Silicon Valley and San Francisco. He later founded FlowGen, replacing marketing teams with AI to help enterprises and creators achieve 100× cost reduction and efficiency improvement, aiming to reshape organizational efficiency and business models through technological innovation.',
+      img: '/images/caijijun.jpg' 
     },
     { 
       name: lang === 'zh' ? '魏海鹰' : 'Haiying Wei', 
@@ -57,23 +33,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? '美国top mcn机构联合创始人，Tiktok5千万粉丝博主Michael Le合伙人，专注品牌出海8年，以专业的品牌美学与广告数据分析来帮助更多品牌完成出海销售，国际电商品牌化运营数据分析师协会会长。'
         : 'Viola He is co-founder of a top MCN agency in the U.S. and partner of TikTok influencer Michael Le (50M followers). She has 8 years of experience in international brand expansion, using professional brand aesthetics and advertising data analysis to help brands go global. She currently serves as President of the International E-commerce Brand Operations & Data Analytics Association.',
-      img: null 
-    },
-    { 
-      name: lang === 'zh' ? '蔡继军' : 'Jijun Cai', 
-      title: lang === 'zh' ? 'GPTDAO联合发起人' : 'Co-founder, GPTDAO & Founder, FlowGen', 
-      bio: lang === 'zh'
-        ? 'FlowGen 创始人，GPTDAO 联创、连续创业者，拥有十年以上市场、产品与技术经验。早年在硅谷从事 iOS 开发与产品管理，先后主导多平台应用、社交增长工具及融资撮合平台的研发与落地。2023 年在加州帕洛阿尔托共同创办全球最大的生成式AI社区品牌GPTDAO，在硅谷和旧金山多次成功举办了全球最大的生成式AI峰会；随后创立FlowGen，以 AI 替代营销团队，帮助企业与创作者实现 100倍降本增效，致力于用技术创新重塑组织效率与商业模式。'
-        : 'Jijun Cai is a serial entrepreneur with over 10 years of experience in marketing, product, and technology. He previously worked in Silicon Valley on iOS development and product management, leading multi-platform applications, social growth tools, and financing matchmaking platforms. In 2023, he co-founded GPTDAO in Palo Alto, creating the largest generative AI community brand globally, and successfully hosted multiple large-scale generative AI summits in Silicon Valley and San Francisco. He later founded FlowGen, replacing marketing teams with AI to help enterprises and creators achieve 100× cost reduction and efficiency improvement, aiming to reshape organizational efficiency and business models through technological innovation.',
-      img: null 
-    },
-    { 
-      name: lang === 'zh' ? '陈喆' : 'Zhe Chen', 
-      title: lang === 'zh' ? '法拉第未来联合创始人' : 'Co-founder, Faraday Future', 
-      bio: lang === 'zh'
-        ? '陈喆是法拉第未来（Faraday Future）联合创始人。'
-        : 'Zhe Chen is a co-founder of Faraday Future.',
-      img: '/images/zhe-chen.png' 
+      img: '/images/viola-he.jpg' 
     },
     { 
       name: lang === 'zh' ? '孙溪唯' : 'Tammy Sun', 
@@ -84,12 +44,12 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/tammy-sun.png' 
     },
     { 
-      name: lang === 'zh' ? '李尚龙' : 'Shanglong Li', 
-      title: lang === 'zh' ? '千万级大V AI博主' : 'Major AI Influencer', 
+      name: lang === 'zh' ? '林哲冰' : 'Zhebing Lin', 
+      title: lang === 'zh' ? 'Magic Ice Cube 创始人；胡润 Under 30' : 'Founder, Magic Ice Cube; Hurun Under 30', 
       bio: lang === 'zh'
-        ? '李尚龙是拥有千万级粉丝的AI领域意见领袖。'
-        : 'Shanglong Li is an AI influencer with a follower base in the millions.',
-      img: '/images/shanglong-li.jpg' 
+        ? '林哲冰是 Magic Ice Cube 创始人，将其打造为总部位于洛杉矶的跨国贸易平台，并在四年内实现 3.5 亿美元营收。他入选胡润 Under 30，现兼任世界精英领袖联盟主席、中美国际经济合作联盟青委主席、蓝源民族产业研究院副院长、国际潮青联合会副会长、美国粤港澳大湾区企业家总商会委员，以及 G20 青年企业家联盟菁英人才，专注全球贸易创新与国际商业合作。'
+        : 'Zhebing Lin founded Magic Ice Cube, building it into a Los Angeles-based multinational trading platform with $350 million in revenue within four years. He was listed on Hurun Under 30 and currently serves as Chairman of the World Elite Leaders Alliance, Chair of the Young Committee of the China-U.S. International Economic Cooperation Alliance, Vice President of the International Chaoqing Federation, Vice President of the U.S. Guangdong-Hong Kong-Macao Bay Area Entrepreneurs Chamber, and G20 Young Entrepreneurs Elite. He focuses on global trade innovation and international business cooperation.',
+      img: '/images/ice-lin.png' 
     },
     { 
       name: 'Jerry Yang', 
@@ -97,7 +57,15 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? 'Jerry Yang 现任 AI Robotics Alliance 主席。'
         : 'Jerry Yang currently serves as Chairman of the AI Robotics Alliance.',
-      img: null 
+      img: '/images/jerry-yang.jpg' 
+    },
+    { 
+      name: lang === 'zh' ? '李尚龙' : 'Shanglong Li', 
+      title: lang === 'zh' ? '千万级大V AI博主' : 'Major AI Influencer', 
+      bio: lang === 'zh'
+        ? '李尚龙是拥有千万级粉丝的AI领域意见领袖。'
+        : 'Shanglong Li is an AI influencer with a follower base in the millions.',
+      img: '/images/shanglong-li.jpg' 
     }
   ];
 
