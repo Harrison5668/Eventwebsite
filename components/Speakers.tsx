@@ -18,7 +18,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh' 
         ? '张红梅女士，现任亚太世界贸易商务联盟副会长，是长期活跃于美国硅谷的投资人。致力于推动中美商业交流。' 
         : 'Diana Zhang currently serves as Vice President of APAC World Trade Group and is a long-term active investor in Silicon Valley.',
-      img: '/images/张红梅Diana Zhang.jpg' 
+      img: '/images/diana-zhang.jpg' 
     },
     { 
       name: lang === 'zh' ? '赵兢' : 'Jing Zhao Cesarone', 
@@ -26,7 +26,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? '赵兢女士是全球 CSR 基金会创始人兼首席执行官，拥有三十年跨文化战略、可持续发展与 NGO 管理经验。'
         : 'Jing Zhao Cesarone is the Founder and CEO of the Global CSR Foundation with over 30 years of experience in cross-cultural strategy.',
-      img: '/images/赵兢Jing Cesarone Zhaojpg.jpg' 
+      img: '/images/jing-zhao.jpg' 
     },
     { 
       name: lang === 'zh' ? '杨依依' : 'Elaine Yang', 
@@ -34,7 +34,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? 'Elaine Yang 为 AI 101 Labs 创始人，活跃于 AI × Web3 × RWA 的早期投资人。深耕 AI 研究、GTM 策略。'
         : 'Elaine Yang is the Founder of AI 101 Labs and an early investor active in AI, Web3, and RWA projects.',
-      img: '/images/杨依依Elaine Yang.jpg' 
+      img: '/images/elaine-yang.jpg' 
     },
     { 
       name: lang === 'zh' ? '林哲冰' : 'Zhebing Lin', 
@@ -42,7 +42,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? '林哲冰是 Magic Ice Cube 创始人，其跨国贸易平台在四年内实现 3.5 亿美元营收。'
         : 'Zhebing Lin founded Magic Ice Cube, building it into a multinational trading platform with $350M revenue in four years.',
-      img: '/images/林哲冰Ice Lin.png' 
+      img: '/images/ice-lin.png' 
     },
     { 
       name: lang === 'zh' ? '魏海鹰' : 'Haiying Wei', 
@@ -50,7 +50,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? '魏海鹰构建了横跨制造、投资、金融等领域的产业矩阵，旗下香港寰宇投资为香港联交所上市公司。'
         : 'Haiying Wei has built an industrial matrix spanning manufacturing, investment, and finance. His company is listed on the HK Stock Exchange.',
-      img: '/images/魏海鹰.jpeg' 
+      img: '/images/haiying-wei.jpeg' 
     },
     { 
       name: 'Viola He', 
@@ -74,7 +74,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? '陈喆是法拉第未来（Faraday Future）联合创始人，深耕新能源汽车与智能出行领域。'
         : 'Zhe Chen is a co-founder of Faraday Future, focusing on new energy vehicles and smart mobility.',
-      img: '/images/陈喆.png' 
+      img: '/images/zhe-chen.png' 
     },
     { 
       name: lang === 'zh' ? '孙溪唯' : 'Tammy Sun', 
@@ -82,7 +82,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? '硅谷知名投资人，专注于 Pre-IPO 硬科技项目投资。'
         : 'Renowned Silicon Valley investor, focusing on pre-IPO hard-tech projects.',
-      img: '/images/孙溪唯Tammy Sun.png' 
+      img: '/images/tammy-sun.png' 
     },
     { 
       name: lang === 'zh' ? '李尚龙' : 'Shanglong Li', 
