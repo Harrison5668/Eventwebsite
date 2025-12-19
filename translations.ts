@@ -58,6 +58,14 @@ export const translations = {
       copy: '我们为你准备的，将是一张以点对面的全球资源地图，而非效率低下的点对点碰撞。',
       wtcIntro: '亚太世界贸易商务联盟——帮您链接WTC全球322个分会、百万企业网络，实现产业链全球最优布局',
       csrIntro: '全球企业家责任基金会 - 为您引荐全球政要首领、联合国公益组织，提升品牌社会形象',
+      mcnDescription: {
+        zh: '全球网红经济联盟——对接世界超一线的名人KOL，创造现象级品牌声量。',
+        en: 'Master TV MCN — Connecting with world-class celebrity influencers to create phenomenal brand impact.'
+      },
+      gptdaoDescription: {
+        zh: '硅谷华人创业者社区GPTDAO——硅谷最大AI峰会主办方社区，获取顶级投融资资源和一线ai资讯。',
+        en: 'GPTDAO — an AI founder community in Silicon Valley and the organizing force behind the region\'s largest AI summits, providing access to top-tier investment resources and first-hand AI industry insights.'
+      },
       sdgsContent: '17个可持续发展目标是实现所有人更美好和更可持续未来的蓝图。',
       csrContent: '企业社会责任（CSR）报告已成为全球上市公司的年度要求。企业社会责任（CSR）是指企业不仅要创造利润、履行对股东和员工的法律义务，还要对消费者、社区和环境承担责任。企业社会责任要求企业超越传统的利润最大化目标，强调在生产过程中重视员工，并为环境、消费者和社会做出贡献。这些报告不仅对公司的市值至关重要，而且对实现联合国可持续发展目标也至关重要。',
       highlights: [
@@ -68,7 +76,6 @@ export const translations = {
       ],
       exhibition: {
         title: '新时代展览',
-        sub: '25年行业经验',
         desc: '拥有 25 年国际展览行业经验，提供全球顶级展会的最佳展位和交付，分享中国企业海外参展最佳实践指南。',
         points: [
           '专业领域：展会覆盖消费电子及配件、天线/基站、光通信、核心专网、网络设备、通信模组及物联网解决方案等领域。',
@@ -84,11 +91,13 @@ export const translations = {
       apply: '立即申请'
     },
     partners: {
-      title: '媒体宣传',
-      subtitle: '200+全球知名媒体合作宣传此次峰会，其中头部媒体包括：',
+      title: '主办方与战略合作伙伴',
+      engSubtitle: 'Backed by the Best: Our Partners',
       organizers: '主办机构',
       coOrganizers: '联合主办',
       communityPartners: '社群合作伙伴',
+      mediaTitle: '媒体宣传',
+      mediaSubtitle: '200+全球知名媒体合作宣传此次峰会，其中头部媒体包括：',
       chineseMedia: '中文主流媒体合作伙伴',
       internationalMedia: '国际媒体发行渠道'
     },
@@ -176,6 +185,14 @@ export const translations = {
       copy: 'What we offer is not a slow, inefficient point-to-point connection, but a global, point-to-sphere resource map designed for maximum reach and impact.',
       wtcIntro: 'APAC World Trade Business Alliance — Connecting you to 322 WTC chapters worldwide and a network of millions of enterprises for optimal global supply chain positioning',
       csrIntro: 'Global CSR Foundation — Introducing you to world leaders and UN-affiliated nonprofit organizations to elevate your brand\'s social impact',
+      mcnDescription: {
+        zh: '全球网红经济联盟——对接世界超一线的名人KOL，创造现象级品牌声量。',
+        en: 'Master TV MCN — Connecting with world-class celebrity influencers to create phenomenal brand impact.'
+      },
+      gptdaoDescription: {
+        zh: '硅谷华人创业者社区GPTDAO——硅谷最大AI峰会主办方社区，获取顶级投融资资源和一线ai资讯。',
+        en: 'GPTDAO — an AI founder community in Silicon Valley and the organizing force behind the region\'s largest AI summits, providing access to top-tier investment resources and first-hand AI industry insights.'
+      },
       sdgsContent: 'The Sustainable Development Goals are a call for action by all countries.',
       csrContent: 'Corporate Social Responsibility (CSR) reporting has become an annual requirement for publicly listed companies worldwide. CSR reflects the principle that companies are responsible not only for generating profits and fulfilling legal obligations to shareholders and employees, but also for their impact on consumers, communities, and the environment. It moves beyond the traditional goal of profit maximization, emphasizing responsible labor practices, sustainable production, and meaningful contributions to society. Today, CSR reports are not only critical to corporate valuation and long-term market credibility, but also play a vital role in advancing the United Nations Sustainable Development Goals (SDGs).',
       highlights: [
@@ -186,7 +203,6 @@ export const translations = {
       ],
       exhibition: {
         title: 'New Times Exhibition',
-        sub: '25 Years Experience',
         desc: 'Securing the best global show booths and delivery, sharing practical guides for international trade shows.',
         points: [
           'Industry Focus: Extensive exhibition coverage across consumer electronics and accessories, antennas and base stations, optical communications, private core networks, network equipment, communication modules, and IoT solutions.',
@@ -202,11 +218,13 @@ export const translations = {
       apply: 'Apply Now'
     },
     partners: {
-      title: 'Media Coverage',
-      subtitle: '200+ renowned global media partners promoting this summit, featuring leading outlets:',
+      title: 'Organizers & Strategic Partners',
+      engSubtitle: 'Backed by the Best: Our Partners',
       organizers: 'Organizers',
       coOrganizers: 'Co-Organizers',
       communityPartners: 'Community Partners',
+      mediaTitle: 'Media Coverage',
+      mediaSubtitle: '200+ renowned global media partners promoting this summit, featuring leading outlets:',
       chineseMedia: 'CHINESE MEDIA PARTNERS',
       internationalMedia: 'INTERNATIONAL MEDIA CHANNELS'
     },

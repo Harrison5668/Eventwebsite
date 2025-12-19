@@ -111,38 +111,46 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
 
         {/* WTC Section with Introduction */}
         <div className="mb-32">
-          {/* WTC Introduction Text */}
-          <div className="text-center mb-12">
-            <p className="text-gold font-bold text-base md:text-lg max-w-4xl mx-auto leading-relaxed border border-gold/30 rounded-2xl px-8 py-6 bg-gold/5">
-              {t.wtcIntro}
-            </p>
-          </div>
-
-          {/* Region Globe Icons */}
-          <div className="flex flex-wrap justify-center gap-8 mb-12">
-            {regions.map((r, i) => (
-              <div key={i} className={`flex flex-col items-center cursor-pointer transition-all ${r.active ? 'opacity-100 scale-110' : 'opacity-40 hover:opacity-60'}`}>
-                <div className="text-4xl mb-4">{r.img}</div>
-                <span className="text-[10px] font-black tracking-widest text-center">{r.name}</span>
-                {r.active && <div className="h-0.5 w-full bg-gold mt-2"></div>}
+          <div className="glass-card rounded-[3rem] p-12 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/5 to-transparent"></div>
+            <div className="relative z-10">
+              {/* Title and Introduction */}
+              <div className="text-center mb-12">
+                <h3 className="text-2xl md:text-3xl font-black mb-4 text-white">
+                  {lang === 'zh' ? '亚太世界贸易商务联盟' : 'APAC World Trade Business Alliance'}
+                </h3>
+                <p className="text-gold font-bold text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
+                  {t.wtcIntro}
+                </p>
               </div>
-            ))}
-          </div>
 
-          {/* City Grid */}
-          <div className="bg-gold rounded-[2rem] overflow-hidden shadow-2xl">
-            <div className="bg-black/10 p-4 border-b border-black/5">
-              <span className="text-xs font-black text-black/60 tracking-widest uppercase">
-                {lang === 'zh' ? '亚太地区城市' : 'LOCATIONS IN ASIA & THE PACIFIC'}
-              </span>
-            </div>
-            <div className="p-8 md:p-12">
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-4">
-                {cities.map((city, idx) => (
-                  <div key={idx} className="text-black text-[11px] font-bold hover:text-white transition-colors cursor-default truncate">
-                    {lang === 'zh' ? city.zh : city.en}
+              {/* Region Globe Icons */}
+              <div className="flex flex-wrap justify-center gap-8 mb-12">
+                {regions.map((r, i) => (
+                  <div key={i} className={`flex flex-col items-center cursor-pointer transition-all ${r.active ? 'opacity-100 scale-110' : 'opacity-40 hover:opacity-60'}`}>
+                    <div className="text-4xl mb-4">{r.img}</div>
+                    <span className="text-[10px] font-black tracking-widest text-center">{r.name}</span>
+                    {r.active && <div className="h-0.5 w-full bg-gold mt-2"></div>}
                   </div>
                 ))}
+              </div>
+
+              {/* City Grid */}
+              <div className="bg-gold rounded-[2rem] overflow-hidden shadow-2xl">
+                <div className="bg-black/10 p-4 border-b border-black/5">
+                  <span className="text-xs font-black text-black/60 tracking-widest uppercase">
+                    {lang === 'zh' ? '亚太地区城市' : 'LOCATIONS IN ASIA & THE PACIFIC'}
+                  </span>
+                </div>
+                <div className="p-8 md:p-12">
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-4">
+                    {cities.map((city, idx) => (
+                      <div key={idx} className="text-black text-[11px] font-bold hover:text-white transition-colors cursor-default truncate">
+                        {lang === 'zh' ? city.zh : city.en}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -150,15 +158,21 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
 
         {/* Global CSR & Resources Section */}
         <div className="mb-32">
-          {/* CSR Introduction Text */}
-          <div className="text-center mb-12">
-            <p className="text-gold font-bold text-base md:text-lg max-w-4xl mx-auto leading-relaxed border border-gold/30 rounded-2xl px-8 py-6 bg-gold/5">
-              {t.csrIntro}
-            </p>
-          </div>
+          <div className="glass-card rounded-[3rem] p-12 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/5 to-transparent"></div>
+            <div className="relative z-10">
+              {/* Title and Introduction */}
+              <div className="text-center mb-12">
+                <h3 className="text-2xl md:text-3xl font-black mb-4 text-white">
+                  {lang === 'zh' ? '全球企业家责任基金会' : 'Global CSR Foundation'}
+                </h3>
+                <p className="text-gold font-bold text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
+                  {t.csrIntro}
+                </p>
+              </div>
 
-          {/* SDGs, CSR, UN Cards - Unified height */}
-          <div className="grid md:grid-cols-3 gap-8">
+              {/* SDGs, CSR, UN Cards - Unified height */}
+              <div className="grid md:grid-cols-3 gap-8">
             {/* SDGs Card */}
             <div className="flex flex-col">
               <h4 className="text-center text-xl font-black mb-8 border-b border-gold/30 pb-4 inline-block mx-auto min-w-[120px]">SDGs</h4>
@@ -202,20 +216,19 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
               </div>
             </div>
           </div>
+            </div>
+          </div>
         </div>
 
         {/* Influencer Network */}
         <div className="glass-card rounded-[3rem] p-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/5 to-transparent"></div>
           <div className="relative z-10">
-            <h3 className="text-2xl font-black mb-2">Master TV MCN</h3>
-            <p className="text-gold text-[10px] font-bold tracking-widest uppercase mb-4">Partial list of influencers who attend our events</p>
-            
-            {/* Description */}
-            <p className="text-white/80 text-sm leading-relaxed mb-12 max-w-4xl">
+            <h3 className="text-2xl font-black mb-12">{lang === 'zh' ? '全球网红经济联盟' : 'Master TV MCN'}</h3>
+            <p className="text-gold text-sm font-bold leading-relaxed mb-12 max-w-4xl">
               {lang === 'zh' 
-                ? '全球网红经济联盟——对接世界超一线的名人KOL，创造现象级品牌声量。' 
-                : 'Master TV MCN — Connecting with world-class celebrity influencers to create phenomenal brand impact.'}
+                ? '对接世界超一线的名人KOL，创造现象级品牌声量。' 
+                : 'Partial list of influencers who attend our events'}
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -232,28 +245,48 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
           </div>
         </div>
 
+        {/* GPTDAO Community */}
+        <div className="glass-card rounded-[3rem] p-12 relative overflow-hidden mt-32">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/5 to-transparent"></div>
+          <div className="relative z-10">
+            <h3 className="text-2xl md:text-3xl font-black text-white text-center mb-4">
+              {lang === 'zh' ? '硅谷华人创业者社区GPTDAO' : 'GPTDAO Silicon Valley AI Founder Community'}
+            </h3>
+            <p className="text-gold font-bold text-base md:text-lg max-w-4xl mx-auto leading-relaxed text-center mb-12">
+              {lang === 'zh' ? t.gptdaoDescription.zh : t.gptdaoDescription.en}
+            </p>
+            
+            {/* Image */}
+            <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden border-2 border-gold/20">
+              <img 
+                src="/siliconvalley/siliconvalley.jpg" 
+                alt="GPTDAO Silicon Valley Community" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Exhibition Expertise */}
         <div className="mt-32 grid lg:grid-cols-2 gap-16 items-center">
            <div className="space-y-8">
-             <div className="inline-block px-4 py-1 border border-gold/50 rounded text-gold text-[10px] font-black tracking-[0.3em]">NEW TIMES EXHIBITION</div>
-             <h3 className="text-4xl font-black leading-tight">
-               {t.exhibition.title}
-               <br/>
-               <span className="text-gold">{t.exhibition.sub}</span>
-             </h3>
-             <p className="text-gray-400 text-lg leading-relaxed">
-               {t.exhibition.desc}
-             </p>
-             <div className="grid grid-cols-3 gap-4">
-                {t.exhibition.points.map((p: string, i: number) => (
-                  <div key={i} className="text-center p-4 glass-card rounded-2xl">
-                    <div className="w-8 h-8 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-gold text-xs">●</span>
-                    </div>
-                    <p className="text-[10px] font-bold text-gray-300 leading-tight uppercase tracking-tighter">{p}</p>
-                  </div>
-                ))}
-             </div>
+            <div className="inline-block px-4 py-1 border border-gold/50 rounded text-gold text-[10px] font-black tracking-[0.3em]">NEW TIMES EXHIBITION</div>
+            <h3 className="text-4xl font-black leading-tight">
+              {t.exhibition.title}
+            </h3>
+            <p className="text-gold text-lg leading-relaxed font-medium">
+              {t.exhibition.desc}
+            </p>
+            <div className="grid grid-cols-3 gap-4">
+               {t.exhibition.points.map((p: string, i: number) => (
+                 <div key={i} className="text-center p-4 glass-card rounded-2xl">
+                   <div className="w-8 h-8 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                     <span className="text-gold text-xs">●</span>
+                   </div>
+                   <p className="text-xs font-bold text-gray-300 leading-tight uppercase tracking-tighter">{p}</p>
+                 </div>
+               ))}
+            </div>
            </div>
            <div className="grid grid-cols-2 grid-rows-2 gap-4 aspect-square">
               <div className="bg-white/5 rounded-3xl border border-white/10 relative overflow-hidden group">

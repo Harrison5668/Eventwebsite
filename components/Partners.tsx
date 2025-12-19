@@ -12,7 +12,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-32">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">{t.title}</h2>
-          <p className="text-gold text-sm font-medium max-w-3xl mx-auto">{t.subtitle}</p>
+          <p className="text-gold text-sm font-medium max-w-3xl mx-auto uppercase tracking-wider">{t.engSubtitle}</p>
         </div>
 
         {/* Organizer Section */}
@@ -295,6 +295,12 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
           </div>
         </div>
 
+        {/* Media Section */}
+        <div className="text-center mb-32">
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">{t.mediaTitle}</h2>
+          <p className="text-gold text-sm font-medium max-w-3xl mx-auto">{t.mediaSubtitle}</p>
+        </div>
+
         {/* Chinese Media Grid */}
         <div className="mb-40">
           <div className="flex items-center space-x-4 mb-12">
@@ -325,7 +331,6 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
                  <div className="glass-card aspect-[2.5/1] w-full rounded flex items-center justify-center p-2 border border-white/5 overflow-hidden bg-white/5">
                    <img src={media.img} alt={media.name} className="w-full h-full object-contain" />
                  </div>
-                 <span className="text-[9px] font-semibold text-gray-400 text-center">{media.name}</span>
                </div>
              ))}
           </div>
@@ -356,7 +361,6 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
                  <div className="glass-card aspect-[2.5/1] w-full rounded flex items-center justify-center p-2 border border-white/5 overflow-hidden bg-white/5">
                    <img src={media.img} alt={media.name} className="w-full h-full object-contain" />
                  </div>
-                 <span className="text-[9px] font-semibold text-gray-400 text-center">{media.name}</span>
                </div>
              ))}
           </div>
