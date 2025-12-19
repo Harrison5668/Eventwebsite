@@ -7,7 +7,7 @@ interface Props {
 
 const Agenda: React.FC<Props> = ({ t }) => {
   return (
-    <section id="agenda" className="py-32 px-6">
+    <section id="agenda" className="py-32 px-6 bg-[#030303]">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-black mb-4">{t.title}</h2>
         <p className="text-gold font-bold tracking-widest text-xs uppercase mb-16">{t.subtitle}</p>
@@ -24,8 +24,8 @@ const Agenda: React.FC<Props> = ({ t }) => {
                   <div className="space-y-6">
                     {event.items.map((s: any, sIdx: number) => (
                       <div key={sIdx} className="pl-4 border-l-2 border-gold/30">
-                        <h4 className="font-bold text-white mb-1">⚫ {s.title}</h4>
-                        <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+                        <h4 className="font-bold text-gold mb-2">{s.title}</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
                       </div>
                     ))}
                   </div>

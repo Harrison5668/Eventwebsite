@@ -1,5 +1,5 @@
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 interface Props {
   t: any;
@@ -8,110 +8,98 @@ interface Props {
 
 const Speakers: React.FC<Props> = ({ t, lang }) => {
   const [activeBio, setActiveBio] = useState<string | null>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Speaker data with local profile images from /images folder
+  // Speaker data with full bios as provided
   const speakers = [
     { 
       name: lang === 'zh' ? '张红梅' : 'Diana Zhang', 
       title: lang === 'zh' ? '亚太世界贸易商务联盟副会长' : 'Vice President, APAC World Trade Group', 
       bio: lang === 'zh' 
-        ? '张红梅女士，现任亚太世界贸易商务联盟副会长，是长期活跃于美国硅谷的投资人。致力于推动中美商业交流。' 
-        : 'Diana Zhang currently serves as Vice President of APAC World Trade Group and is a long-term active investor in Silicon Valley.',
+        ? '张红梅女士，现任亚太世界贸易商务联盟副会长，是长期活跃于美国硅谷的投资人。她曾联合创办北京大学公益孵化器与北大未名天使基金，现担任美国华人专家会常务理事、美国飞虎文化交流协会执行会长、亚太世贸商务联盟副会长及杭州世贸中心董事长，致力于推动中美商业交流、资本合作与跨国项目落地。' 
+        : 'Diana Zhang currently serves as Vice President of APAC World Trade Group and is a long-term active investor in Silicon Valley. She co-founded the Peking University Public Welfare Incubator and the PKU Weiming Angel Fund. She also serves as Executive Director of the Chinese American Experts Association, Executive President of the Flying Tigers Cultural Exchange Association, Vice President of APAC World Trade Group, and Chairwoman of Hangzhou World Trade Center. She is dedicated to promoting business exchanges, capital cooperation, and cross-border project implementation between China and the United States.',
       img: '/images/diana-zhang.jpg' 
     },
     { 
       name: lang === 'zh' ? '赵兢' : 'Jing Zhao Cesarone', 
       title: lang === 'zh' ? '全球 CSR 基金会创始人' : 'Founder & CEO, Global CSR Foundation', 
       bio: lang === 'zh'
-        ? '赵兢女士是全球 CSR 基金会创始人兼首席执行官，拥有三十年跨文化战略、可持续发展与 NGO 管理经验。'
-        : 'Jing Zhao Cesarone is the Founder and CEO of the Global CSR Foundation with over 30 years of experience in cross-cultural strategy.',
+        ? '赵兢女士是全球CSR基金会创始人兼首席执行官，联合国世界妇女组织全球女性领导力峰会主席，拥有三十年跨文化战略、可持续发展与NGO管理经验。她曾获 NAWBO 女性企业成就奖和中华文化基金会全球成就奖，长期推动教育、可持续发展、气候行动等领域的国际合作，并成功搭建中美企业界、政策界高层交流的桥梁。'
+        : 'Jing Zhao Cesarone is the Founder and CEO of the Global CSR Foundation and Chair of the UN Women\'s Global Women Leadership Summit. She has over 30 years of experience in cross-cultural strategy, sustainable development, and NGO management. She has received the NAWBO Women\'s Achievement Award and the Global Achievement Award from the Chinese Culture Foundation. She has long promoted international cooperation in education, sustainability, and climate action, successfully bridging high-level exchanges between businesses and policymakers in China and the U.S.',
       img: '/images/jing-zhao.jpg' 
     },
     { 
       name: lang === 'zh' ? '杨依依' : 'Elaine Yang', 
       title: lang === 'zh' ? 'AI 101 Labs 创始人' : 'Founder, AI 101 Labs', 
       bio: lang === 'zh'
-        ? 'Elaine Yang 为 AI 101 Labs 创始人，活跃于 AI × Web3 × RWA 的早期投资人。深耕 AI 研究、GTM 策略。'
-        : 'Elaine Yang is the Founder of AI 101 Labs and an early investor active in AI, Web3, and RWA projects.',
+        ? 'Elaine Yang 为 AI 101 Labs 创始人，同时是活跃于 AI × Web3 × RWA 的早期投资人，担任 Waterdrip Capital 投资合伙人与 AI101 Labs GP。她为多家领先的区块链与人工智能项目担任顾问，深耕 AI 研究、GTM 策略与生态建设，并创立 AI & Web3 KOL 机构，专注内容增长与社区生态联动。'
+        : 'Elaine Yang is the Founder of AI 101 Labs and an early investor active in AI × Web3 × RWA projects. She is an Investment Partner at Waterdrip Capital and GP at AI 101 Labs. Elaine advises multiple leading blockchain and AI projects, focusing on AI research, GTM strategy, and ecosystem building. She also founded an AI & Web3 KOL agency, specializing in content growth and community-ecosystem synergy.',
       img: '/images/elaine-yang.jpg' 
     },
     { 
       name: lang === 'zh' ? '林哲冰' : 'Zhebing Lin', 
       title: lang === 'zh' ? 'Magic Ice Cube 创始人' : 'Founder, Magic Ice Cube', 
       bio: lang === 'zh'
-        ? '林哲冰是 Magic Ice Cube 创始人，其跨国贸易平台在四年内实现 3.5 亿美元营收。'
-        : 'Zhebing Lin founded Magic Ice Cube, building it into a multinational trading platform with $350M revenue in four years.',
+        ? '林哲冰是 Magic Ice Cube 创始人，将其打造为总部位于洛杉矶的跨国贸易平台，并在四年内实现 3.5 亿美元营收。他入选胡润 Under 30，现兼任世界精英领袖联盟主席、中美国际经济合作联盟青委主席、蓝源民族产业研究院副院长、国际潮青联合会副会长、美国粤港澳大湾区企业家总商会委员，以及 G20 青年企业家联盟菁英人才，专注全球贸易创新与国际商业合作。'
+        : 'Zhebing Lin founded Magic Ice Cube, building it into a Los Angeles-based multinational trading platform with $350 million in revenue within four years. He was listed on Hurun Under 30 and currently serves as Chairman of the World Elite Leaders Alliance, Chair of the Young Committee of the China-U.S. International Economic Cooperation Alliance, Vice President of the International Chaoqing Federation, Vice President of the U.S. Guangdong-Hong Kong-Macao Bay Area Entrepreneurs Chamber, and G20 Young Entrepreneurs Elite. He focuses on global trade innovation and international business cooperation.',
       img: '/images/ice-lin.png' 
     },
     { 
       name: lang === 'zh' ? '魏海鹰' : 'Haiying Wei', 
-      title: lang === 'zh' ? '香港寰宇投资董事长' : 'Chairman, Horizon International Investment', 
+      title: lang === 'zh' ? '香港寰宇投资董事长' : 'Chairman, Horizon International Investment, Hong Kong', 
       bio: lang === 'zh'
-        ? '魏海鹰构建了横跨制造、投资、金融等领域的产业矩阵，旗下香港寰宇投资为香港联交所上市公司。'
-        : 'Haiying Wei has built an industrial matrix spanning manufacturing, investment, and finance. His company is listed on the HK Stock Exchange.',
+        ? '魏海鹰构建了横跨制造、投资、金融等领域的产业矩阵，旗下香港寰宇投资（集团）有限公司为香港联交所上市公司（股份代号 1046），中山市金日铝业有限公司作为核心制造企业，聚焦新型合金材料领域，实力雄厚。同时身兼广东省十届、十一届政协委员，中山潮人海外联谊会会长、美国南加州华人社团大联盟荣誉主席等职，持续搭建海内外经贸与文化交流桥梁。'
+        : 'Haiying Wei has built an industrial matrix spanning manufacturing, investment, and finance. His company, Horizon International Investment (Group) Limited, is listed on the Hong Kong Stock Exchange (Stock Code: 1046). The core manufacturing enterprise, Zhongshan Jinri Aluminum Co., Ltd., focuses on new alloy materials. He also serves as a member of the 10th and 11th Guangdong CPPCC, President of the Zhongshan Chaozhou Overseas Association, and Honorary Chairman of the Southern California Chinese Associations Alliance. He continuously builds bridges for trade and cultural exchange between China and overseas markets.',
       img: '/images/haiying-wei.jpeg' 
     },
     { 
       name: 'Viola He', 
-      title: lang === 'zh' ? '国际电商品牌化运营数据分析师协会会长' : 'President, Intl E-commerce Brand Analytics Association', 
+      title: lang === 'zh' ? '国际电商品牌化运营数据分析师协会会长' : 'President, International E-commerce Brand Operations & Data Analytics Association', 
       bio: lang === 'zh'
-        ? '美国顶级 MCN 联合创始人，TikTok 5千万粉博主 Michael Le 合伙人。专注品牌出海8年，以品牌美学与数据分析帮助品牌全球化。'
-        : 'Co-founder of a top U.S. MCN, partner of TikTok influencer Michael Le (50M followers). 8 years in international brand expansion using data analytics.',
+        ? '美国top mcn机构联合创始人，Tiktok5千万粉丝博主Michael Le合伙人，专注品牌出海8年，以专业的品牌美学与广告数据分析来帮助更多品牌完成出海销售，国际电商品牌化运营数据分析师协会会长。'
+        : 'Viola He is co-founder of a top MCN agency in the U.S. and partner of TikTok influencer Michael Le (50M followers). She has 8 years of experience in international brand expansion, using professional brand aesthetics and advertising data analysis to help brands go global. She currently serves as President of the International E-commerce Brand Operations & Data Analytics Association.',
       img: null 
     },
     { 
       name: lang === 'zh' ? '蔡继军' : 'Jijun Cai', 
-      title: lang === 'zh' ? 'GPTDAO 联合发起人 & FlowGen 创始人' : 'Co-founder GPTDAO & Founder FlowGen', 
+      title: lang === 'zh' ? 'GPTDAO联合发起人' : 'Co-founder, GPTDAO & Founder, FlowGen', 
       bio: lang === 'zh'
-        ? '连续创业者，2023年在硅谷共同创办全球最大生成式AI社区GPTDAO，后创立FlowGen，用AI替代营销团队实现100倍降本增效。'
-        : 'Serial entrepreneur. Co-founded GPTDAO in 2023, the largest generative AI community globally. Founded FlowGen to replace marketing teams with AI.',
+        ? 'FlowGen 创始人，GPTDAO 联创、连续创业者，拥有十年以上市场、产品与技术经验。早年在硅谷从事 iOS 开发与产品管理，先后主导多平台应用、社交增长工具及融资撮合平台的研发与落地。2023 年在加州帕洛阿尔托共同创办全球最大的生成式AI社区品牌GPTDAO，在硅谷和旧金山多次成功举办了全球最大的生成式AI峰会；随后创立FlowGen，以 AI 替代营销团队，帮助企业与创作者实现 100倍降本增效，致力于用技术创新重塑组织效率与商业模式。'
+        : 'Jijun Cai is a serial entrepreneur with over 10 years of experience in marketing, product, and technology. He previously worked in Silicon Valley on iOS development and product management, leading multi-platform applications, social growth tools, and financing matchmaking platforms. In 2023, he co-founded GPTDAO in Palo Alto, creating the largest generative AI community brand globally, and successfully hosted multiple large-scale generative AI summits in Silicon Valley and San Francisco. He later founded FlowGen, replacing marketing teams with AI to help enterprises and creators achieve 100× cost reduction and efficiency improvement, aiming to reshape organizational efficiency and business models through technological innovation.',
       img: null 
     },
     { 
       name: lang === 'zh' ? '陈喆' : 'Zhe Chen', 
       title: lang === 'zh' ? '法拉第未来联合创始人' : 'Co-founder, Faraday Future', 
       bio: lang === 'zh'
-        ? '陈喆是法拉第未来（Faraday Future）联合创始人，深耕新能源汽车与智能出行领域。'
-        : 'Zhe Chen is a co-founder of Faraday Future, focusing on new energy vehicles and smart mobility.',
+        ? '陈喆是法拉第未来（Faraday Future）联合创始人。'
+        : 'Zhe Chen is a co-founder of Faraday Future.',
       img: '/images/zhe-chen.png' 
     },
     { 
       name: lang === 'zh' ? '孙溪唯' : 'Tammy Sun', 
       title: lang === 'zh' ? 'AI Reinvent Ventures 创始人' : 'Founder, AI Reinvent Ventures', 
       bio: lang === 'zh'
-        ? '硅谷知名投资人，专注于 Pre-IPO 硬科技项目投资。'
-        : 'Renowned Silicon Valley investor, focusing on pre-IPO hard-tech projects.',
+        ? '硅谷知名投资人，看Pre-IPO硬科技项目。'
+        : 'Tammy Sun is a renowned Silicon Valley investor, focusing on pre-IPO hard-tech projects.',
       img: '/images/tammy-sun.png' 
     },
     { 
       name: lang === 'zh' ? '李尚龙' : 'Shanglong Li', 
-      title: lang === 'zh' ? '千万级大V AI博主' : 'Major AI Influencer (10M+ Followers)', 
+      title: lang === 'zh' ? '千万级大V AI博主' : 'Major AI Influencer', 
       bio: lang === 'zh'
-        ? '李尚龙是拥有千万级粉丝的AI领域意见领袖，致力于AI知识普及与行业洞察分享。'
-        : 'Shanglong Li is an AI influencer with a follower base in the millions, dedicated to AI knowledge sharing.',
-      img: null 
+        ? '李尚龙是拥有千万级粉丝的AI领域意见领袖。'
+        : 'Shanglong Li is an AI influencer with a follower base in the millions.',
+      img: '/images/shanglong-li.jpg' 
     },
     { 
       name: 'Jerry Yang', 
       title: lang === 'zh' ? 'AI Robotics Alliance 主席' : 'Chairman, AI Robotics Alliance', 
       bio: lang === 'zh'
-        ? 'Jerry Yang 现任 AI Robotics Alliance 主席，推动AI与机器人技术的产业融合与创新发展。'
-        : 'Jerry Yang serves as Chairman of the AI Robotics Alliance, driving AI and robotics industry integration.',
+        ? 'Jerry Yang 现任 AI Robotics Alliance 主席。'
+        : 'Jerry Yang currently serves as Chairman of the AI Robotics Alliance.',
       img: null 
     }
   ];
-
-  // Scroll handler for horizontal navigation
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = 320; // Card width + gap
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <section id="speakers" className="py-32 bg-[#030303]">
@@ -120,74 +108,62 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
         <p className="text-gold font-bold tracking-widest text-xs uppercase mb-12">{t.subtitle}</p>
       </div>
       
-      {/* Horizontal scrolling container with navigation arrows */}
-      <div className="relative">
-        {/* Left scroll button */}
-        <button 
-          onClick={() => scroll('left')}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/60 border border-gold/30 text-gold hover:bg-gold/20 hover:border-gold transition-all flex items-center justify-center"
-          aria-label="Scroll left"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        
-        {/* Right scroll button */}
-        <button 
-          onClick={() => scroll('right')}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/60 border border-gold/30 text-gold hover:bg-gold/20 hover:border-gold transition-all flex items-center justify-center"
-          aria-label="Scroll right"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-
-        {/* Scrollable speaker cards */}
-        <div 
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto px-16 pb-6 scrollbar-hide"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
+      {/* Grid layout: 5 columns on large screens */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {speakers.map((s, idx) => (
             <div 
               key={idx} 
-              className="glass-card p-6 rounded-2xl cursor-pointer hover:border-gold/50 transition-all flex flex-col flex-shrink-0 w-[280px]"
-              onClick={() => setActiveBio(activeBio === s.name ? null : s.name)}
+              className="relative"
             >
-              <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-gold/20 mb-6 bg-gradient-to-br from-gold/10 to-transparent">
-                {s.img ? (
-                  <img src={s.img} alt={s.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all" />
-                ) : (
-                  // Placeholder avatar for speakers without images
-                  <div className="w-full h-full flex items-center justify-center text-gold/40 text-3xl font-bold">
-                    {s.name.charAt(0)}
-                  </div>
-                )}
+              {/* Speaker card */}
+              <div 
+                className="glass-card p-4 rounded-2xl cursor-pointer hover:border-gold/50 transition-all flex flex-col items-center text-center h-full"
+                onClick={() => setActiveBio(activeBio === s.name ? null : s.name)}
+              >
+                {/* Profile image - no grayscale filter */}
+                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gold/30 mb-4 bg-gradient-to-br from-gold/10 to-transparent flex-shrink-0">
+                  {s.img ? (
+                    <img src={s.img} alt={s.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-gold/60 text-2xl font-bold bg-black/50">
+                      {s.name.charAt(0)}
+                    </div>
+                  )}
+                </div>
+                
+                {/* Name */}
+                <h3 className="font-bold text-sm mb-1 leading-tight">{s.name}</h3>
+                
+                {/* Title */}
+                <p className="text-[9px] text-gold font-bold uppercase tracking-tight leading-tight mb-3">{s.title}</p>
+                
+                {/* Click hint */}
+                <div className="mt-auto text-[8px] text-gray-600 uppercase font-bold tracking-widest">
+                  {activeBio === s.name ? t.less : t.more}
+                </div>
               </div>
-              <h3 className="font-bold text-lg mb-1">{s.name}</h3>
-              <p className="text-[10px] text-gold font-bold uppercase tracking-tight leading-tight min-h-[28px]">{s.title}</p>
               
+              {/* Expandable bio overlay - positioned absolute to not affect layout */}
               {activeBio === s.name && (
-                <div className="mt-4 pt-4 border-t border-white/10 text-[10px] text-gray-400 text-left leading-relaxed animate-fade-in">
-                  {s.bio}
+                <div 
+                  className="absolute top-full left-0 right-0 z-50 mt-2 p-4 bg-[#0a0a0a] border border-gold/30 rounded-xl shadow-2xl animate-fade-in"
+                  style={{ minWidth: '280px', maxWidth: '350px' }}
+                >
+                  <div className="text-[11px] text-gray-300 leading-relaxed text-left">
+                    {s.bio}
+                  </div>
+                  <button 
+                    className="mt-3 text-[9px] text-gold uppercase font-bold tracking-widest hover:underline"
+                    onClick={(e) => { e.stopPropagation(); setActiveBio(null); }}
+                  >
+                    {t.less}
+                  </button>
                 </div>
               )}
-              
-              <div className="mt-auto pt-4 text-[9px] text-gray-600 uppercase font-bold tracking-widest">
-                {activeBio === s.name ? t.less : t.more}
-              </div>
             </div>
           ))}
         </div>
-      </div>
-      
-      {/* Scroll hint indicator */}
-      <div className="flex justify-center mt-4 gap-2">
-        <span className="text-[10px] text-gray-500 uppercase tracking-widest">
-          {lang === 'zh' ? '← 左右滑动查看更多 →' : '← Scroll to see more →'}
-        </span>
       </div>
     </section>
   );

@@ -28,10 +28,10 @@ const App: React.FC = () => {
         <Speakers t={t.speakers} lang={lang} />
         <Ecosystem t={t.ecosystem} />
         <Sponsorship t={t.sponsorship} lang={lang} />
-        <Partners lang={lang} />
+        <Partners t={t.partners} lang={lang} />
         <Ticketing t={t.ticketing} />
       </main>
-      <Footer t={t.footer} />
+      <Footer t={t.footer} lang={lang} />
     </div>
   );
 };

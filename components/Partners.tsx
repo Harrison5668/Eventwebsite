@@ -2,41 +2,67 @@
 import React from 'react';
 
 interface Props {
+  t: any;
   lang: string;
 }
 
-const Partners: React.FC<Props> = ({ lang }) => {
+const Partners: React.FC<Props> = ({ t, lang }) => {
   return (
     <section id="partners" className="py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-32">
-          <h2 className="text-4xl md:text-5xl font-black mb-6">{lang === 'zh' ? '主办与媒体' : 'Organizers & Media'}</h2>
-          <p className="text-gold font-bold tracking-[0.4em] text-xs uppercase">PARTNERSHIP NETWORK</p>
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">{t.title}</h2>
+          <p className="text-gold text-sm font-medium max-w-3xl mx-auto">{t.subtitle}</p>
         </div>
 
         {/* Organizer Section */}
         <div className="grid lg:grid-cols-3 gap-16 mb-40">
           <div>
-            <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase">{lang === 'zh' ? '主办机构' : 'Organizers'}</h4>
+            <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase">{t.organizers}</h4>
             <div className="space-y-6 text-gray-400 text-sm font-medium">
-              <p className="hover:text-gold transition-colors cursor-default">亚太世界贸易商务联盟 (WTC Alliance)</p>
-              <p className="hover:text-gold transition-colors cursor-default">全球企业社会责任基金会 (GCSRF)</p>
-              <p className="hover:text-gold transition-colors cursor-default">全球网红经济联盟 (Master TV MCN)</p>
-              <p className="hover:text-gold transition-colors cursor-default">GPTDAO / AI 101 Labs</p>
-              <p className="hover:text-gold transition-colors cursor-default">新时代展览 / RWAWA</p>
+              {lang === 'zh' ? (
+                <>
+                  <p className="hover:text-gold transition-colors cursor-default">亚太世界贸易商务联盟</p>
+                  <p className="hover:text-gold transition-colors cursor-default">全球企业社会责任基金会</p>
+                  <p className="hover:text-gold transition-colors cursor-default">全球网红经济联盟</p>
+                  <p className="hover:text-gold transition-colors cursor-default">GPTDAO</p>
+                  <p className="hover:text-gold transition-colors cursor-default">AI 101 Labs</p>
+                  <p className="hover:text-gold transition-colors cursor-default">新时代展览</p>
+                  <p className="hover:text-gold transition-colors cursor-default">RWAWA</p>
+                </>
+              ) : (
+                <>
+                  <p className="hover:text-gold transition-colors cursor-default">APAC World Trade Group</p>
+                  <p className="hover:text-gold transition-colors cursor-default">Global CSR Foundation (GCSRF)</p>
+                  <p className="hover:text-gold transition-colors cursor-default">Master TV MCN</p>
+                  <p className="hover:text-gold transition-colors cursor-default">GPTDAO</p>
+                  <p className="hover:text-gold transition-colors cursor-default">AI 101 Labs</p>
+                  <p className="hover:text-gold transition-colors cursor-default">New Times Exhibition</p>
+                  <p className="hover:text-gold transition-colors cursor-default">RWAWA</p>
+                </>
+              )}
             </div>
           </div>
           
           <div>
-            <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase">{lang === 'zh' ? '联合主办' : 'Co-Organizers'}</h4>
+            <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase">{t.coOrganizers}</h4>
             <div className="space-y-6 text-gray-400 text-sm font-medium">
-              <p className="hover:text-gold transition-colors cursor-default">法拉第未来 (Faraday Future)</p>
-              <p className="hover:text-gold transition-colors cursor-default">AI Reinvent Ventures</p>
+              {lang === 'zh' ? (
+                <>
+                  <p className="hover:text-gold transition-colors cursor-default">法拉第未来</p>
+                  <p className="hover:text-gold transition-colors cursor-default">AI Reinvent Ventures</p>
+                </>
+              ) : (
+                <>
+                  <p className="hover:text-gold transition-colors cursor-default">Faraday Future</p>
+                  <p className="hover:text-gold transition-colors cursor-default">AI Reinvent Ventures</p>
+                </>
+              )}
             </div>
           </div>
 
           <div>
-            <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase">{lang === 'zh' ? '社群合作伙伴' : 'Community Partners'}</h4>
+            <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase">{t.communityPartners}</h4>
             <div className="grid grid-cols-2 gap-4 text-gray-500 text-[10px] font-bold uppercase tracking-tight">
               <span>EntreConnect</span><span>OnePiece Labs</span>
               <span>Bitslabs</span><span>Taro</span><span>UpHonest Scout</span>
@@ -45,16 +71,16 @@ const Partners: React.FC<Props> = ({ lang }) => {
           </div>
         </div>
 
-        {/* Chinese Media Grid (Ref Image 6) */}
+        {/* Chinese Media Grid */}
         <div className="mb-40">
           <div className="flex items-center space-x-4 mb-12">
             <div className="h-px flex-1 bg-white/10"></div>
-            <h4 className="text-[10px] font-black text-gray-500 tracking-[0.5em] uppercase text-center">{lang === 'zh' ? '中文主流媒体合作伙伴' : 'CHINESE MEDIA PARTNERS'}</h4>
+            <h4 className="text-[10px] font-black text-gray-500 tracking-[0.5em] uppercase text-center">{t.chineseMedia}</h4>
             <div className="h-px flex-1 bg-white/10"></div>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 grayscale opacity-40 hover:opacity-100 transition-all duration-700">
-             {/* Replace with real logos from Image 6 */}
+             {/* Media logos */}
              {['SOHU', 'TODAY TOUTIAO', 'EASTMONEY', 'HCZYW', 'BAIDU', 'CSSXW', 'CHINA.COM', '3NEWS', 'CNIM', 'INTERNATIONAL DAILY', 'CENN', '163 NEWS', '71DAILY', 'JINGJI', 'TONGHUN'].map((name) => (
                <div key={name} className="glass-card aspect-[2.5/1] rounded flex items-center justify-center p-4 border border-white/5">
                  <span className="text-[8px] font-black text-white/40 tracking-tighter uppercase">{name} LOGO</span>
@@ -63,16 +89,15 @@ const Partners: React.FC<Props> = ({ lang }) => {
           </div>
         </div>
 
-        {/* International Media List Grid (Ref Image 7 top) */}
+        {/* International Media List Grid */}
         <div>
           <div className="flex items-center space-x-4 mb-12">
             <div className="h-px flex-1 bg-white/10"></div>
-            <h4 className="text-[10px] font-black text-gray-500 tracking-[0.5em] uppercase text-center">{lang === 'zh' ? '国际媒体发行渠道' : 'INTERNATIONAL MEDIA CHANNELS'}</h4>
+            <h4 className="text-[10px] font-black text-gray-500 tracking-[0.5em] uppercase text-center">{t.internationalMedia}</h4>
             <div className="h-px flex-1 bg-white/10"></div>
           </div>
           
           <div className="grid md:grid-cols-2 gap-px bg-white/5 border border-white/5 rounded-2xl overflow-hidden opacity-30 grayscale hover:opacity-80 transition-all duration-700">
-             {/* Ref Image 7 top list style */}
              {[
                'WBTW CBS 13', 'FOX 31 DENVER', 'THE WORLD NEWSWIRE', 'WTNH ABC 8', 
                'INNOVATION & ENTREPRENEURS', 'KLRT FOX 16', 'INTERNATIONAL BUSINESS WATCH', 

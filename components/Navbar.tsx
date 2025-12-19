@@ -21,8 +21,12 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <span className="text-xl font-black tracking-tighter">
-            CES <span className="text-gold">SUMMIT</span>
+          <span className="text-lg font-black tracking-tight">
+            {currentLang === 'zh' ? (
+              <>CES 创新 & <span className="text-gold">变现峰会</span></>
+            ) : (
+              <>INNOVATION & <span className="text-gold">MONETIZATION</span></>
+            )}
           </span>
         </div>
         

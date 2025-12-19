@@ -30,17 +30,24 @@ const Ecosystem: React.FC<Props> = ({ t }) => {
   return (
     <section id="ecosystem" className="py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        {/* Core Title Section */}
+        {/* Core Title Section - Gold style for Chinese text */}
         <div className="text-center mb-24">
           <h2 className="text-4xl md:text-5xl font-black mb-6">{t.title}</h2>
-          <p className="text-gold font-bold tracking-[0.4em] text-xs uppercase mb-8">{t.subtitle}</p>
-          <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-gold font-bold text-lg max-w-3xl mx-auto leading-relaxed">
             {t.copy}
           </p>
         </div>
 
-        {/* WTC Location Grid (Ref Image 2) */}
+        {/* WTC Section with Introduction */}
         <div className="mb-32">
+          {/* WTC Introduction Text */}
+          <div className="text-center mb-12">
+            <p className="text-gold font-bold text-base md:text-lg max-w-4xl mx-auto leading-relaxed border border-gold/30 rounded-2xl px-8 py-6 bg-gold/5">
+              {t.wtcIntro}
+            </p>
+          </div>
+
+          {/* Region Globe Icons */}
           <div className="flex flex-wrap justify-center gap-8 mb-12">
             {regions.map((r, i) => (
               <div key={i} className={`flex flex-col items-center cursor-pointer transition-all ${r.active ? 'opacity-100 scale-110' : 'opacity-40 hover:opacity-60'}`}>
@@ -51,6 +58,7 @@ const Ecosystem: React.FC<Props> = ({ t }) => {
             ))}
           </div>
 
+          {/* City Grid */}
           <div className="bg-gold rounded-[2rem] overflow-hidden shadow-2xl">
             <div className="bg-black/10 p-4 border-b border-black/5">
               <span className="text-xs font-black text-black/60 tracking-widest uppercase">LOCATIONS IN ASIA & THE PACIFIC</span>
@@ -67,22 +75,63 @@ const Ecosystem: React.FC<Props> = ({ t }) => {
           </div>
         </div>
 
-        {/* Global CSR & Resources (Ref Image 3) */}
-        <div className="grid md:grid-cols-3 gap-8 mb-32">
-          {['SDGs', 'CSR', 'UN'].map((item) => (
-            <div key={item} className="flex flex-col">
-              <h4 className="text-center text-xl font-black mb-8 border-b border-gold/30 pb-4 inline-block mx-auto min-w-[120px]">{item}</h4>
-              <div className="glass-card aspect-[4/3] rounded-3xl overflow-hidden relative group">
-                <div className="absolute inset-0 bg-gold/5 group-hover:bg-gold/10 transition-all"></div>
-                <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-                  <span className="text-gray-500 text-xs font-bold uppercase tracking-widest">[RESOURCE IMAGE {item}]</span>
+        {/* Global CSR & Resources Section */}
+        <div className="mb-32">
+          {/* CSR Introduction Text */}
+          <div className="text-center mb-12">
+            <p className="text-gold font-bold text-base md:text-lg max-w-4xl mx-auto leading-relaxed border border-gold/30 rounded-2xl px-8 py-6 bg-gold/5">
+              {t.csrIntro}
+            </p>
+          </div>
+
+          {/* SDGs, CSR, UN Cards - Unified height */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* SDGs Card */}
+            <div className="flex flex-col">
+              <h4 className="text-center text-xl font-black mb-8 border-b border-gold/30 pb-4 inline-block mx-auto min-w-[120px]">SDGs</h4>
+              <div className="glass-card rounded-3xl overflow-hidden relative group flex flex-col h-[420px]">
+                <div className="p-4 flex-shrink-0">
+                  <img 
+                    src="/images/SDGS.png" 
+                    alt="SDGs" 
+                    className="w-full h-auto max-h-[320px] object-contain mx-auto"
+                  />
+                </div>
+                <div className="px-4 pb-4 text-center mt-auto">
+                  <p className="text-gray-300 text-xs leading-relaxed">
+                    {t.sdgsContent}
+                  </p>
                 </div>
               </div>
             </div>
-          ))}
+
+            {/* CSR Card */}
+            <div className="flex flex-col">
+              <h4 className="text-center text-xl font-black mb-8 border-b border-gold/30 pb-4 inline-block mx-auto min-w-[120px]">CSR</h4>
+              <div className="glass-card rounded-3xl overflow-hidden relative group flex flex-col h-[420px] p-5">
+                <p className="text-gray-300 text-[10px] leading-relaxed overflow-y-auto">
+                  {t.csrContent}
+                </p>
+              </div>
+            </div>
+
+            {/* UN Card */}
+            <div className="flex flex-col">
+              <h4 className="text-center text-xl font-black mb-8 border-b border-gold/30 pb-4 inline-block mx-auto min-w-[120px]">UN</h4>
+              <div className="glass-card rounded-3xl overflow-hidden relative group flex flex-col h-[420px]">
+                <div className="p-4 h-full flex items-center justify-center">
+                  <img 
+                    src="/images/UN1.png" 
+                    alt="UN" 
+                    className="w-full h-auto max-h-[380px] object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Influencer Network (Ref Image 5) */}
+        {/* Influencer Network */}
         <div className="glass-card rounded-[3rem] p-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/5 to-transparent"></div>
           <div className="relative z-10">
@@ -93,20 +142,20 @@ const Ecosystem: React.FC<Props> = ({ t }) => {
               {influencers.map((inf, i) => (
                 <div key={i} className="text-center group">
                   <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-gold/20 mb-4 group-hover:border-gold transition-all ring-4 ring-gold/0 group-hover:ring-gold/20">
-                    <img src={inf.img} alt={inf.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0" />
+                    <img src={inf.img} alt={inf.name} className="w-full h-full object-cover" />
                   </div>
                   <h5 className="text-[11px] font-bold text-white mb-1">{inf.name}</h5>
-                  <p className="text-[9px] text-gray-500 font-bold uppercase tracking-tighter">{inf.fans}</p>
+                  <p className="text-[9px] text-gold font-bold uppercase tracking-tighter">{inf.fans}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Exhibition Expertise (Ref Image 7 lower) */}
+        {/* Exhibition Expertise */}
         <div className="mt-32 grid lg:grid-cols-2 gap-16 items-center">
            <div className="space-y-8">
-             <div className="inline-block px-4 py-1 border border-gold/50 rounded text-gold text-[10px] font-black tracking-[0.3em]">NEW ERA EXHIBITION</div>
+             <div className="inline-block px-4 py-1 border border-gold/50 rounded text-gold text-[10px] font-black tracking-[0.3em]">NEW TIMES EXHIBITION</div>
              <h3 className="text-4xl font-black leading-tight">
                {t.exhibition.title}
                <br/>

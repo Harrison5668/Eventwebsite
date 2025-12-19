@@ -31,9 +31,11 @@ const Hero: React.FC<Props> = ({ t }) => {
           {t.subtitle}
         </h2>
         
-        <p className="text-sm md:text-lg font-light text-gray-500 mb-12 italic">
-          {t.engSubtitle}
-        </p>
+        {t.engSubtitle && (
+          <p className="text-sm md:text-lg font-light text-gray-500 mb-12 italic">
+            {t.engSubtitle}
+          </p>
+        )}
 
         <div className="max-w-2xl mx-auto text-gray-300 text-base md:text-lg mb-12 leading-relaxed font-light">
           {t.copy}

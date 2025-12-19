@@ -12,7 +12,7 @@ const Ticketing: React.FC<Props> = ({ t }) => {
   };
 
   return (
-    <section id="ticketing" className="py-32 px-6 bg-[#030303] relative">
+    <section id="ticketing" className="py-20 px-6 bg-[#030303] relative">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gold/5 blur-[120px] rounded-full"></div>
       </div>
