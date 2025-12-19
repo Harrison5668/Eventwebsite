@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IMS 2026 | Innovation & Monetization Summit</title>
+    <title>CES 创新 & 奇迹峰会 | 官网</title>
     
     <script type="importmap">
     {
@@ -19,37 +19,66 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
+      :root {
+        --gold: #D4AF37;
+        --gold-dark: #B8860B;
+        --bg-black: #050505;
+      }
       body {
-        font-family: 'Inter', sans-serif;
-        background-color: #050510;
+        font-family: 'Inter', 'Noto Sans SC', sans-serif;
+        background-color: var(--bg-black);
         color: white;
+        scroll-behavior: smooth;
       }
-      .neon-glow {
-        text-shadow: 0 0 10px rgba(0, 245, 255, 0.5), 0 0 20px rgba(0, 245, 255, 0.3);
-      }
-      .purple-glow {
-        box-shadow: 0 0 20px rgba(192, 38, 211, 0.3);
-      }
+      .text-gold { color: var(--gold); }
+      .bg-gold { background-color: var(--gold); }
+      .border-gold { border-color: var(--gold); }
+      
       .glass-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(212, 175, 55, 0.1);
+        transition: all 0.3s ease;
       }
-      .custom-gradient-btn {
-        background: linear-gradient(90deg, #A855F7 0%, #06B6D4 100%);
+      .glass-card:hover {
+        border-color: rgba(212, 175, 55, 0.3);
+        background: rgba(255, 255, 255, 0.04);
       }
-      .network-bg {
-        background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
-        background-size: 40px 40px;
+      
+      .gold-btn {
+        background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+        color: black;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .gold-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+      }
+      
+      .outline-gold-btn {
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        transition: all 0.3s ease;
+      }
+      .outline-gold-btn:hover {
+        background: rgba(212, 175, 55, 0.1);
+      }
+
+      /* Divider decoration */
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        opacity: 0.3;
+        margin: 4rem 0;
       }
     </style>
   </head>
   <body>
     <div id="root"></div>
-    <!-- 显式引入入口文件，确保 Vite 能够识别并构建 -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>

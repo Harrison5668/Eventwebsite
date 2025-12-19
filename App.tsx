@@ -1,25 +1,37 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import ExhibitorPackages from './components/ExhibitorPackages';
+import Agenda from './components/Agenda';
 import Speakers from './components/Speakers';
+import Ecosystem from './components/Ecosystem';
+import Sponsorship from './components/Sponsorship';
+import Partners from './components/Partners';
+import Ticketing from './components/Ticketing';
 import Footer from './components/Footer';
-import FloatingActionButton from './components/FloatingActionButton';
+import { translations } from './translations';
 
 const App: React.FC = () => {
+  const [lang, setLang] = useState<'zh' | 'en'>('zh');
+  const t = translations[lang];
+
+  const toggleLang = () => {
+    setLang(prev => prev === 'zh' ? 'en' : 'zh');
+  };
+
   return (
-    <div className="relative min-h-screen selection:bg-cyan-500/30">
-      <Navbar />
+    <div className="relative min-h-screen">
+      <Navbar t={t.nav} toggleLang={toggleLang} currentLang={lang} />
       <main>
-        <Hero />
-        <About />
-        <ExhibitorPackages />
-        <Speakers />
+        <Hero t={t.hero} />
+        <Agenda t={t.agenda} />
+        <Speakers t={t.speakers} lang={lang} />
+        <Ecosystem t={t.ecosystem} />
+        <Sponsorship t={t.sponsorship} lang={lang} />
+        <Partners lang={lang} />
+        <Ticketing t={t.ticketing} />
       </main>
-      <Footer />
-      <FloatingActionButton />
+      <Footer t={t.footer} />
     </div>
   );
 };
