@@ -9,6 +9,7 @@ interface Props {
 const Speakers: React.FC<Props> = ({ t, lang }) => {
   const [activeBio, setActiveBio] = useState<string | null>(null);
 
+  // Speaker data with local profile images from /images folder
   const speakers = [
     { 
       name: lang === 'zh' ? '张红梅' : 'Diana Zhang', 
@@ -16,7 +17,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh' 
         ? '张红梅女士，现任亚太世界贸易商务联盟副会长，是长期活跃于美国硅谷的投资人。致力于推动中美商业交流。' 
         : 'Diana Zhang currently serves as Vice President of APAC World Trade Group and is a long-term active investor in Silicon Valley. She is dedicated to promoting business exchanges and capital cooperation.',
-      img: 'https://picsum.photos/seed/diana/400/400' 
+      img: '/images/张红梅Diana Zhang.jpg' 
     },
     { 
       name: lang === 'zh' ? '赵兢' : 'Jing Zhao Cesarone', 
@@ -24,7 +25,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? '赵兢女士是全球 CSR 基金会创始人兼首席执行官，拥有三十年跨文化战略、可持续发展与 NGO 管理经验。'
         : 'Jing Zhao Cesarone is the Founder and CEO of the Global CSR Foundation with over 30 years of experience in cross-cultural strategy and sustainable development.',
-      img: 'https://picsum.photos/seed/jing/400/400' 
+      img: '/images/赵兢Jing Cesarone Zhaojpg.jpg' 
     },
     { 
       name: lang === 'zh' ? '杨依依' : 'Elaine Yang', 
@@ -32,7 +33,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? 'Elaine Yang 为 AI 101 Labs 创始人，活跃于 AI × Web3 × RWA 的早期投资人。深耕 AI 研究、GTM 策略。'
         : 'Elaine Yang is the Founder of AI 101 Labs and an early investor active in AI, Web3, and RWA projects, focusing on GTM strategy.',
-      img: 'https://picsum.photos/seed/elaine/400/400' 
+      img: '/images/杨依依Elaine Yang.jpg' 
     },
     { 
       name: lang === 'zh' ? '林哲冰' : 'Zhebing Lin', 
@@ -40,7 +41,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? '林哲冰是 Magic Ice Cube 创始人，其跨国贸易平台在四年内实现 3.5 亿美元营收。'
         : 'Zhebing Lin founded Magic Ice Cube, building it into a multinational trading platform with $350 million in revenue within four years.',
-      img: 'https://picsum.photos/seed/magic/400/400' 
+      img: '/images/林哲冰Ice Lin.png' 
     },
     { 
       name: lang === 'zh' ? '魏海鹰' : 'Haiying Wei', 
@@ -48,7 +49,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? '魏海鹰构建了横跨制造、投资、金融等领域的产业矩阵，旗下香港寰宇投资为香港联交所上市公司。'
         : 'Haiying Wei has built an industrial matrix spanning manufacturing, investment, and finance. His company is listed on the HK Stock Exchange.',
-      img: 'https://picsum.photos/seed/wei/400/400' 
+      img: '/images/魏海鹰.jpeg' 
     }
   ];
 

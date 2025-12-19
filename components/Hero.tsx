@@ -8,18 +8,14 @@ interface Props {
 const Hero: React.FC<Props> = ({ t }) => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background with Image 1 Concept: Gold flowing lines */}
+      {/* Background image - using local bg.jpg without overlay mask */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#050505] z-10"></div>
         <div 
-          className="w-full h-full bg-cover bg-center" 
+          className="w-full h-full bg-cover bg-center bg-no-repeat" 
           style={{ 
-            backgroundImage: 'url("https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=2070&auto=format&fit=crop")', // Placeholder for Image 1: Golden abstract lines
-            filter: 'sepia(50%) brightness(40%) contrast(120%)'
+            backgroundImage: 'url("/images/bg.jpg")'
           }}
         ></div>
-        {/* Animated accent to simulate the light flow in Image 1 */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold via-transparent to-transparent"></div>
       </div>
       
       <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
