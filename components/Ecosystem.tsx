@@ -86,20 +86,20 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
   ];
 
   const influencers = [
-    { name: 'Nathan Davis JR', img: '/mcn/nathan-davis-jr.jpeg' },
-    { name: 'Michael Dimuccio', img: '/mcn/michael-dimuccio.jpeg' },
-    { name: 'Shane Nagy', img: '/mcn/shane-nagy.jpeg' },
-    { name: 'Swaggy Wolfdog', img: '/mcn/swaggy-wolfdog.jpeg' },
-    { name: 'Fabio Farati', img: '/mcn/fabio-farati.jpeg' },
-    { name: 'Emmy Combs', img: '/mcn/emmy-combs.jpeg' },
-    { name: 'Tallia Storm', img: '/mcn/tallia-storm.jpeg' },
-    { name: 'Dayshawn Wilson', img: '/mcn/dayshawn-wilson.jpeg' },
-    { name: 'Martine Beerman', img: '/mcn/martine-beerman.jpg' },
-    { name: 'Matt Garry', img: '/mcn/matt-garry.jpeg' }
+    { name: 'Nathan Davis JR', fans: '16.7M Followers', img: '/mcn/nathan-davis-jr.jpeg' },
+    { name: 'Michael Dimuccio', fans: '9.4M Followers', img: '/mcn/michael-dimuccio.jpeg' },
+    { name: 'Shane Nagy', fans: '10.6M Followers', img: '/mcn/shane-nagy.jpeg' },
+    { name: 'Swaggy Wolfdog', fans: '10.7M Followers', img: '/mcn/swaggy-wolfdog.jpeg' },
+    { name: 'Fabio Farati', fans: '19M Followers', img: '/mcn/fabio-farati.jpeg' },
+    { name: 'Emmy Combs', fans: '16M Followers', img: '/mcn/emmy-combs.jpeg' },
+    { name: 'Tallia Storm', fans: '1.4M Followers', img: '/mcn/tallia-storm.jpeg' },
+    { name: 'Dayshawn Wilson', fans: '3.3M Followers', img: '/mcn/dayshawn-wilson.jpeg' },
+    { name: 'Martine Beerman', fans: '3.1M Followers', img: '/mcn/martine-beerman.jpg' },
+    { name: 'Matt Garry', fans: '2.5M Followers', img: '/mcn/matt-garry.jpeg' }
   ];
 
   return (
-    <section id="ecosystem" className="py-32 px-6">
+    <section id="ecosystem" className="py-32 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Core Title Section - Gold style for Chinese text */}
         <div className="text-center mb-24">
@@ -209,7 +209,14 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/5 to-transparent"></div>
           <div className="relative z-10">
             <h3 className="text-2xl font-black mb-2">Master TV MCN</h3>
-            <p className="text-gold text-[10px] font-bold tracking-widest uppercase mb-12">Partial list of influencers who attend our events</p>
+            <p className="text-gold text-[10px] font-bold tracking-widest uppercase mb-4">Partial list of influencers who attend our events</p>
+            
+            {/* Description */}
+            <p className="text-white/80 text-sm leading-relaxed mb-12 max-w-4xl">
+              {lang === 'zh' 
+                ? '全球网红经济联盟——对接世界超一线的名人KOL，创造现象级品牌声量。' 
+                : 'Master TV MCN — Connecting with world-class celebrity influencers to create phenomenal brand impact.'}
+            </p>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {influencers.map((inf, i) => (
@@ -217,7 +224,8 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
                   <div className="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-gold/20 mb-4 group-hover:border-gold transition-all ring-4 ring-gold/0 group-hover:ring-gold/20">
                     <img src={inf.img} alt={inf.name} className="w-full h-full object-cover" />
                   </div>
-                  <h5 className="text-[11px] font-bold text-white">{inf.name}</h5>
+                  <h5 className="text-[11px] font-bold text-white mb-1">{inf.name}</h5>
+                  <p className="text-[9px] text-gold font-bold uppercase tracking-tighter">{inf.fans}</p>
                 </div>
               ))}
             </div>

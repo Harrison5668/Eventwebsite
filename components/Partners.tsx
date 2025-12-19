@@ -8,7 +8,7 @@ interface Props {
 
 const Partners: React.FC<Props> = ({ t, lang }) => {
   return (
-    <section id="partners" className="py-16 px-6">
+    <section id="partners" className="py-16 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-32">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">{t.title}</h2>
@@ -19,20 +19,68 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
         <div className="grid lg:grid-cols-3 gap-16 mb-40">
           <div>
             <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase">{t.organizers}</h4>
-            <div className="space-y-6 text-gray-400 text-sm font-medium">
+            <div className="grid grid-cols-2 gap-6">
               {lang === 'zh' ? (
                 <>
-                  <p className="hover:text-gold transition-colors cursor-default">杭州世界贸易中心&亚太世界贸易商务联盟联合发起方</p>
-                  <p className="hover:text-gold transition-colors cursor-default">全球企业社会责任基金会</p>
-                  <p className="hover:text-gold transition-colors cursor-default">全球网红经济联盟</p>
-                  <p className="hover:text-gold transition-colors cursor-default">GPTDAO</p>
+                  {/* 杭州世界贸易中心 */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/杭州世界贸易中心&亚太世界贸易商务联盟联合发起方.png" alt="杭州世界贸易中心" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">杭州世界贸易中心&亚太世界贸易商务联盟联合发起方</p>
+                  </div>
+                  {/* 全球企业社会责任基金会 */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                    </div>
+                    <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">全球企业社会责任基金会</p>
+                  </div>
+                  {/* 全球网红经济联盟 */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/Master TV MCN.jpg" alt="全球网红经济联盟" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">全球网红经济联盟</p>
+                  </div>
+                  {/* GPTDAO */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/GPTDAO.jpg" alt="GPTDAO" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">GPTDAO</p>
+                  </div>
                 </>
               ) : (
                 <>
-                  <p className="hover:text-gold transition-colors cursor-default">World Trade Center Hangzhou & APAC World Trade Group</p>
-                  <p className="hover:text-gold transition-colors cursor-default">Global CSR Foundation</p>
-                  <p className="hover:text-gold transition-colors cursor-default">Master TV MCN</p>
-                  <p className="hover:text-gold transition-colors cursor-default">GPTDAO</p>
+                  {/* World Trade Center Hangzhou */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/杭州世界贸易中心&亚太世界贸易商务联盟联合发起方.png" alt="World Trade Center Hangzhou" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">World Trade Center Hangzhou & APAC World Trade Group</p>
+                  </div>
+                  {/* Global CSR Foundation */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                    </div>
+                    <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">Global CSR Foundation</p>
+                  </div>
+                  {/* Master TV MCN */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/Master TV MCN.jpg" alt="Master TV MCN" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">Master TV MCN</p>
+                  </div>
+                  {/* GPTDAO */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/GPTDAO.jpg" alt="GPTDAO" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">GPTDAO</p>
+                  </div>
                 </>
               )}
             </div>
@@ -40,47 +88,207 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
           
           <div>
             <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase">{t.coOrganizers}</h4>
-            <div className="space-y-6 text-gray-400 text-sm font-medium">
-              {lang === 'zh' ? (
-                <>
-                  <p className="hover:text-gold transition-colors cursor-default">法拉第未来</p>
-                  <p className="hover:text-gold transition-colors cursor-default">AI 101 Labs</p>
-                  <p className="hover:text-gold transition-colors cursor-default">新时代展览</p>
-                  <p className="hover:text-gold transition-colors cursor-default">RWAWA</p>
-                  <p className="hover:text-gold transition-colors cursor-default">AI Reinvent Ventures</p>
-                </>
-              ) : (
-                <>
-                  <p className="hover:text-gold transition-colors cursor-default">Faraday Future</p>
-                  <p className="hover:text-gold transition-colors cursor-default">AI 101 Labs</p>
-                  <p className="hover:text-gold transition-colors cursor-default">New Times Exhibition</p>
-                  <p className="hover:text-gold transition-colors cursor-default">RWAWA</p>
-                  <p className="hover:text-gold transition-colors cursor-default">AI Reinvent Ventures</p>
-                </>
-              )}
+            <div className="grid grid-cols-2 gap-6">
+              {/* 法拉第未来 */}
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                  <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                </div>
+                <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">{lang === 'zh' ? '法拉第未来' : 'Faraday Future'}</p>
+              </div>
+              {/* AI 101 Labs */}
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                  <img src="/host/AI 101 Labs.jpg" alt="AI 101 Labs" className="w-full h-full object-contain" />
+                </div>
+                <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">AI 101 Labs</p>
+              </div>
+              {/* 新时代展览 */}
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                  <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                </div>
+                <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">{lang === 'zh' ? '新时代展览' : 'New Times Exhibition'}</p>
+              </div>
+              {/* RWAWA */}
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                  <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                </div>
+                <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">RWAWA</p>
+              </div>
+              {/* AI Reinvent Ventures */}
+              <div className="flex flex-col items-center text-center space-y-3">
+                <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                  <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                </div>
+                <p className="text-gray-400 text-xs font-medium hover:text-gold transition-colors">AI Reinvent Ventures</p>
+              </div>
             </div>
           </div>
 
           <div>
             <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase">{t.communityPartners}</h4>
-            <div className="grid grid-cols-2 gap-4 text-gray-500 text-[10px] font-bold uppercase tracking-tight">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {lang === 'zh' ? (
                 <>
-                  <span>美中硅谷商会</span><span>AI机器人联盟</span>
-                  <span>神舞科技</span><span>Magic Ice Cube</span>
-                  <span>吃块披萨实验室</span><span>出海同学会</span>
-                  <span>EntreConnect</span><span>Weshine</span>
-                  <span>Taro</span><span>UpHonest Scout</span>
-                  <span>纽约探险者俱乐部</span>
+                  {/* 美中硅谷商会 */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/美中硅谷商会.jpg" alt="美中硅谷商会" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">美中硅谷商会</p>
+                  </div>
+                  {/* AI机器人联盟 */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">AI机器人联盟</p>
+                  </div>
+                  {/* 神舞科技 */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/NeuroDance.jpg" alt="神舞科技" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">神舞科技</p>
+                  </div>
+                  {/* Magic Ice Cube */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/Magic Ice Cube.jpg" alt="Magic Ice Cube" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">Magic Ice Cube</p>
+                  </div>
+                  {/* 吃块披萨实验室 */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">吃块披萨实验室</p>
+                  </div>
+                  {/* 出海同学会 */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/出海同学会.jpg" alt="出海同学会" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">出海同学会</p>
+                  </div>
+                  {/* EntreConnect */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/EntreConnect.jpg" alt="EntreConnect" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">EntreConnect</p>
+                  </div>
+                  {/* Weshine */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/Weshine.jpg" alt="Weshine" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">Weshine</p>
+                  </div>
+                  {/* Taro */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">Taro</p>
+                  </div>
+                  {/* UpHonest Scout */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/UpHonest Scouts.png" alt="UpHonest Scout" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">UpHonest Scout</p>
+                  </div>
+                  {/* 纽约探险者俱乐部 */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/NYC Adventures Club.jpg" alt="纽约探险者俱乐部" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">纽约探险者俱乐部</p>
+                  </div>
                 </>
               ) : (
                 <>
-                  <span>US China Chamber of Commerce (Silicon Valley)</span><span>AI Robotics Alliance</span>
-                  <span>Neuro Dance</span><span>Magic Ice Cube</span>
-                  <span>OnePiece Labs</span><span>SEAMATE</span>
-                  <span>EntreConnect</span><span>Weshine</span>
-                  <span>Taro</span><span>UpHonest Scout</span>
-                  <span>NYC Adventures Club</span>
+                  {/* US China Chamber of Commerce */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/美中硅谷商会.jpg" alt="US China Chamber of Commerce" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">US China Chamber of Commerce (Silicon Valley)</p>
+                  </div>
+                  {/* AI Robotics Alliance */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">AI Robotics Alliance</p>
+                  </div>
+                  {/* Neuro Dance */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/NeuroDance.jpg" alt="Neuro Dance" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">Neuro Dance</p>
+                  </div>
+                  {/* Magic Ice Cube */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/Magic Ice Cube.jpg" alt="Magic Ice Cube" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">Magic Ice Cube</p>
+                  </div>
+                  {/* OnePiece Labs */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">OnePiece Labs</p>
+                  </div>
+                  {/* SEAMATE */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">SEAMATE</p>
+                  </div>
+                  {/* EntreConnect */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/EntreConnect.jpg" alt="EntreConnect" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">EntreConnect</p>
+                  </div>
+                  {/* Weshine */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/Weshine.jpg" alt="Weshine" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">Weshine</p>
+                  </div>
+                  {/* Taro */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <span className="text-[10px] text-gray-600 font-bold">LOGO</span>
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">Taro</p>
+                  </div>
+                  {/* UpHonest Scout */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/UpHonest Scouts.png" alt="UpHonest Scout" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">UpHonest Scout</p>
+                  </div>
+                  {/* NYC Adventures Club */}
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="w-full aspect-[2/1] bg-white/5 rounded-lg flex items-center justify-center p-4 border border-white/10">
+                      <img src="/host/NYC Adventures Club.jpg" alt="NYC Adventures Club" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="text-gray-500 text-[10px] font-bold hover:text-gold transition-colors">NYC Adventures Club</p>
+                  </div>
                 </>
               )}
             </div>
