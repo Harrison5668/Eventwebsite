@@ -25,19 +25,38 @@ const Ticketing: React.FC<Props> = ({ t }) => {
               {t.copy}
             </p>
             
-            <div className="glass-card p-10 rounded-3xl border-gold/40">
-              <div className="flex justify-between items-center mb-8">
-                <div>
-                  <h3 className="text-2xl font-bold">{t.ticketTitle}</h3>
-                  <p className="text-gray-500 text-sm">{t.ticketTag}</p>
+            <div className="space-y-6">
+              {/* Early Bird Ticket */}
+              <div className="glass-card p-8 rounded-2xl border-gold/40">
+                <div className="flex justify-between items-center mb-6">
+                  <div>
+                    <h3 className="text-xl font-bold">{t.earlyBird}</h3>
+                    <p className="text-gray-500 text-xs">{t.earlyBirdDate}</p>
+                  </div>
+                  <div className="text-3xl font-black text-gold">{t.earlyBirdPrice}</div>
                 </div>
-                <div className="text-4xl font-black text-gold">{t.ticketPrice}</div>
+                <ul className="space-y-3 text-sm text-gray-300">
+                  {t.features.map((f: string, idx: number) => (
+                    <li key={idx} className="flex items-center"><span className="text-gold mr-3">✓</span> {f}</li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-4 mb-10 text-sm text-gray-300">
-                {t.features.map((f: string, idx: number) => (
-                  <li key={idx} className="flex items-center"><span className="text-gold mr-3">✓</span> {f}</li>
-                ))}
-              </ul>
+
+              {/* Late Bird Ticket */}
+              <div className="glass-card p-8 rounded-2xl border-white/20">
+                <div className="flex justify-between items-center mb-6">
+                  <div>
+                    <h3 className="text-xl font-bold">{t.lateBird}</h3>
+                    <p className="text-gray-500 text-xs">{t.lateBirdDate}</p>
+                  </div>
+                  <div className="text-3xl font-black text-gold">{t.lateBirdPrice}</div>
+                </div>
+                <ul className="space-y-3 text-sm text-gray-300">
+                  {t.features.map((f: string, idx: number) => (
+                    <li key={idx} className="flex items-center"><span className="text-gold mr-3">✓</span> {f}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 

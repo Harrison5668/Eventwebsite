@@ -10,11 +10,12 @@ interface Props {
 const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
   const navItems = [
     { label: t.about, href: '#hero' },
-    { label: t.agenda, href: '#agenda' },
     { label: t.speakers, href: '#speakers' },
-    { label: t.ecosystem, href: '#ecosystem' },
+    { label: t.agenda, href: '#agenda' },
+    { label: t.venue, href: '#venue' },
+    { label: t.resources, href: '#ecosystem' },
     { label: t.sponsorship, href: '#sponsorship' },
-    { label: t.partners, href: '#partners' },
+    { label: t.team, href: '#partners' },
   ];
 
   return (
@@ -45,7 +46,7 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
           </a>
           <button 
             onClick={toggleLang}
-            className="text-[10px] font-bold text-gray-500 border border-white/10 px-3 py-1 rounded hover:border-gold/50 transition-colors uppercase"
+            className="text-xs font-bold text-white/90 border border-white/30 px-3 py-1 rounded hover:border-gold/70 hover:text-gold transition-colors uppercase"
           >
             {t.langToggle}
           </button>

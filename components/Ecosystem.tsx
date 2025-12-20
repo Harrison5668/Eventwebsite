@@ -288,13 +288,21 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
                ))}
             </div>
            </div>
-           <div className="grid grid-cols-2 grid-rows-2 gap-4 aspect-square">
-              <div className="bg-white/5 rounded-3xl border border-white/10 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+           <div className="grid grid-cols-1 gap-6">
+              <div className="rounded-3xl border border-white/10 overflow-hidden group">
+                <img 
+                  src="/exhibit/图片5.jpg" 
+                  alt="New Times Exhibition" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
-              <div className="bg-white/5 rounded-3xl border border-white/10 mt-12"></div>
-              <div className="bg-white/5 rounded-3xl border border-white/10 -mt-12"></div>
-              <div className="bg-white/5 rounded-3xl border border-white/10"></div>
+              <div className="rounded-3xl border border-white/10 overflow-hidden group">
+                <img 
+                  src="/exhibit/图片6.jpg" 
+                  alt="New Times Exhibition" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
            </div>
         </div>
       </div>
