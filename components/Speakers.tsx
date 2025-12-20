@@ -97,7 +97,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? '程正昌，熊猫餐饮集团联合创始人兼董事长。他将一间小餐馆发展成为横跨全球2500家门店的餐饮帝国，开创了中餐在美国的品牌化与大众化新时代，被誉为将中华美食推向全球的传奇人物。'
         : 'Andrew Cherng: co-founder and Chairman of Panda Restaurant Group. He transformed a single restaurant into a global dining empire with over 2,500 locations worldwide, pioneering the mainstream brandization of Chinese cuisine in the United States and earning recognition as a legendary figure in bringing Chinese food to the world.',
-      img: '/images/andrew-cherng.jpg' 
+      img: '/images/andrew.png' 
     },
     { 
       name: lang === 'zh' ? '于海迪' : 'Heidi Yu', 
@@ -122,6 +122,14 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
         ? '北美崔哥（崔宝印）：活跃在美加华人圈的著名脱口秀艺人和文化评论人，以幽默犀利的风格讲述中美文化差异、移民生活和社会现象。在抖音等中国短视频平台拥有约500万粉丝，通过地道北京口音与美式幽默结合的表演，成为北美华人社群里极具辨识度的跨文化观察者。'
         : 'Cui Baoyin: a well-known stand-up comedian and cultural commentator active in the Chinese communities across North America. He humorously and incisively explores cultural differences between China and the U.S., immigrant life, and social phenomena. With 5 million followers across all platforms, his performances—blending authentic Beijing accents with American-style humor—have made him a highly recognizable cross-cultural observer within the North American Chinese community.',
       img: '/images/Cui Baoyin.png' 
+    },
+    { 
+      name: lang === 'zh' ? '陈喆' : 'Zhe Chen', 
+      title: lang === 'zh' ? '法拉第未来联合创始人' : 'Co-founder, Faraday Future', 
+      bio: lang === 'zh'
+        ? '陈喆，法拉第未来联合创始人，致力于推动电动汽车和智能出行领域的创新发展。'
+        : 'Zhe Chen, Co-founder of Faraday Future, dedicated to driving innovation in electric vehicles and smart mobility.',
+      img: '/images/zhe-chen.png' 
     }
   ];
 

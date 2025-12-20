@@ -25,7 +25,7 @@ const App: React.FC = () => {
     <div className="relative min-h-screen">
       <Navbar t={t.nav} toggleLang={toggleLang} currentLang={lang} />
       <main>
-        <Hero t={t.hero} />
+        <Hero t={t.hero} lang={lang} />
         <ValueProposition t={t.valueProposition} />
         <Speakers t={t.speakers} lang={lang} />
         <Agenda t={t.agenda} />
