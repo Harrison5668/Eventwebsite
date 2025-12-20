@@ -61,8 +61,7 @@ const Sponsorship: React.FC<Props> = ({ t, lang }) => {
   return (
     <section id="sponsorship" className="py-32 px-6 bg-[#030303]">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-black mb-4">{t.title}</h2>
-        <p className="text-gold font-bold tracking-widest text-xs uppercase mb-20">{t.subtitle}</p>
+        <h2 className="text-4xl font-black mb-20">{t.title}</h2>
         
         <div className="grid md:grid-cols-3 gap-6">
           {tiers.map((tier, idx) => (

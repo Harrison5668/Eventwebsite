@@ -11,8 +11,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
     <section id="partners" className="py-16 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-32">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">{t.title}</h2>
-          <p className="text-gold text-sm font-medium max-w-3xl mx-auto uppercase tracking-wider">{t.engSubtitle}</p>
+          <h2 className="text-4xl md:text-5xl font-black text-white">{t.title}</h2>
         </div>
 
         {/* Organizer Section */}

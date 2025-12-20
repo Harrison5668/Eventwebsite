@@ -15,8 +15,7 @@ const Venue: React.FC<Props> = ({ t }) => {
   return (
     <section id="venue" className="py-32 px-6 bg-[#050505]">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-black mb-4 text-center">{t.title}</h2>
-        <p className="text-gold font-bold tracking-widest text-xs uppercase mb-16 text-center">{t.subtitle}</p>
+        <h2 className="text-4xl font-black mb-16 text-center">{t.title}</h2>
         
         <div className="space-y-8">
           {/* Hotel info card */}
