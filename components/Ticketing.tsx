@@ -178,11 +178,21 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
               </div>
               <div>
                 <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">{t.form.needs}</label>
-                <textarea 
+                <input 
                   name="needs"
-                  rows={3} 
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50"
-                ></textarea>
+                />
+              </div>
+              
+              <div>
+                <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">
+                  {lang === 'zh' ? '折扣码（可选）' : 'Discount Code (Optional)'}
+                </label>
+                <input 
+                  name="discountCode"
+                  placeholder={lang === 'zh' ? '如有折扣码请输入' : 'Enter discount code if you have one'}
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50 placeholder:text-gray-600" 
+                />
               </div>
               
               <button 
