@@ -275,11 +275,11 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
           </div>
 
           {/* Mobile view - Single image (shown only on mobile) */}
-          <div className="md:hidden">
+          <div className="md:hidden -mx-6 px-2">
             <img 
               src={lang === 'zh' ? '/partner/111.jpg' : '/partner/222.jpg'}
               alt="Global CSR Foundation"
-              className="w-full h-auto rounded-2xl"
+              className="w-full h-auto rounded-xl"
             />
           </div>
             </div>
