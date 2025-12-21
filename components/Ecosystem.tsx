@@ -331,7 +331,7 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
             {t.exhibition.desc}
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="rounded-2xl border border-white/10 overflow-hidden group">
               <img 
                 src="/exhibit/图片5.jpg" 
