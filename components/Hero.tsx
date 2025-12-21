@@ -11,7 +11,7 @@ const Hero: React.FC<Props> = ({ t, lang }) => {
   const bgImage = lang === 'zh' ? '/bg/关于页.jpg' : '/bg/about.jpg';
   
   return (
-    <section id="hero" className="relative md:min-h-screen overflow-hidden">
+    <section id="hero" className="relative md:min-h-screen overflow-hidden pt-20 md:pt-0">
       {/* Background image with language selection */}
       <img 
         src={bgImage}
