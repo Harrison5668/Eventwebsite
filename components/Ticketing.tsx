@@ -8,10 +8,72 @@ interface Props {
 
 const Ticketing: React.FC<Props> = ({ t, lang }) => {
   const [selectedTicket, setSelectedTicket] = useState<'early' | 'late'>('early');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Stripe payment links
+  const STRIPE_LINKS = {
+    early: 'https://buy.stripe.com/5kQ5kw9OS8bVeuBcJrf7i00',
+    late: 'https://buy.stripe.com/cNidR29OScsb0DLdNvf7i01'
+  };
+
+  // Google Apps Script Web App URL
+  const GOOGLE_SHEETS_API = 'https://script.google.com/macros/s/AKfycbx2uJ6uKx92be9JequLuurbjaM0LqFWrRfvdOLtXTdi1GM9ayWT5L7kdYyRlsUrVKg0/exec';
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Redirecting to Stripe Checkout...');
+    
+    // Get form data
+    const formData = new FormData(e.target as HTMLFormElement);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const company = formData.get('company') as string;
+    const linkedin = formData.get('linkedin') as string;
+    const needs = formData.get('needs') as string;
+    
+    // Validate required fields
+    if (!name || !email || !company) {
+      alert(lang === 'zh' ? '请填写所有必填项！' : 'Please fill in all required fields!');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      // Save data to Google Sheets
+      const registrationData = {
+        name,
+        email,
+        company,
+        linkedin,
+        needs,
+        ticketType: selectedTicket === 'early' ? 'Early Bird' : 'Late Bird'
+      };
+      
+      const response = await fetch(GOOGLE_SHEETS_API, {
+        method: 'POST',
+        mode: 'no-cors', // Important for Google Apps Script
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(registrationData)
+      });
+      
+      // Note: no-cors mode doesn't allow reading response, so we proceed anyway
+      console.log('Registration data sent to Google Sheets:', registrationData);
+      
+      // Redirect to Stripe checkout
+      window.location.href = STRIPE_LINKS[selectedTicket];
+      
+    } catch (error) {
+      console.error('Error saving to Google Sheets:', error);
+      // Still redirect to payment even if logging fails
+      alert(lang === 'zh' 
+        ? '数据保存可能失败，但您仍可继续支付。' 
+        : 'Data saving may have failed, but you can still proceed with payment.');
+      window.location.href = STRIPE_LINKS[selectedTicket];
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -83,28 +145,54 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">{t.form.name}</label>
-                  <input required className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50" />
+                  <input 
+                    name="name"
+                    required 
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50" 
+                  />
                 </div>
                 <div>
                   <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">{t.form.email}</label>
-                  <input required type="email" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50" />
+                  <input 
+                    name="email"
+                    required 
+                    type="email" 
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50" 
+                  />
                 </div>
               </div>
               <div>
                 <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">{t.form.company}</label>
-                <input required className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50" />
+                <input 
+                  name="company"
+                  required 
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50" 
+                />
               </div>
               <div>
                 <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">{t.form.linkedin}</label>
-                <input className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50" />
+                <input 
+                  name="linkedin"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50" 
+                />
               </div>
               <div>
                 <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">{t.form.needs}</label>
-                <textarea rows={3} className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50"></textarea>
+                <textarea 
+                  name="needs"
+                  rows={3} 
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50"
+                ></textarea>
               </div>
               
-              <button type="submit" className="w-full gold-btn py-5 rounded-full text-lg uppercase tracking-widest mt-8">
-                {t.form.submit}
+              <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full gold-btn py-5 rounded-full text-lg uppercase tracking-widest mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting 
+                  ? (lang === 'zh' ? '处理中...' : 'Processing...') 
+                  : t.form.submit}
               </button>
             </form>
           </div>
