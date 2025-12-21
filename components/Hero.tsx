@@ -14,12 +14,15 @@ const Hero: React.FC<Props> = ({ t, lang }) => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image with language selection */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat" 
-          style={{ 
-            backgroundImage: `url("${bgImage}")`
+        <img 
+          src={bgImage}
+          alt="Event background"
+          className="w-full h-full object-cover md:object-cover object-center"
+          style={{
+            minHeight: '100%',
+            minWidth: '100%'
           }}
-        ></div>
+        />
       </div>
     </section>
   );
