@@ -175,7 +175,7 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
         </div>
 
         {/* WTC Section with Introduction */}
-        <div className="mb-32">
+        <div className="mb-12">
           <div className="glass-card rounded-[3rem] p-12 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/5 to-transparent"></div>
             <div className="relative z-10">
@@ -226,7 +226,7 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
         </div>
 
         {/* Global CSR & Resources Section */}
-        <div className="mb-32">
+        <div className="mb-12">
           <div className="glass-card rounded-[3rem] p-12 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/5 to-transparent"></div>
             <div className="relative z-10">
@@ -315,7 +315,7 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
         </div>
 
         {/* GPTDAO Community */}
-        <div className="glass-card rounded-[3rem] p-12 relative overflow-hidden mt-32">
+        <div className="glass-card rounded-[3rem] p-12 relative overflow-hidden mt-12">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/5 to-transparent"></div>
           <div className="relative z-10">
             <h3 className="text-2xl font-black mb-4 text-center">{lang === 'zh' ? '硅谷华人创业者社区GPTDAO' : 'GPTDAO Silicon Valley AI Founder Community'}</h3>
@@ -339,10 +339,10 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
            <div className="flex flex-col justify-between h-full">
             <div className="space-y-8 mb-12">
               <div className="inline-block px-4 py-1 border border-gold/50 rounded text-gold text-[10px] font-black tracking-[0.3em]">NEW TIMES EXHIBITION</div>
-              <h3 className={`font-black leading-tight ${lang === 'zh' ? 'text-6xl' : 'text-5xl'}`}>
+              <h3 className="text-2xl font-black mb-4">
                 {t.exhibition.title}
               </h3>
-              <p className={`text-gold leading-relaxed font-medium ${lang === 'zh' ? 'text-2xl' : 'text-xl'}`}>
+              <p className="text-gold text-sm font-bold leading-relaxed">
                 {t.exhibition.desc}
               </p>
             </div>

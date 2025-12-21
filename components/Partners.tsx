@@ -24,7 +24,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
               <img 
                 src={lang === 'zh' ? '/host/host4.png' : '/host/host3.png'} 
                 alt="Host Organizations" 
-                className="w-full h-auto object-contain" 
+                className="w-1/2 h-auto object-contain" 
               />
             </div>
           </div>
