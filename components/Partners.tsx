@@ -11,7 +11,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
     <section id="partners" className="py-12 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Organizer Section - Changed to vertical layout */}
-        <div className="space-y-12 mb-20">
+        <div className="space-y-12 mb-8">
           {/* Top - host3 (EN) or host4 (ZH) */}
           <div>
             <h4 className="text-2xl font-black text-white mb-4 text-center">{t.organizers}</h4>
@@ -49,8 +49,8 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
 
         {/* Media Section */}
         <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">{t.mediaTitle}</h2>
-          <p className="text-gold text-sm font-medium max-w-3xl mx-auto">{t.mediaSubtitle}</p>
+          <h2 className="text-2xl font-black mb-4 text-white">{t.mediaTitle}</h2>
+          <p className="text-gold text-sm font-medium">{t.mediaSubtitle}</p>
         </div>
 
         {/* Single Media Image */}

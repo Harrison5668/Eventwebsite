@@ -335,7 +335,7 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
         </div>
 
         {/* Exhibition Expertise */}
-        <div className="mt-32 grid lg:grid-cols-2 gap-16 items-start">
+        <div className="mt-12 grid lg:grid-cols-2 gap-16 items-start">
            <div className="flex flex-col justify-between h-full">
             <div className="space-y-8 mb-12">
               <div className="inline-block px-4 py-1 border border-gold/50 rounded text-gold text-[10px] font-black tracking-[0.3em]">NEW TIMES EXHIBITION</div>
