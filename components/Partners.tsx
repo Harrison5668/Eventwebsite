@@ -41,7 +41,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
               <img 
                 src={lang === 'zh' ? '/host/host5.png' : '/host/host2.png'} 
                 alt="Strategic Partners" 
-                className="w-full h-auto object-contain" 
+                className="w-1/2 h-auto object-contain" 
               />
             </div>
           </div>
@@ -55,7 +55,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
 
         {/* Single Media Image */}
         <div className="flex items-center justify-center">
-          <img src="/media/media.png" alt="Media Partners" className="w-3/5 h-auto object-contain" />
+          <img src="/media/media.png" alt="Media Partners" className="w-2/5 h-auto object-contain" />
         </div>
       </div>
     </section>

@@ -81,7 +81,7 @@ export const translations = {
         en: 'Master TV MCN — Connecting with world-class celebrity influencers to create phenomenal brand impact.'
       },
       gptdaoDescription: {
-        zh: '硅谷华人创业者社区GPTDAO——硅谷最大AI峰会主办方社区，获取顶级投融资资源和一线ai资讯。',
+        zh: '硅谷最大AI峰会主办方社区，获取顶级投融资资源和一线ai资讯。',
         en: 'GPTDAO — an AI founder community in Silicon Valley and the organizing force behind the region\'s largest AI summits, providing access to top-tier investment resources and first-hand AI industry insights.'
       },
       sdgsContent: '17个可持续发展目标是实现所有人更美好和更可持续未来的蓝图。',
@@ -229,7 +229,7 @@ export const translations = {
         en: 'Master TV MCN — Connecting with world-class celebrity influencers to create phenomenal brand impact.'
       },
       gptdaoDescription: {
-        zh: '硅谷华人创业者社区GPTDAO——硅谷最大AI峰会主办方社区，获取顶级投融资资源和一线ai资讯。',
+        zh: '硅谷最大AI峰会主办方社区，获取顶级投融资资源和一线ai资讯。',
         en: 'GPTDAO — an AI founder community in Silicon Valley and the organizing force behind the region\'s largest AI summits, providing access to top-tier investment resources and first-hand AI industry insights.'
       },
       sdgsContent: 'The Sustainable Development Goals are a call for action by all countries.',

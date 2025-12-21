@@ -181,10 +181,10 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
             <div className="relative z-10">
               {/* Title and Introduction */}
               <div className="text-center mb-12">
-                <h3 className="text-2xl md:text-3xl font-black mb-4 text-white">
+                <h3 className="text-2xl font-black mb-4">
                   {lang === 'zh' ? '亚太世界贸易商务联盟' : 'APAC World Trade Business Alliance'}
                 </h3>
-                <p className="text-gold font-bold text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
+                <p className="text-gold text-sm font-bold leading-relaxed">
                   {t.wtcIntro}
                 </p>
               </div>
@@ -232,10 +232,10 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
             <div className="relative z-10">
               {/* Title and Introduction */}
               <div className="text-center mb-12">
-                <h3 className="text-2xl md:text-3xl font-black mb-4 text-white">
+                <h3 className="text-2xl font-black mb-4">
                   {lang === 'zh' ? '全球企业家责任基金会' : 'Global CSR Foundation'}
                 </h3>
-                <p className="text-gold font-bold text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
+                <p className="text-gold text-sm font-bold leading-relaxed">
                   {t.csrIntro}
                 </p>
               </div>
@@ -318,10 +318,8 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
         <div className="glass-card rounded-[3rem] p-12 relative overflow-hidden mt-32">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/5 to-transparent"></div>
           <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl font-black text-white text-center mb-4">
-              {lang === 'zh' ? '硅谷华人创业者社区GPTDAO' : 'GPTDAO Silicon Valley AI Founder Community'}
-            </h3>
-            <p className="text-gold font-bold text-base md:text-lg max-w-4xl mx-auto leading-relaxed text-center mb-12">
+            <h3 className="text-2xl font-black mb-4 text-center">{lang === 'zh' ? '硅谷华人创业者社区GPTDAO' : 'GPTDAO Silicon Valley AI Founder Community'}</h3>
+            <p className="text-gold text-sm font-bold leading-relaxed text-center mb-12">
               {lang === 'zh' ? t.gptdaoDescription.zh : t.gptdaoDescription.en}
             </p>
             
