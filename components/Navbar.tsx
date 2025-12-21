@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 interface Props {
   t: any;
@@ -8,6 +8,8 @@ interface Props {
 }
 
 const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navItems = [
     { label: t.about, href: '#hero' },
     { label: t.speakers, href: '#speakers' },
@@ -17,6 +19,11 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
     { label: t.sponsorship, href: '#sponsorship' },
     { label: t.team, href: '#partners' },
   ];
+
+  const handleMobileMenuClick = (href: string) => {
+    setIsMobileMenuOpen(false);
+    window.location.hash = href;
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
@@ -31,6 +38,7 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
           </span>
         </div>
         
+        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-10">
           {navItems.map((item) => (
             <a
@@ -52,12 +60,56 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
           </button>
         </div>
 
-        <div className="lg:hidden text-white">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-        </div>
+        {/* Mobile Menu Button */}
+        <button 
+          className="lg:hidden text-white"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          )}
+        </button>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-[#050505]/95 backdrop-blur-md border-t border-white/5">
+          <div className="max-w-7xl mx-auto px-6 py-4 space-y-4">
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => handleMobileMenuClick(item.href)}
+                className="block text-sm font-bold text-gray-400 hover:text-gold transition-colors py-2"
+              >
+                {item.label}
+              </a>
+            ))}
+            <a 
+              href="#ticketing" 
+              onClick={() => handleMobileMenuClick('#ticketing')}
+              className="block gold-btn px-6 py-3 rounded-full text-xs font-bold text-center"
+            >
+              {t.register}
+            </a>
+            <button 
+              onClick={() => {
+                toggleLang();
+                setIsMobileMenuOpen(false);
+              }}
+              className="block w-full text-sm font-bold text-white/90 border border-white/30 px-4 py-2 rounded hover:border-gold/70 hover:text-gold transition-colors uppercase"
+            >
+              {t.langToggle}
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 interface Props {
   t: any;
@@ -8,15 +8,6 @@ interface Props {
 
 const Ecosystem: React.FC<Props> = ({ t, lang }) => {
   const [activeRegion, setActiveRegion] = useState<number>(0); // Start from North America (index 0)
-
-  // Auto-rotate regions every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveRegion((prev) => (prev + 1) % 5); // Cycle through 0-4
-    }, 3000);
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
 
   const regions = [
     { name: lang === 'zh' ? '北美洲' : 'NORTH AMERICA', img: '🌎', index: 0 },
