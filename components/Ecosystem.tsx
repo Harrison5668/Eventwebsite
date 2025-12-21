@@ -339,22 +339,22 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
         {/* Exhibition Expertise */}
         <div className="mt-32 grid lg:grid-cols-2 gap-16 items-start">
            <div className="flex flex-col justify-between h-full">
-            <div className="space-y-6 mb-10">
+            <div className="space-y-8 mb-12">
               <div className="inline-block px-4 py-1 border border-gold/50 rounded text-gold text-[10px] font-black tracking-[0.3em]">NEW TIMES EXHIBITION</div>
-              <h3 className="text-5xl font-black leading-tight">
+              <h3 className={`font-black leading-tight ${lang === 'zh' ? 'text-6xl' : 'text-5xl'}`}>
                 {t.exhibition.title}
               </h3>
-              <p className="text-gold text-xl leading-relaxed font-medium">
+              <p className={`text-gold leading-relaxed font-medium ${lang === 'zh' ? 'text-2xl' : 'text-xl'}`}>
                 {t.exhibition.desc}
               </p>
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-8">
                {t.exhibition.points.map((p: string, i: number) => (
-                 <div key={i} className="flex items-start gap-4 p-6 glass-card rounded-2xl">
-                   <div className="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                     <span className="text-gold text-sm">●</span>
+                 <div key={i} className="flex items-start gap-4 p-8 glass-card rounded-2xl">
+                   <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                     <span className="text-gold text-lg">●</span>
                    </div>
-                   <p className="text-base font-bold text-gray-300 leading-relaxed">{p}</p>
+                   <p className={`font-bold text-gray-300 leading-relaxed ${lang === 'zh' ? 'text-lg' : 'text-base'}`}>{p}</p>
                  </div>
                ))}
             </div>

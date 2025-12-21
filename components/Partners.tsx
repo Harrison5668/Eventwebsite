@@ -10,9 +10,9 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
   return (
     <section id="partners" className="py-16 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
-        {/* Organizer Section */}
-        <div className="grid md:grid-cols-2 gap-16 mb-40">
-          {/* Left side - host3 (EN) or host4 (ZH) */}
+        {/* Organizer Section - Changed to vertical layout */}
+        <div className="space-y-20 mb-40">
+          {/* Top - host3 (EN) or host4 (ZH) */}
           <div>
             <h4 className="text-2xl font-black text-white mb-4 text-center">{t.organizers}</h4>
             <p className="text-gold text-sm font-medium mb-8 text-center leading-relaxed">
@@ -29,7 +29,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
             </div>
           </div>
           
-          {/* Right side - host2 (EN) or host5 (ZH) */}
+          {/* Bottom - host2 (EN) or host5 (ZH) */}
           <div>
             <h4 className="text-2xl font-black text-white mb-4 text-center">{t.communityPartners}</h4>
             <p className="text-gold text-sm font-medium mb-8 text-center leading-relaxed">
