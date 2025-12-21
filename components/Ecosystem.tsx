@@ -164,7 +164,7 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
   ];
 
   return (
-    <section id="ecosystem" className="py-16 px-6 bg-black">
+    <section id="ecosystem" className="py-8 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Core Title Section - Gold style for Chinese text */}
         <div className="text-center mb-24">

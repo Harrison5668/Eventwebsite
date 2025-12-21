@@ -13,7 +13,7 @@ const Venue: React.FC<Props> = ({ t }) => {
   ];
 
   return (
-    <section id="venue" className="py-16 px-6 bg-[#050505]">
+    <section id="venue" className="py-8 px-6 bg-[#050505]">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-black mb-2 text-center">{t.title}</h2>
         <p className="text-gold text-sm font-medium mb-12 text-center">{t.distance}</p>
