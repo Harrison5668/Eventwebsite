@@ -226,9 +226,6 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
                 <h3 className="text-2xl font-black mb-4">
                   {lang === 'zh' ? '全球企业家责任基金会' : 'Global CSR Foundation'}
                 </h3>
-                <p className="text-gold text-sm font-bold leading-relaxed">
-                  {t.csrIntro}
-                </p>
               </div>
 
               {/* SDGs, CSR, UN Cards - Unified height */}
@@ -326,56 +323,44 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
         </div>
 
         {/* Exhibition Expertise */}
-        <div className="mt-12 grid lg:grid-cols-2 gap-16 items-start">
-           <div className="flex flex-col justify-between h-full">
-            <div className="space-y-8 mb-12">
-              <div className="inline-block px-4 py-1 border border-gold/50 rounded text-gold text-[10px] font-black tracking-[0.3em]">NEW TIMES EXHIBITION</div>
-              <h3 className="text-2xl font-black mb-4">
-                {t.exhibition.title}
-              </h3>
-              <p className="text-gold text-sm font-bold leading-relaxed">
-                {t.exhibition.desc}
-              </p>
+        <div className="mt-12 text-center">
+          <h3 className="text-4xl font-black mb-4">
+            {t.exhibition.title}
+          </h3>
+          <p className="text-gold text-sm font-medium mb-20 max-w-4xl mx-auto leading-relaxed">
+            {t.exhibition.desc}
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="rounded-2xl border border-white/10 overflow-hidden group">
+              <img 
+                src="/exhibit/图片5.jpg" 
+                alt="New Times Exhibition 1" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
-            <div className="flex flex-col gap-6">
-               {t.exhibition.points.map((p: string, i: number) => (
-                 <div key={i} className="flex items-start gap-4">
-                   <div className="w-3 h-3 bg-gold rounded-full flex-shrink-0 mt-2"></div>
-                   <p className={`font-bold text-gray-300 ${lang === 'zh' ? 'text-lg leading-relaxed' : 'text-xs leading-normal'}`}>{p}</p>
-                 </div>
-               ))}
+            <div className="rounded-2xl border border-white/10 overflow-hidden group">
+              <img 
+                src="/exhibit/图片6.jpg" 
+                alt="New Times Exhibition 2" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
-           </div>
-           <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-white/10 overflow-hidden group">
-                <img 
-                  src="/exhibit/图片5.jpg" 
-                  alt="New Times Exhibition 1" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="rounded-2xl border border-white/10 overflow-hidden group">
-                <img 
-                  src="/exhibit/图片6.jpg" 
-                  alt="New Times Exhibition 2" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="rounded-2xl border border-white/10 overflow-hidden group">
-                <img 
-                  src="/exhibit/图片7.jpg" 
-                  alt="New Times Exhibition 3" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="rounded-2xl border border-white/10 overflow-hidden group">
-                <img 
-                  src="/exhibit/图片8.jpg" 
-                  alt="New Times Exhibition 4" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-           </div>
+            <div className="rounded-2xl border border-white/10 overflow-hidden group">
+              <img 
+                src="/exhibit/图片7.jpg" 
+                alt="New Times Exhibition 3" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="rounded-2xl border border-white/10 overflow-hidden group">
+              <img 
+                src="/exhibit/图片8.jpg" 
+                alt="New Times Exhibition 4" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

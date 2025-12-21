@@ -84,9 +84,7 @@ const Sponsorship: React.FC<Props> = ({ t, lang }) => {
               </ul>
               
               <a 
-                href={`mailto:info@wima.live?subject=${encodeURIComponent(lang === 'zh' ? `赞助申请 - ${tier.name}` : `Sponsorship Application - ${tier.name}`)}&body=${encodeURIComponent(lang === 'zh' 
-                  ? `您好，\n\n我有意申请 ${tier.name}（${tier.price}）。\n\n公司名称：\n联系人姓名：\n职位：\n联系电话：\n电子邮箱：\n公司网站：\n\n简要说明：\n\n期待您的回复！`
-                  : `Hello,\n\nI am interested in applying for ${tier.name} (${tier.price}).\n\nCompany Name:\nContact Person:\nPosition:\nPhone:\nEmail:\nCompany Website:\n\nBrief Description:\n\nLooking forward to your reply!`)}`}
+                href={`mailto:info@wima.live?subject=${encodeURIComponent(`Sponsorship Application - ${tier.name}`)}&body=${encodeURIComponent(`Hello,\n\nI am interested in applying for ${tier.name} (${tier.price}).\n\nCompany Name:\nContact Person:\nPosition:\nPhone:\nEmail:\nCompany Website:\nBrief Description:\n\nLooking forward to your reply!\n\n---\n\n您好，\n\n我有意申请 ${lang === 'zh' ? tier.name : (tier.name === 'Title Sponsorship' ? '冠名赞助' : tier.name === 'Gold Sponsorship' ? '金牌赞助' : '银牌赞助')}（${tier.price}）。\n\n公司名称：\n联系人姓名：\n职位：\n联系电话：\n电子邮箱：\n公司网站：\n简要说明：\n\n期待您的回复！`)}`}
                 className={`block w-full py-3 rounded-full text-xs font-bold transition-all uppercase tracking-widest text-center ${tier.featured ? 'gold-btn' : 'outline-gold-btn'}`}
               >
                 {t.apply}
