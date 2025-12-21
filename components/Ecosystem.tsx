@@ -265,7 +265,7 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
               <div className="glass-card rounded-2xl md:rounded-3xl overflow-hidden relative group flex flex-col h-[280px] md:h-[420px]">
                 <div className="p-2 md:p-4 h-full flex items-center justify-center">
                   <img 
-                    src="/images/UN1.png" 
+                    src={lang === 'zh' ? '/images/UN1.png' : '/images/UN2.png'}
                     alt="UN" 
                     className="w-full h-auto max-h-[260px] md:max-h-[380px] object-contain"
                   />
