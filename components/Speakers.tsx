@@ -9,31 +9,15 @@ interface Props {
 const Speakers: React.FC<Props> = ({ t, lang }) => {
   const [activeBio, setActiveBio] = useState<string | null>(null);
 
-  // Speaker data with full bios as provided - ordered as requested
+  // Speaker data - ordered alphabetically by last name
   const speakers = [
     { 
-      name: lang === 'zh' ? '张红梅' : 'Diana Zhang', 
-      title: lang === 'zh' ? '亚太世界贸易商务联盟副会长' : 'Vice President, APAC World Trade Group', 
+      name: lang === 'zh' ? '崔宝印' : 'Baoyin Cui', 
+      title: lang === 'zh' ? '著名脱口秀艺人和文化评论人' : 'Renowned Stand-up Comedian & Cultural Commentator', 
       bio: lang === 'zh'
-        ? '张红梅女士，现任亚太世界贸易商务联盟副会长，是长期活跃于美国硅谷的投资人。她曾联合创办北京大学公益孵化器与北大未名天使基金，现担任美国华人专家会常务理事、美国飞虎文化交流协会执行会长、亚太世贸商务联盟副会长及杭州世贸中心董事长，致力于推动中美商业交流、资本合作与跨国项目落地。'
-        : 'Diana Zhang currently serves as Vice President of APAC World Trade Group and is a long-term active investor in Silicon Valley. She co-founded the Peking University Public Welfare Incubator and the PKU Weiming Angel Fund. She also serves as Executive Director of the Chinese American Experts Association, Executive President of the Flying Tigers Cultural Exchange Association, Vice President of APAC World Trade Group, and Chairwoman of Hangzhou World Trade Center. She is dedicated to promoting business exchanges, capital cooperation, and cross-border project implementation between China and the United States.',
-      img: '/images/diana-zhang.jpg' 
-    },
-    { 
-      name: lang === 'zh' ? '赵兢' : 'Jing Zhao Cesarone', 
-      title: lang === 'zh' ? '全球 CSR 基金会创始人' : 'Founder & CEO, Global CSR Foundation', 
-      bio: lang === 'zh'
-        ? '赵兢女士是全球CSR基金会创始人兼首席执行官，联合国世界妇女组织全球女性领导力峰会主席，拥有三十年跨文化战略、可持续发展与NGO管理经验。她曾获 NAWBO 女性企业成就奖和中华文化基金会全球成就奖，长期推动教育、可持续发展、气候行动等领域的国际合作，并成功搭建中美企业界、政策界高层交流的桥梁。'
-        : 'Jing Zhao Cesarone is the Founder and CEO of the Global CSR Foundation and Chair of the UN Women\'s Global Women Leadership Summit. She has over 30 years of experience in cross-cultural strategy, sustainable development, and NGO management. She has received the NAWBO Women\'s Achievement Award and the Global Achievement Award from the Chinese Culture Foundation. She has long promoted international cooperation in education, sustainability, and climate action, successfully bridging high-level exchanges between businesses and policymakers in China and the U.S.',
-      img: '/images/jing-zhao.jpg' 
-    },
-    { 
-      name: lang === 'zh' ? '杨依依' : 'Elaine Yang', 
-      title: lang === 'zh' ? 'AI 101 Labs 创始人' : 'Founder, AI 101 Labs', 
-      bio: lang === 'zh'
-        ? 'Elaine Yang 为 AI 101 Labs 创始人，同时是活跃于 AI × Web3 × RWA 的早期投资人，担任 Waterdrip Capital 投资合伙人与 AI101 Labs GP。她为多家领先的区块链与人工智能项目担任顾问，深耕 AI 研究、GTM 策略与生态建设，并创立 AI & Web3 KOL 机构，专注内容增长与社区生态联动。'
-        : 'Elaine Yang is the Founder of AI 101 Labs and an early investor active in AI × Web3 × RWA projects. She is an Investment Partner at Waterdrip Capital and GP at AI 101 Labs. Elaine advises multiple leading blockchain and AI projects, focusing on AI research, GTM strategy, and ecosystem building. She also founded an AI & Web3 KOL agency, specializing in content growth and community-ecosystem synergy.',
-      img: '/images/elaine-yang.jpg' 
+        ? '北美崔哥（崔宝印）：活跃在美加华人圈的著名脱口秀艺人和文化评论人，以幽默犀利的风格讲述中美文化差异、移民生活和社会现象。在抖音等中国短视频平台拥有约500万粉丝，通过地道北京口音与美式幽默结合的表演，成为北美华人社群里极具辨识度的跨文化观察者。'
+        : 'Cui Baoyin: a well-known stand-up comedian and cultural commentator active in the Chinese communities across North America. He humorously and incisively explores cultural differences between China and the U.S., immigrant life, and social phenomena. With 5 million followers across all platforms, his performances—blending authentic Beijing accents with American-style humor—have made him a highly recognizable cross-cultural observer within the North American Chinese community.',
+      img: '/images/Cui Baoyin.png' 
     },
     { 
       name: lang === 'zh' ? '蔡继军' : 'Jijun Cai', 
@@ -44,52 +28,12 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/caijijun.jpg' 
     },
     { 
-      name: lang === 'zh' ? '魏海鹰' : 'Haiying Wei', 
-      title: lang === 'zh' ? '香港寰宇投资董事长' : 'Chairman, Horizon International Investment, Hong Kong', 
+      name: lang === 'zh' ? '陈喆' : 'Zhe Chen', 
+      title: lang === 'zh' ? '法拉第未来全球合伙人&VP' : 'Global Partner & VP of Faraday Future', 
       bio: lang === 'zh'
-        ? '魏海鹰构建了横跨制造、投资、金融等领域的产业矩阵，旗下香港寰宇投资（集团）有限公司为香港联交所上市公司（股份代号 1046），中山市金日铝业有限公司作为核心制造企业，聚焦新型合金材料领域，实力雄厚。同时身兼广东省十届、十一届政协委员，中山潮人海外联谊会会长、美国南加州华人社团大联盟荣誉主席等职，持续搭建海内外经贸与文化交流桥梁。'
-        : 'Haiying Wei has built an industrial matrix spanning manufacturing, investment, and finance. His company, Horizon International Investment (Group) Limited, is listed on the Hong Kong Stock Exchange (Stock Code: 1046). The core manufacturing enterprise, Zhongshan Jinri Aluminum Co., Ltd., focuses on new alloy materials. He also serves as a member of the 10th and 11th Guangdong CPPCC, President of the Zhongshan Chaozhou Overseas Association, and Honorary Chairman of the Southern California Chinese Associations Alliance. He continuously builds bridges for trade and cultural exchange between China and overseas markets.',
-      img: '/images/haiying-wei.jpeg' 
-    },
-    { 
-      name: lang === 'zh' ? '贺子怡' : 'Viola He', 
-      title: lang === 'zh' ? 'Good Deal MCN 联合创始人' : 'Co-founder, Good Deal MCN', 
-      bio: lang === 'zh'
-        ? '贺子怡，全球领先的网红营销平台Good Deal MCN的联合创始人，国际电商品牌化运营数据分析师协会会长，海外网红营销覆盖103个国家与地区，拥有500+网红资源，触达约50亿受众。是TikTok官方合作伙伴（TSP & TAP），Meta官方运营商，并拥有Google Ads认证。'
-        : 'Viola He, founder of the world\'s leading influencer marketing platform Good Deal MCN, oversees overseas influencer marketing spanning 103 countries and regions. With access to over 500 influencers, the platform reaches approximately 5 billion viewers worldwide. It is an official TikTok partner (TSP & TAP), a Meta-authorized operator, and holds Google Ads certification.',
-      img: '/images/viola-he.jpg' 
-    },
-    { 
-      name: lang === 'zh' ? '孙溪唯' : 'Tammy Sun', 
-      title: lang === 'zh' ? 'AI Reinvent Ventures 创始人' : 'Founder, AI Reinvent Ventures', 
-      bio: lang === 'zh'
-        ? '硅谷知名投资人，看Pre-IPO硬科技项目。'
-        : 'Tammy Sun is a renowned Silicon Valley investor, focusing on pre-IPO hard-tech projects.',
-      img: '/images/tammy-sun.png' 
-    },
-    { 
-      name: lang === 'zh' ? '林哲冰' : 'Zhebing Lin', 
-      title: lang === 'zh' ? 'Magic Ice Cube 创始人；胡润 Under 30' : 'Founder, Magic Ice Cube; Hurun Under 30', 
-      bio: lang === 'zh'
-        ? '林哲冰是 Magic Ice Cube 创始人，将其打造为总部位于洛杉矶的跨国贸易平台，并在四年内实现 3.5 亿美元营收。他入选胡润 Under 30，现兼任世界精英领袖联盟主席、中美国际经济合作联盟青委主席、蓝源民族产业研究院副院长、国际潮青联合会副会长、美国粤港澳大湾区企业家总商会委员，以及 G20 青年企业家联盟菁英人才，专注全球贸易创新与国际商业合作。'
-        : 'Zhebing Lin founded Magic Ice Cube, building it into a Los Angeles-based multinational trading platform with $350 million in revenue within four years. He was listed on Hurun Under 30 and currently serves as Chairman of the World Elite Leaders Alliance, Chair of the Young Committee of the China-U.S. International Economic Cooperation Alliance, Vice President of the International Chaoqing Federation, Vice President of the U.S. Guangdong-Hong Kong-Macao Bay Area Entrepreneurs Chamber, and G20 Young Entrepreneurs Elite. He focuses on global trade innovation and international business cooperation.',
-      img: '/images/ice-lin.png' 
-    },
-    { 
-      name: 'Jerry Yang', 
-      title: lang === 'zh' ? 'AI Robotics Alliance 主席' : 'Chairman, AI Robotics Alliance', 
-      bio: lang === 'zh'
-        ? 'Jerry Yang 现任 AI Robotics Alliance 主席。'
-        : 'Jerry Yang currently serves as Chairman of the AI Robotics Alliance.',
-      img: '/images/jerry-yang.jpg' 
-    },
-    { 
-      name: lang === 'zh' ? '李尚龙' : 'Shanglong Li', 
-      title: lang === 'zh' ? '千万级大V AI博主' : 'Major AI Influencer', 
-      bio: lang === 'zh'
-        ? '李尚龙是拥有千万级粉丝的AI领域意见领袖。'
-        : 'Shanglong Li is an AI influencer with a follower base in the millions.',
-      img: '/images/shanglong-li.jpg' 
+        ? '陈喆，法拉第未来全球合伙人&VP，致力于推动电动汽车和智能出行领域的创新发展。'
+        : 'Zhe Chen, Global Partner & VP of Faraday Future, dedicated to driving innovation in electric vehicles and smart mobility.',
+      img: '/images/zhe-chen.png' 
     },
     { 
       name: lang === 'zh' ? '程正昌' : 'Andrew Cherng', 
@@ -100,12 +44,52 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/andrew.png' 
     },
     { 
-      name: lang === 'zh' ? '于海迪' : 'Heidi Yu', 
-      title: lang === 'zh' ? 'SocialBook 创始人兼 CEO' : 'Founder & CEO, SocialBook', 
+      name: lang === 'zh' ? '赵兢' : 'Jingzhao Cesarone', 
+      title: lang === 'zh' ? '全球 CSR 基金会创始人' : 'Founder & CEO, Global CSR Foundation', 
       bio: lang === 'zh'
-        ? '于海迪，全球最大红人大数据 SaaS 平台 SocialBook 创始人兼 CEO，2022 福布斯海外华人精英 Top 100、以及2022–2025连续上榜美国Inc.5000 增长最快的科技公司创始人，Draper university Google Female Launch导师。SocialBook 拥有 2 亿+ 全球红人资源，覆盖美国、欧洲、拉美、中东、东南亚、日韩，为品牌提供从种草到全球爆品的全链路能力。VIP 客户包括：阿里巴巴、华为、小米、美的、创维、小鹏、李宁、字节跳动、腾讯、网易、米哈游等。'
-        : 'Heidi Yu: Founder & CEO of SocialBook, the world\'s largest influencer big data SaaS platform. She was named one of Forbes\' Top 100 Overseas Chinese Elites in 2022 and has consecutively ranked among the fastest-growing tech founders on the U.S. Inc. 5000 list from 2022 to 2025. She is also a Google Female Launch mentor at Draper University. SocialBook owns a global influencer network of over 200 million, covering the U.S., Europe, Latin America, the Middle East, Southeast Asia, Japan, and South Korea, providing brands with end-to-end capabilities from seeding to global viral hits. VIP clients include Alibaba, Huawei, Xiaomi, and others.',
-      img: '/images/heidi yu.jpg' 
+        ? '赵兢女士是全球CSR基金会创始人兼首席执行官，联合国世界妇女组织全球女性领导力峰会主席，拥有三十年跨文化战略、可持续发展与NGO管理经验。她曾获 NAWBO 女性企业成就奖和中华文化基金会全球成就奖，长期推动教育、可持续发展、气候行动等领域的国际合作，并成功搭建中美企业界、政策界高层交流的桥梁。'
+        : 'Jing Zhao Cesarone is the Founder and CEO of the Global CSR Foundation and Chair of the UN Women\'s Global Women Leadership Summit. She has over 30 years of experience in cross-cultural strategy, sustainable development, and NGO management. She has received the NAWBO Women\'s Achievement Award and the Global Achievement Award from the Chinese Culture Foundation. She has long promoted international cooperation in education, sustainability, and climate action, successfully bridging high-level exchanges between businesses and policymakers in China and the U.S.',
+      img: '/images/jing-zhao.jpg' 
+    },
+    { 
+      name: lang === 'zh' ? '贺子怡' : 'Viola He', 
+      title: lang === 'zh' ? 'Good Deal MCN 联合创始人' : 'Co-founder, Good Deal MCN', 
+      bio: lang === 'zh'
+        ? '贺子怡，全球领先的网红营销平台Good Deal MCN的联合创始人，国际电商品牌化运营数据分析师协会会长，海外网红营销覆盖103个国家与地区，拥有500+网红资源，触达约50亿受众。是TikTok官方合作伙伴（TSP & TAP），Meta官方运营商，并拥有Google Ads认证。'
+        : 'Viola He, founder of the world\'s leading influencer marketing platform Good Deal MCN, oversees overseas influencer marketing spanning 103 countries and regions. With access to over 500 influencers, the platform reaches approximately 5 billion viewers worldwide. It is an official TikTok partner (TSP & TAP), a Meta-authorized operator, and holds Google Ads certification.',
+      img: '/images/viola-he.jpg' 
+    },
+    { 
+      name: lang === 'zh' ? '李尚龙' : 'Shanglong Li', 
+      title: lang === 'zh' ? '千万级大V AI博主' : 'Major AI Influencer', 
+      bio: lang === 'zh'
+        ? '李尚龙是拥有千万级粉丝的AI领域意见领袖。'
+        : 'Shanglong Li is an AI influencer with a follower base in the millions.',
+      img: '/images/shanglong-li.jpg' 
+    },
+    { 
+      name: lang === 'zh' ? '林哲冰' : 'Zhebing Lin', 
+      title: lang === 'zh' ? 'Magic Ice Cube 创始人；胡润 Under 30' : 'Founder, Magic Ice Cube; Hurun Under 30', 
+      bio: lang === 'zh'
+        ? '林哲冰是 Magic Ice Cube 创始人，将其打造为总部位于洛杉矶的跨国贸易平台，并在四年内实现 3.5 亿美元营收。他入选胡润 Under 30，现兼任世界精英领袖联盟主席、中美国际经济合作联盟青委主席、蓝源民族产业研究院副院长、国际潮青联合会副会长、美国粤港澳大湾区企业家总商会委员，以及 G20 青年企业家联盟菁英人才，专注全球贸易创新与国际商业合作。'
+        : 'Zhebing Lin founded Magic Ice Cube, building it into a Los Angeles-based multinational trading platform with $350 million in revenue within four years. He was listed on Hurun Under 30 and currently serves as Chairman of the World Elite Leaders Alliance, Chair of the Young Committee of the China-U.S. International Economic Cooperation Alliance, Vice President of the International Chaoqing Federation, Vice President of the U.S. Guangdong-Hong Kong-Macao Bay Area Entrepreneurs Chamber, and G20 Young Entrepreneurs Elite. He focuses on global trade innovation and international business cooperation.',
+      img: '/images/ice-lin.png' 
+    },
+    { 
+      name: lang === 'zh' ? '孙溪唯' : 'Tammy Sun', 
+      title: lang === 'zh' ? 'AI Reinvent Ventures 创始人' : 'Founder, AI Reinvent Ventures', 
+      bio: lang === 'zh'
+        ? '硅谷知名投资人，看Pre-IPO硬科技项目。'
+        : 'Tammy Sun is a renowned Silicon Valley investor, focusing on pre-IPO hard-tech projects.',
+      img: '/images/tammy-sun.png' 
+    },
+    { 
+      name: lang === 'zh' ? '魏海鹰' : 'Haiying Wei', 
+      title: lang === 'zh' ? '香港寰宇投资董事长' : 'Chairman, Horizon International Investment, Hong Kong', 
+      bio: lang === 'zh'
+        ? '魏海鹰构建了横跨制造、投资、金融等领域的产业矩阵，旗下香港寰宇投资（集团）有限公司为香港联交所上市公司（股份代号 1046），中山市金日铝业有限公司作为核心制造企业，聚焦新型合金材料领域，实力雄厚。同时身兼广东省十届、十一届政协委员，中山潮人海外联谊会会长、美国南加州华人社团大联盟荣誉主席等职，持续搭建海内外经贸与文化交流桥梁。'
+        : 'Haiying Wei has built an industrial matrix spanning manufacturing, investment, and finance. His company, Horizon International Investment (Group) Limited, is listed on the Hong Kong Stock Exchange (Stock Code: 1046). The core manufacturing enterprise, Zhongshan Jinri Aluminum Co., Ltd., focuses on new alloy materials. He also serves as a member of the 10th and 11th Guangdong CPPCC, President of the Zhongshan Chaozhou Overseas Association, and Honorary Chairman of the Southern California Chinese Associations Alliance. He continuously builds bridges for trade and cultural exchange between China and overseas markets.',
+      img: '/images/haiying-wei.jpeg' 
     },
     { 
       name: lang === 'zh' ? '王紫' : 'Ray Wang', 
@@ -116,27 +100,49 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/wangzi.jpg' 
     },
     { 
-      name: lang === 'zh' ? '北美崔哥（崔宝印）' : 'Cui Baoyin', 
-      title: lang === 'zh' ? '著名脱口秀艺人和文化评论人' : 'Renowned Stand-up Comedian & Cultural Commentator', 
+      name: lang === 'zh' ? '杨依依' : 'Elaine Yang', 
+      title: lang === 'zh' ? 'AI 101 Labs 创始人' : 'Founder, AI 101 Labs', 
       bio: lang === 'zh'
-        ? '北美崔哥（崔宝印）：活跃在美加华人圈的著名脱口秀艺人和文化评论人，以幽默犀利的风格讲述中美文化差异、移民生活和社会现象。在抖音等中国短视频平台拥有约500万粉丝，通过地道北京口音与美式幽默结合的表演，成为北美华人社群里极具辨识度的跨文化观察者。'
-        : 'Cui Baoyin: a well-known stand-up comedian and cultural commentator active in the Chinese communities across North America. He humorously and incisively explores cultural differences between China and the U.S., immigrant life, and social phenomena. With 5 million followers across all platforms, his performances—blending authentic Beijing accents with American-style humor—have made him a highly recognizable cross-cultural observer within the North American Chinese community.',
-      img: '/images/Cui Baoyin.png' 
+        ? 'Elaine Yang 为 AI 101 Labs 创始人，同时是活跃于 AI × Web3 × RWA 的早期投资人，担任 Waterdrip Capital 投资合伙人与 AI101 Labs GP。她为多家领先的区块链与人工智能项目担任顾问，深耕 AI 研究、GTM 策略与生态建设，并创立 AI & Web3 KOL 机构，专注内容增长与社区生态联动。'
+        : 'Elaine Yang is the Founder of AI 101 Labs and an early investor active in AI × Web3 × RWA projects. She is an Investment Partner at Waterdrip Capital and GP at AI 101 Labs. Elaine advises multiple leading blockchain and AI projects, focusing on AI research, GTM strategy, and ecosystem building. She also founded an AI & Web3 KOL agency, specializing in content growth and community-ecosystem synergy.',
+      img: '/images/elaine-yang.jpg' 
     },
     { 
-      name: lang === 'zh' ? '陈喆' : 'Zhe Chen', 
-      title: lang === 'zh' ? '法拉第未来联合创始人' : 'Co-founder, Faraday Future', 
+      name: 'Jerry Yang', 
+      title: lang === 'zh' ? 'AI Robotics Alliance 主席' : 'Chairman, AI Robotics Alliance', 
       bio: lang === 'zh'
-        ? '陈喆，法拉第未来联合创始人，致力于推动电动汽车和智能出行领域的创新发展。'
-        : 'Zhe Chen, Co-founder of Faraday Future, dedicated to driving innovation in electric vehicles and smart mobility.',
-      img: '/images/zhe-chen.png' 
+        ? 'Jerry Yang 现任 AI Robotics Alliance 主席。'
+        : 'Jerry Yang currently serves as Chairman of the AI Robotics Alliance.',
+      img: '/images/jerry-yang.jpg' 
+    },
+    { 
+      name: lang === 'zh' ? '于海迪' : 'Heidi Yu', 
+      title: lang === 'zh' ? 'SocialBook 创始人兼 CEO' : 'Founder & CEO, SocialBook', 
+      bio: lang === 'zh'
+        ? '于海迪，全球最大红人大数据 SaaS 平台 SocialBook 创始人兼 CEO，2022 福布斯海外华人精英 Top 100、以及2022–2025连续上榜美国Inc.5000 增长最快的科技公司创始人，Draper university Google Female Launch导师。SocialBook 拥有 2 亿+ 全球红人资源，覆盖美国、欧洲、拉美、中东、东南亚、日韩，为品牌提供从种草到全球爆品的全链路能力。VIP 客户包括：阿里巴巴、华为、小米、美的、创维、小鹏、李宁、字节跳动、腾讯、网易、米哈游等。'
+        : 'Heidi Yu: Founder & CEO of SocialBook, the world\'s largest influencer big data SaaS platform. She was named one of Forbes\' Top 100 Overseas Chinese Elites in 2022 and has consecutively ranked among the fastest-growing tech founders on the U.S. Inc. 5000 list from 2022 to 2025. She is also a Google Female Launch mentor at Draper University. SocialBook owns a global influencer network of over 200 million, covering the U.S., Europe, Latin America, the Middle East, Southeast Asia, Japan, and South Korea, providing brands with end-to-end capabilities from seeding to global viral hits. VIP clients include Alibaba, Huawei, Xiaomi, and others.',
+      img: '/images/heidi yu.jpg' 
+    },
+    { 
+      name: lang === 'zh' ? '张红梅' : 'Diana Zhang', 
+      title: lang === 'zh' ? '亚太世界贸易商务联盟副会长' : 'Vice President, APAC World Trade Group', 
+      bio: lang === 'zh'
+        ? '张红梅女士，现任亚太世界贸易商务联盟副会长，是长期活跃于美国硅谷的投资人。她曾联合创办北京大学公益孵化器与北大未名天使基金，现担任美国华人专家会常务理事、美国飞虎文化交流协会执行会长、亚太世贸商务联盟副会长及杭州世贸中心董事长，致力于推动中美商业交流、资本合作与跨国项目落地。'
+        : 'Diana Zhang currently serves as Vice President of APAC World Trade Group and is a long-term active investor in Silicon Valley. She co-founded the Peking University Public Welfare Incubator and the PKU Weiming Angel Fund. She also serves as Executive Director of the Chinese American Experts Association, Executive President of the Flying Tigers Cultural Exchange Association, Vice President of APAC World Trade Group, and Chairwoman of Hangzhou World Trade Center. She is dedicated to promoting business exchanges, capital cooperation, and cross-border project implementation between China and the United States.',
+      img: '/images/diana-zhang.png' 
     }
   ];
 
   return (
     <section id="speakers" className="py-32 bg-[#030303]">
       <div className="max-w-7xl mx-auto text-center px-6">
-        <h2 className="text-4xl font-black mb-16">{t.title}</h2>
+        <h2 className="text-4xl font-black mb-4">{t.title}</h2>
+        <p className="text-gold text-sm font-medium mb-2">
+          {lang === 'zh' ? '行业头部大佬的实战经验、信息差分享' : 'Practical experience and insider insights from industry leaders.'}
+        </p>
+        <p className="text-gray-500 text-xs mb-16">
+          {lang === 'zh' ? '按姓氏首字母排序' : 'Sorted alphabetically by last name.'}
+        </p>
       </div>
       
       {/* Grid layout: 5 columns on large screens */}

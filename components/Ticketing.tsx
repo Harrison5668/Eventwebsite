@@ -1,11 +1,14 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 interface Props {
   t: any;
+  lang: string;
 }
 
-const Ticketing: React.FC<Props> = ({ t }) => {
+const Ticketing: React.FC<Props> = ({ t, lang }) => {
+  const [selectedTicket, setSelectedTicket] = useState<'early' | 'late'>('early');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Redirecting to Stripe Checkout...');
@@ -20,43 +23,58 @@ const Ticketing: React.FC<Props> = ({ t }) => {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">{t.title}</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-4 leading-tight">{t.title}</h2>
             <p className="text-gray-400 text-lg mb-12 leading-relaxed">
-              {t.copy}
+              {lang === 'zh' 
+                ? '门票支付成功将发送峰会具体位置信息。欢迎带着挑战来，带着落地方案走。'
+                : 'Once your ticket payment is confirmed, the exact location of the summit will be sent to you. Come with your challenges, and leave with actionable solutions!'}
             </p>
             
-            <div className="space-y-6">
-              {/* Early Bird Ticket */}
-              <div className="glass-card p-8 rounded-2xl border-gold/40">
-                <div className="flex justify-between items-center mb-6">
+            {/* Unified Ticket Card */}
+            <div className="glass-card p-8 rounded-2xl border-gold/40">
+              {/* Radio Selection */}
+              <div className="flex gap-6 mb-6">
+                <label className="flex items-center gap-3 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="ticket"
+                    value="early"
+                    checked={selectedTicket === 'early'}
+                    onChange={() => setSelectedTicket('early')}
+                    className="w-5 h-5 text-gold focus:ring-gold"
+                  />
                   <div>
-                    <h3 className="text-xl font-bold">{t.earlyBird}</h3>
+                    <h3 className="text-lg font-bold">{t.earlyBird}</h3>
                     <p className="text-gray-500 text-xs">{t.earlyBirdDate}</p>
                   </div>
-                  <div className="text-3xl font-black text-gold">{t.earlyBirdPrice}</div>
-                </div>
-                <ul className="space-y-3 text-sm text-gray-300">
-                  {t.features.map((f: string, idx: number) => (
-                    <li key={idx} className="flex items-center"><span className="text-gold mr-3">✓</span> {f}</li>
-                  ))}
-                </ul>
+                  <div className="text-2xl font-black text-gold ml-auto">{t.earlyBirdPrice}</div>
+                </label>
               </div>
-
-              {/* Late Bird Ticket */}
-              <div className="glass-card p-8 rounded-2xl border-white/20">
-                <div className="flex justify-between items-center mb-6">
+              
+              <div className="flex gap-6 mb-6">
+                <label className="flex items-center gap-3 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="ticket"
+                    value="late"
+                    checked={selectedTicket === 'late'}
+                    onChange={() => setSelectedTicket('late')}
+                    className="w-5 h-5 text-gold focus:ring-gold"
+                  />
                   <div>
-                    <h3 className="text-xl font-bold">{t.lateBird}</h3>
+                    <h3 className="text-lg font-bold">{t.lateBird}</h3>
                     <p className="text-gray-500 text-xs">{t.lateBirdDate}</p>
                   </div>
-                  <div className="text-3xl font-black text-gold">{t.lateBirdPrice}</div>
-                </div>
-                <ul className="space-y-3 text-sm text-gray-300">
-                  {t.features.map((f: string, idx: number) => (
-                    <li key={idx} className="flex items-center"><span className="text-gold mr-3">✓</span> {f}</li>
-                  ))}
-                </ul>
+                  <div className="text-2xl font-black text-gold ml-auto">{t.lateBirdPrice}</div>
+                </label>
               </div>
+
+              {/* Features List */}
+              <ul className="space-y-3 text-sm text-gray-300">
+                {t.features.map((f: string, idx: number) => (
+                  <li key={idx} className="flex items-center"><span className="text-gold mr-3">✓</span> {f}</li>
+                ))}
+              </ul>
             </div>
           </div>
 
@@ -88,10 +106,6 @@ const Ticketing: React.FC<Props> = ({ t }) => {
               <button type="submit" className="w-full gold-btn py-5 rounded-full text-lg uppercase tracking-widest mt-8">
                 {t.form.submit}
               </button>
-              
-              <p className="text-[10px] text-gray-500 text-center mt-6 uppercase tracking-wider">
-                Secured by Stripe | 256-bit Encryption
-              </p>
             </form>
           </div>
         </div>

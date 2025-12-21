@@ -8,7 +8,7 @@ interface Props {
 
 const Hero: React.FC<Props> = ({ t, lang }) => {
   // Select background image based on language
-  const bgImage = lang === 'zh' ? '/bg/about.jpg' : '/bg/关于页.jpg';
+  const bgImage = lang === 'zh' ? '/bg/关于页.jpg' : '/bg/about.jpg';
   
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">

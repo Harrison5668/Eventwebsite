@@ -10,25 +10,39 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
   return (
     <section id="partners" className="py-16 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-32">
-          <h2 className="text-4xl md:text-5xl font-black text-white">{t.title}</h2>
-        </div>
-
         {/* Organizer Section */}
         <div className="grid md:grid-cols-2 gap-16 mb-40">
-          {/* Left side - host1.png */}
+          {/* Left side - host3 (EN) or host4 (ZH) */}
           <div>
-            <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase text-center">{t.organizers}</h4>
+            <h4 className="text-2xl font-black text-white mb-4 text-center">{t.organizers}</h4>
+            <p className="text-gold text-sm font-medium mb-8 text-center leading-relaxed">
+              {lang === 'zh' 
+                ? '连接企业与国际资源，推动合作与发展。'
+                : 'Bridging businesses with global resources to foster cooperation and development.'}
+            </p>
             <div className="flex items-center justify-center">
-              <img src="/host/host1.png" alt="Host Organizations 1" className="w-full h-auto object-contain" />
+              <img 
+                src={lang === 'zh' ? '/host/host4.png' : '/host/host3.png'} 
+                alt="Host Organizations" 
+                className="w-full h-auto object-contain" 
+              />
             </div>
           </div>
           
-          {/* Right side - host2.png */}
+          {/* Right side - host2 (EN) or host5 (ZH) */}
           <div>
-            <h4 className="text-[10px] font-black text-gray-500 mb-8 tracking-[0.3em] uppercase text-center">{t.communityPartners}</h4>
+            <h4 className="text-2xl font-black text-white mb-4 text-center">{t.communityPartners}</h4>
+            <p className="text-gold text-sm font-medium mb-8 text-center leading-relaxed">
+              {lang === 'zh' 
+                ? '感谢各行业领袖的大力支持：'
+                : 'backed by the best：'}
+            </p>
             <div className="flex items-center justify-center">
-              <img src="/host/host2.png" alt="Host Organizations 2" className="w-full h-auto object-contain" />
+              <img 
+                src={lang === 'zh' ? '/host/host5.png' : '/host/host2.png'} 
+                alt="Strategic Partners" 
+                className="w-full h-auto object-contain" 
+              />
             </div>
           </div>
         </div>

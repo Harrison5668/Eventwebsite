@@ -14,14 +14,11 @@ const Footer: React.FC<Props> = ({ t, lang }) => {
         <div className="mb-4">
           <h3 className="text-2xl font-black tracking-tight mb-2">
             {lang === 'zh' ? (
-              <>世界创新<span className="text-gold">变现联盟</span></>
+              <>CES 创新 & <span className="text-gold">变现峰会</span>组委会</>
             ) : (
-              <>World Innovation & <span className="text-gold">Monetization</span> Association</>
+              <>CES Innovation & <span className="text-gold">Monetization</span> Summit Organizing Committee</>
             )}
           </h3>
-          {lang === 'zh' && t.subtitle && (
-            <p className="text-gray-500 text-xs uppercase tracking-widest">{t.subtitle}</p>
-          )}
         </div>
 
         {/* Contact Information */}
@@ -34,7 +31,12 @@ const Footer: React.FC<Props> = ({ t, lang }) => {
           </p>
           <p className="text-gray-400">{t.phone}</p>
           {t.wechat && (
-            <p className="text-gray-400">{t.wechat}</p>
+            <div className="flex flex-col items-center gap-2">
+              <p className="text-gray-400">{t.wechat}</p>
+              {lang === 'zh' && (
+                <img src="/wechat/QRcode.jpg" alt="WeChat QR Code" className="w-32 h-32 mt-2" />
+              )}
+            </div>
           )}
         </div>
 

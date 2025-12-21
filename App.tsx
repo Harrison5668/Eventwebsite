@@ -26,14 +26,13 @@ const App: React.FC = () => {
       <Navbar t={t.nav} toggleLang={toggleLang} currentLang={lang} />
       <main>
         <Hero t={t.hero} lang={lang} />
-        <ValueProposition t={t.valueProposition} />
         <Speakers t={t.speakers} lang={lang} />
         <Agenda t={t.agenda} />
         <Venue t={t.venue} />
         <Ecosystem t={t.ecosystem} lang={lang} />
         <Sponsorship t={t.sponsorship} lang={lang} />
         <Partners t={t.partners} lang={lang} />
-        <Ticketing t={t.ticketing} />
+        <Ticketing t={t.ticketing} lang={lang} />
       </main>
       <Footer t={t.footer} lang={lang} />
     </div>

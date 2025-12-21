@@ -32,7 +32,7 @@ export const translations = {
     },
     agenda: {
       title: '议程与内容',
-      subtitle: '2026年1月7日 · Jan.7.2026',
+      subtitle: '2026年1月7日',
       events: [
         { time: '5:30 PM – 6:00 PM', title: '贵宾签名墙摄影留念', engTitle: 'Guest Signature Wall: Photo & Networking' },
         { 
@@ -73,8 +73,8 @@ export const translations = {
     ecosystem: {
       title: '资源网络',
       subtitle: '',
-      copy: '我们为你准备的，将是一张以点对面的全球资源地图，而非效率低下的点对点碰撞。',
-      wtcIntro: '亚太世界贸易商务联盟——帮您链接WTC全球322个分会、百万企业网络，实现产业链全球最优布局',
+      copy: '我们为您准备的，将是一张全球资源清单与盟友网络。',
+      wtcIntro: '帮您链接WTC全球322个分会、百万企业网络，实现产业链全球最优布局',
       csrIntro: '全球企业家责任基金会 - 为您引荐全球政要首领、联合国公益组织，提升品牌社会形象',
       mcnDescription: {
         zh: '全球网红经济联盟——对接世界超一线的名人KOL，创造现象级品牌声量。',
@@ -180,7 +180,7 @@ export const translations = {
     },
     agenda: {
       title: 'Agenda',
-      subtitle: '2026年1月7日 · Jan.7.2026',
+      subtitle: 'Jan. 7, 2026',
       events: [
         { time: '5:30 PM – 6:00 PM', title: 'Guest Signature Wall: Photo & Networking' },
         { 
@@ -221,8 +221,8 @@ export const translations = {
     ecosystem: {
       title: 'Ecosystem',
       subtitle: '',
-      copy: 'What we offer is not a slow, inefficient point-to-point connection, but a global, point-to-sphere resource map designed for maximum reach and impact.',
-      wtcIntro: 'APAC World Trade Business Alliance — Connecting you to 322 WTC chapters worldwide and a network of millions of enterprises for optimal global supply chain positioning',
+      copy: 'What we have prepared for you is a comprehensive list of global resources and a network of allies.',
+      wtcIntro: 'Connecting you to 322 WTC chapters worldwide and a network of millions of enterprises for optimal global supply chain positioning',
       csrIntro: 'Global CSR Foundation — Introducing you to world leaders and UN-affiliated nonprofit organizations to elevate your brand\'s social impact',
       mcnDescription: {
         zh: '全球网红经济联盟——对接世界超一线的名人KOL，创造现象级品牌声量。',
