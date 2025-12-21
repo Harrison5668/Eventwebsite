@@ -10,10 +10,19 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
   const [selectedTicket, setSelectedTicket] = useState<'early' | 'late'>('early');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Stripe payment links
+  // Valid discount codes
+  const VALID_DISCOUNT_CODES = ['RWAWA'];
+
+  // Stripe payment links - normal and discounted
   const STRIPE_LINKS = {
-    early: 'https://buy.stripe.com/5kQ5kw9OS8bVeuBcJrf7i00',
-    late: 'https://buy.stripe.com/cNidR29OScsb0DLdNvf7i01'
+    early: {
+      normal: 'https://buy.stripe.com/5kQ5kw9OS8bVeuBcJrf7i00',
+      discounted: 'https://buy.stripe.com/fZu00c3qugIrdqxbFnf7i02'
+    },
+    late: {
+      normal: 'https://buy.stripe.com/cNidR29OScsb0DLdNvf7i01',
+      discounted: 'https://buy.stripe.com/5kQfZae582RB86dcJrf7i03'
+    }
   };
 
   // Google Apps Script Web App URL
@@ -29,6 +38,7 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
     const company = formData.get('company') as string;
     const linkedin = formData.get('linkedin') as string;
     const needs = formData.get('needs') as string;
+    const discountCode = (formData.get('discountCode') as string || '').trim().toUpperCase();
     
     // Validate required fields
     if (!name || !email || !company) {
@@ -36,17 +46,34 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
       return;
     }
     
+    // Check if discount code is valid (if provided)
+    const hasValidDiscount = discountCode && VALID_DISCOUNT_CODES.includes(discountCode);
+    
+    // If discount code is provided but invalid, show warning
+    if (discountCode && !hasValidDiscount) {
+      const proceed = confirm(
+        lang === 'zh' 
+          ? `折扣码 "${discountCode}" 无效。是否继续以原价购买？` 
+          : `Discount code "${discountCode}" is invalid. Proceed with regular price?`
+      );
+      if (!proceed) return;
+    }
+    
     setIsSubmitting(true);
     
     try {
       // Save data to Google Sheets
       const registrationData = {
+        timestamp: new Date().toISOString(),
         name,
         email,
         company,
-        linkedin,
-        needs,
-        ticketType: selectedTicket === 'early' ? 'Early Bird' : 'Late Bird'
+        linkedin: linkedin || '',
+        needs: needs || '',
+        ticketType: selectedTicket === 'early' ? 'Early Bird' : 'Late Bird',
+        discountCode: hasValidDiscount ? discountCode : '',
+        paymentStatus: 'Pending',
+        registrationDate: new Date().toLocaleDateString()
       };
       
       const response = await fetch(GOOGLE_SHEETS_API, {
@@ -61,8 +88,12 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
       // Note: no-cors mode doesn't allow reading response, so we proceed anyway
       console.log('Registration data sent to Google Sheets:', registrationData);
       
-      // Redirect to Stripe checkout
-      window.location.href = STRIPE_LINKS[selectedTicket];
+      // Redirect to appropriate Stripe checkout based on discount code
+      const paymentLink = hasValidDiscount 
+        ? STRIPE_LINKS[selectedTicket].discounted 
+        : STRIPE_LINKS[selectedTicket].normal;
+      
+      window.location.href = paymentLink;
       
     } catch (error) {
       console.error('Error saving to Google Sheets:', error);
@@ -70,7 +101,12 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
       alert(lang === 'zh' 
         ? '数据保存可能失败，但您仍可继续支付。' 
         : 'Data saving may have failed, but you can still proceed with payment.');
-      window.location.href = STRIPE_LINKS[selectedTicket];
+      
+      const paymentLink = hasValidDiscount 
+        ? STRIPE_LINKS[selectedTicket].discounted 
+        : STRIPE_LINKS[selectedTicket].normal;
+      
+      window.location.href = paymentLink;
     } finally {
       setIsSubmitting(false);
     }
