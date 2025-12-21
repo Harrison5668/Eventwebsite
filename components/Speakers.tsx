@@ -134,7 +134,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
   ];
 
   return (
-    <section id="speakers" className="py-32 bg-[#030303]">
+    <section id="speakers" className="py-16 bg-[#030303]">
       <div className="max-w-7xl mx-auto text-center px-6">
         <h2 className="text-4xl font-black mb-4">{t.title}</h2>
         <p className="text-gold text-sm font-medium mb-2">

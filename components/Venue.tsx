@@ -13,17 +13,17 @@ const Venue: React.FC<Props> = ({ t }) => {
   ];
 
   return (
-    <section id="venue" className="py-32 px-6 bg-[#050505]">
+    <section id="venue" className="py-16 px-6 bg-[#050505]">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-black mb-16 text-center">{t.title}</h2>
+        <h2 className="text-4xl font-black mb-2 text-center">{t.title}</h2>
+        <p className="text-gold text-sm font-medium mb-12 text-center">{t.distance}</p>
         
         <div className="space-y-8">
           {/* Hotel info card */}
           <div className="bg-black/30 border border-white/5 rounded-lg p-8">
             <h3 className="text-2xl font-bold text-gold mb-4">{t.name}</h3>
-            <div className="space-y-3 text-gray-300">
+            <div className="text-gray-300">
               <p className="text-lg">{t.address}</p>
-              <p className="text-sm text-gold font-bold">({t.distance})</p>
             </div>
           </div>
           

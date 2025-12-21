@@ -8,7 +8,7 @@ interface Props {
 
 const Footer: React.FC<Props> = ({ t, lang }) => {
   return (
-    <footer className="py-20 px-6 bg-[#030303] border-t border-white/5">
+    <footer className="py-12 px-6 bg-[#030303] border-t border-white/5">
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center gap-6">
         {/* Organization Name */}
         <div className="mb-4">

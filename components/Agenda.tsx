@@ -7,7 +7,7 @@ interface Props {
 
 const Agenda: React.FC<Props> = ({ t }) => {
   return (
-    <section id="agenda" className="py-32 px-6 bg-[#030303]">
+    <section id="agenda" className="py-16 px-6 bg-[#030303]">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-black mb-4">{t.title}</h2>
         <p className="text-gold font-bold tracking-widest text-xs uppercase mb-16">{t.subtitle}</p>

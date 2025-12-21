@@ -164,7 +164,7 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
   ];
 
   return (
-    <section id="ecosystem" className="py-32 px-6 bg-black">
+    <section id="ecosystem" className="py-16 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Core Title Section - Gold style for Chinese text */}
         <div className="text-center mb-24">
@@ -348,29 +348,41 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
                 {t.exhibition.desc}
               </p>
             </div>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6">
                {t.exhibition.points.map((p: string, i: number) => (
-                 <div key={i} className="flex items-start gap-4 p-8 glass-card rounded-2xl">
-                   <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                     <span className="text-gold text-lg">●</span>
-                   </div>
-                   <p className={`font-bold text-gray-300 leading-relaxed ${lang === 'zh' ? 'text-lg' : 'text-base'}`}>{p}</p>
+                 <div key={i} className="flex items-start gap-4">
+                   <div className="w-3 h-3 bg-gold rounded-full flex-shrink-0 mt-2"></div>
+                   <p className={`font-bold text-gray-300 ${lang === 'zh' ? 'text-lg leading-relaxed' : 'text-xs leading-normal'}`}>{p}</p>
                  </div>
                ))}
             </div>
            </div>
-           <div className="grid grid-cols-1 gap-6">
-              <div className="rounded-3xl border border-white/10 overflow-hidden group">
+           <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-2xl border border-white/10 overflow-hidden group">
                 <img 
                   src="/exhibit/图片5.jpg" 
-                  alt="New Times Exhibition" 
+                  alt="New Times Exhibition 1" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="rounded-3xl border border-white/10 overflow-hidden group">
+              <div className="rounded-2xl border border-white/10 overflow-hidden group">
                 <img 
                   src="/exhibit/图片6.jpg" 
-                  alt="New Times Exhibition" 
+                  alt="New Times Exhibition 2" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="rounded-2xl border border-white/10 overflow-hidden group">
+                <img 
+                  src="/exhibit/图片7.jpg" 
+                  alt="New Times Exhibition 3" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="rounded-2xl border border-white/10 overflow-hidden group">
+                <img 
+                  src="/exhibit/图片8.jpg" 
+                  alt="New Times Exhibition 4" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>

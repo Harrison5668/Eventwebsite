@@ -57,7 +57,7 @@ const Sponsorship: React.FC<Props> = ({ t, lang }) => {
   ];
 
   return (
-    <section id="sponsorship" className="py-32 px-6 bg-[#030303]">
+    <section id="sponsorship" className="py-16 px-6 bg-[#030303]">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-black mb-4">{t.title}</h2>
         <p className="text-gold text-sm font-medium mb-20 max-w-4xl mx-auto leading-relaxed">

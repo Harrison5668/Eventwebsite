@@ -8,10 +8,10 @@ interface Props {
 
 const Partners: React.FC<Props> = ({ t, lang }) => {
   return (
-    <section id="partners" className="py-16 px-6 bg-black">
+    <section id="partners" className="py-12 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Organizer Section - Changed to vertical layout */}
-        <div className="space-y-20 mb-40">
+        <div className="space-y-12 mb-20">
           {/* Top - host3 (EN) or host4 (ZH) */}
           <div>
             <h4 className="text-2xl font-black text-white mb-4 text-center">{t.organizers}</h4>
@@ -48,14 +48,14 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
         </div>
 
         {/* Media Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">{t.mediaTitle}</h2>
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">{t.mediaTitle}</h2>
           <p className="text-gold text-sm font-medium max-w-3xl mx-auto">{t.mediaSubtitle}</p>
         </div>
 
         {/* Single Media Image */}
         <div className="flex items-center justify-center">
-          <img src="/media/media.png" alt="Media Partners" className="w-full max-w-6xl h-auto object-contain" />
+          <img src="/media/media.png" alt="Media Partners" className="w-3/5 h-auto object-contain" />
         </div>
       </div>
     </section>
