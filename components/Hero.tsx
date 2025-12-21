@@ -11,15 +11,13 @@ const Hero: React.FC<Props> = ({ t, lang }) => {
   const bgImage = lang === 'zh' ? '/bg/关于页.jpg' : '/bg/about.jpg';
   
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative md:min-h-screen overflow-hidden">
       {/* Background image with language selection */}
-      <div className="absolute inset-0 z-0 flex items-start justify-center">
-        <img 
-          src={bgImage}
-          alt="Event background"
-          className="w-full h-auto md:w-full md:h-full md:object-cover"
-        />
-      </div>
+      <img 
+        src={bgImage}
+        alt="Event background"
+        className="w-full h-auto md:absolute md:inset-0 md:w-full md:h-full md:object-cover"
+      />
     </section>
   );
 };
