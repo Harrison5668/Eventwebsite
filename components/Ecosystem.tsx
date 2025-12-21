@@ -158,9 +158,9 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
     <section id="ecosystem" className="py-8 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Core Title Section - Gold style for Chinese text */}
-        <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-5xl font-black mb-6">{t.title}</h2>
-          <p className="text-gold font-bold text-lg max-w-3xl mx-auto leading-relaxed">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-black mb-4">{t.title}</h2>
+          <p className="text-gold text-sm font-medium max-w-3xl mx-auto leading-relaxed">
             {t.copy}
           </p>
         </div>
@@ -229,20 +229,20 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
               </div>
 
               {/* SDGs, CSR, UN Cards - Unified height */}
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-8">
             {/* SDGs Card */}
             <div className="flex flex-col">
-              <h4 className="text-center text-xl font-black mb-8 border-b border-gold/30 pb-4 inline-block mx-auto min-w-[120px]">SDGs</h4>
-              <div className="glass-card rounded-3xl overflow-hidden relative group flex flex-col h-[420px]">
-                <div className="p-4 flex-shrink-0">
+              <h4 className="text-center text-sm md:text-xl font-black mb-4 md:mb-8 border-b border-gold/30 pb-2 md:pb-4 inline-block mx-auto min-w-[60px] md:min-w-[120px]">SDGs</h4>
+              <div className="glass-card rounded-2xl md:rounded-3xl overflow-hidden relative group flex flex-col h-[280px] md:h-[420px]">
+                <div className="p-2 md:p-4 flex-shrink-0">
                   <img 
                     src="/images/SDGS.png" 
                     alt="SDGs" 
-                    className="w-full h-auto max-h-[320px] object-contain mx-auto"
+                    className="w-full h-auto max-h-[200px] md:max-h-[320px] object-contain mx-auto"
                   />
                 </div>
-                <div className="px-4 pb-4 text-center mt-auto">
-                  <p className="text-gray-300 text-xs leading-relaxed">
+                <div className="px-2 md:px-4 pb-2 md:pb-4 text-center mt-auto">
+                  <p className="text-gray-300 text-[8px] md:text-xs leading-relaxed">
                     {t.sdgsContent}
                   </p>
                 </div>
@@ -251,9 +251,9 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
 
             {/* CSR Card */}
             <div className="flex flex-col">
-              <h4 className="text-center text-xl font-black mb-8 border-b border-gold/30 pb-4 inline-block mx-auto min-w-[120px]">CSR</h4>
-              <div className="glass-card rounded-3xl overflow-hidden relative group flex flex-col h-[420px] p-6">
-                <p className={`text-gray-300 overflow-y-auto ${lang === 'zh' ? 'text-base leading-loose' : 'text-sm leading-relaxed'}`}>
+              <h4 className="text-center text-sm md:text-xl font-black mb-4 md:mb-8 border-b border-gold/30 pb-2 md:pb-4 inline-block mx-auto min-w-[60px] md:min-w-[120px]">CSR</h4>
+              <div className="glass-card rounded-2xl md:rounded-3xl overflow-hidden relative group flex flex-col h-[280px] md:h-[420px] p-3 md:p-6">
+                <p className={`text-gray-300 overflow-y-auto ${lang === 'zh' ? 'text-[10px] md:text-base leading-relaxed md:leading-loose' : 'text-[9px] md:text-sm leading-relaxed'}`}>
                   {t.csrContent}
                 </p>
               </div>
@@ -261,13 +261,13 @@ const Ecosystem: React.FC<Props> = ({ t, lang }) => {
 
             {/* UN Card */}
             <div className="flex flex-col">
-              <h4 className="text-center text-xl font-black mb-8 border-b border-gold/30 pb-4 inline-block mx-auto min-w-[120px]">UN</h4>
-              <div className="glass-card rounded-3xl overflow-hidden relative group flex flex-col h-[420px]">
-                <div className="p-4 h-full flex items-center justify-center">
+              <h4 className="text-center text-sm md:text-xl font-black mb-4 md:mb-8 border-b border-gold/30 pb-2 md:pb-4 inline-block mx-auto min-w-[60px] md:min-w-[120px]">UN</h4>
+              <div className="glass-card rounded-2xl md:rounded-3xl overflow-hidden relative group flex flex-col h-[280px] md:h-[420px]">
+                <div className="p-2 md:p-4 h-full flex items-center justify-center">
                   <img 
                     src="/images/UN1.png" 
                     alt="UN" 
-                    className="w-full h-auto max-h-[380px] object-contain"
+                    className="w-full h-auto max-h-[260px] md:max-h-[380px] object-contain"
                   />
                 </div>
               </div>
