@@ -24,7 +24,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
               <img 
                 src={lang === 'zh' ? '/host/host4.png' : '/host/host3.png'} 
                 alt="Host Organizations" 
-                className="w-1/2 h-auto object-contain" 
+                className="w-4/5 h-auto object-contain" 
               />
             </div>
           </div>
@@ -41,7 +41,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
               <img 
                 src={lang === 'zh' ? '/host/host5.png' : '/host/host2.png'} 
                 alt="Strategic Partners" 
-                className="w-1/2 h-auto object-contain" 
+                className="w-4/5 h-auto object-contain" 
               />
             </div>
           </div>
