@@ -11,36 +11,62 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Valid discount codes (case insensitive)
-  const VALID_DISCOUNT_CODES = [
-    'RWAWA',
-    'GPTDAO',
-    'GCSRF',
-    'MASTERTV',
-    'AI101LAB',
-    'APACWTG',
-    'AIRA',
-    'AIREINVENT',
-    'SVUSCCC',
-    'MIC',
-    'ENTRECONNECT',
-    'ONEPIECE',
-    'UPHONEST',
-    'ADVENTURES',
-    'BITSLAB',
-    'TARO',
-    'SEAMATE',
-    'WESHINE'
-  ];
+  const DISCOUNT_CODES = {
+    // 85% discount codes
+    '85OFF': [
+      'RWAWA',
+      'GPTDAO',
+      'GCSRF',
+      'MASTERTV',
+      'AI101LAB',
+      'APACWTG',
+      'AIRA',
+      'AIREINVENT',
+      'SVUSCCC',
+      'MIC',
+      'ENTRECONNECT',
+      'ONEPIECE',
+      'UPHONEST',
+      'ADVENTURES',
+      'BITSLAB',
+      'TARO',
+      'SEAMATE',
+      'WESHINE'
+    ],
+    // Free codes (limited to 5 uses each)
+    'FREE': [
+      'RWAWA-FREE',
+      'GPTDAO-FREE',
+      'GCSRF-FREE',
+      'MASTERTV-FREE',
+      'AI101LAB-FREE',
+      'APACWTG-FREE',
+      'AIRA-FREE',
+      'AIREINVENT-FREE',
+      'SVUSCCC-FREE',
+      'MIC-FREE',
+      'ENTRECONNECT-FREE',
+      'ONEPIECE-FREE',
+      'UPHONEST-FREE',
+      'ADVENTURES-FREE',
+      'BITSLAB-FREE',
+      'TARO-FREE',
+      'SEAMATE-FREE',
+      'WESHINE-FREE'
+    ]
+  };
 
-  // Stripe payment links - normal and discounted
+  // Stripe payment links - normal, discounted, and free
   const STRIPE_LINKS = {
     early: {
       normal: 'https://buy.stripe.com/5kQ5kw9OS8bVeuBcJrf7i00',
-      discounted: 'https://buy.stripe.com/fZu00c3qugIrdqxbFnf7i02'
+      discounted: 'https://buy.stripe.com/fZu00c3qugIrdqxbFnf7i02',
+      free: 'https://buy.stripe.com/00wbIU0ei2RBfyF8tbf7i04'
     },
     late: {
       normal: 'https://buy.stripe.com/cNidR29OScsb0DLdNvf7i01',
-      discounted: 'https://buy.stripe.com/5kQfZae582RB86dcJrf7i03'
+      discounted: 'https://buy.stripe.com/5kQfZae582RB86dcJrf7i03',
+      free: 'https://buy.stripe.com/00wbIU0ei2RBfyF8tbf7i04'
     }
   };
 
@@ -65,22 +91,52 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
       return;
     }
     
-    // Check if discount code is valid (if provided)
-    const hasValidDiscount = discountCode && VALID_DISCOUNT_CODES.includes(discountCode);
+    // Check discount code type
+    let discountType: 'normal' | 'discounted' | 'free' = 'normal';
+    let isValidCode = false;
     
-    // If discount code is provided but invalid, show warning
-    if (discountCode && !hasValidDiscount) {
-      const proceed = confirm(
-        lang === 'zh' 
-          ? `折扣码 "${discountCode}" 无效。是否继续以原价购买？` 
-          : `Discount code "${discountCode}" is invalid. Proceed with regular price?`
-      );
-      if (!proceed) return;
+    if (discountCode) {
+      if (DISCOUNT_CODES['85OFF'].includes(discountCode)) {
+        discountType = 'discounted';
+        isValidCode = true;
+      } else if (DISCOUNT_CODES['FREE'].includes(discountCode)) {
+        discountType = 'free';
+        isValidCode = true;
+      } else {
+        // Invalid code
+        const proceed = confirm(
+          lang === 'zh' 
+            ? `折扣码 "${discountCode}" 无效。是否继续以原价购买？` 
+            : `Discount code "${discountCode}" is invalid. Proceed with regular price?`
+        );
+        if (!proceed) return;
+      }
     }
     
     setIsSubmitting(true);
     
     try {
+      // For free codes, check usage count first
+      if (discountType === 'free') {
+        try {
+          const checkResponse = await fetch(`${GOOGLE_SHEETS_API}?code=${encodeURIComponent(discountCode)}`);
+          const checkResult = await checkResponse.json();
+          
+          if (checkResult.usageCount >= 5) {
+            alert(
+              lang === 'zh'
+                ? `抱歉！免费折扣码 "${discountCode}" 已达到使用上限（5次）。\n\n请使用其他折扣码或选择付费票种。`
+                : `Sorry! Free discount code "${discountCode}" has reached its usage limit (5 times).\n\nPlease use another code or choose a paid ticket.`
+            );
+            setIsSubmitting(false);
+            return;
+          }
+        } catch (error) {
+          console.error('Error checking discount code usage:', error);
+          // Continue anyway if check fails
+        }
+      }
+      
       // Save data to Google Sheets
       const registrationData = {
         timestamp: new Date().toISOString(),
@@ -90,41 +146,37 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
         linkedin: linkedin || '',
         needs: needs || '',
         ticketType: selectedTicket === 'early' ? 'Early Bird' : 'Standard Ticket',
-        discountCode: hasValidDiscount ? discountCode : '',
-        paymentStatus: 'Pending',
+        discountCode: isValidCode ? discountCode : '',
+        discountType: discountType === 'free' ? 'Free' : discountType === 'discounted' ? '85% Off' : 'Full Price',
+        paymentStatus: discountType === 'free' ? 'Free Registration' : 'Pending',
         registrationDate: new Date().toLocaleDateString()
       };
       
-      const response = await fetch(GOOGLE_SHEETS_API, {
+      // Use no-cors mode for Google Apps Script and wait for completion
+      await fetch(GOOGLE_SHEETS_API, {
         method: 'POST',
-        mode: 'no-cors', // Important for Google Apps Script
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(registrationData)
       });
       
-      // Note: no-cors mode doesn't allow reading response, so we proceed anyway
       console.log('Registration data sent to Google Sheets:', registrationData);
       
-      // Redirect to appropriate Stripe checkout based on discount code
-      const paymentLink = hasValidDiscount 
-        ? STRIPE_LINKS[selectedTicket].discounted 
-        : STRIPE_LINKS[selectedTicket].normal;
+      // Small delay to ensure data is saved
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      // Redirect to appropriate Stripe checkout (including free tickets)
+      const paymentLink = STRIPE_LINKS[selectedTicket][discountType as 'normal' | 'discounted' | 'free'];
       
       window.location.href = paymentLink;
       
     } catch (error) {
-      console.error('Error saving to Google Sheets:', error);
-      // Still redirect to payment even if logging fails
-      alert(lang === 'zh' 
-        ? '数据保存可能失败，但您仍可继续支付。' 
-        : 'Data saving may have failed, but you can still proceed with payment.');
+      console.error('Error during registration:', error);
       
-      const paymentLink = hasValidDiscount 
-        ? STRIPE_LINKS[selectedTicket].discounted 
-        : STRIPE_LINKS[selectedTicket].normal;
-      
+      // Redirect anyway without showing alert
+      const paymentLink = STRIPE_LINKS[selectedTicket][discountType as 'normal' | 'discounted' | 'free'];
       window.location.href = paymentLink;
     } finally {
       setIsSubmitting(false);
