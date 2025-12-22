@@ -89,7 +89,7 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
         company,
         linkedin: linkedin || '',
         needs: needs || '',
-        ticketType: selectedTicket === 'early' ? 'Early Bird' : 'Late Bird',
+        ticketType: selectedTicket === 'early' ? 'Early Bird' : 'Standard Ticket',
         discountCode: hasValidDiscount ? discountCode : '',
         paymentStatus: 'Pending',
         registrationDate: new Date().toLocaleDateString()
