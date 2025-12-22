@@ -13,9 +13,9 @@ const Venue: React.FC<Props> = ({ t }) => {
   ];
 
   return (
-    <section id="venue" className="py-8 px-6 bg-[#050505]">
+    <section id="venue" className="pt-4 pb-8 px-6 bg-[#050505]">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-black mb-4 text-center">{t.title}</h2>
+        <h2 className="text-4xl font-black mb-2 text-center">{t.title}</h2>
         
         {/* Single unified card with everything inside */}
         <div className="bg-black/30 border border-white/5 rounded-lg">

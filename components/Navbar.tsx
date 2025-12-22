@@ -28,7 +28,8 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+        {/* Logo - hidden on mobile */}
+        <div className="hidden lg:flex items-center space-x-2">
           <span className="text-lg font-black tracking-tight">
             {currentLang === 'zh' ? (
               <>CES 创新 & <span className="text-gold">变现峰会</span></>
@@ -56,25 +57,34 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
             onClick={toggleLang}
             className="text-xs font-bold text-white/90 border border-white/30 px-3 py-1 rounded hover:border-gold/70 hover:text-gold transition-colors uppercase"
           >
-            {t.langToggle}
+            {currentLang === 'zh' ? 'EN / 中文' : 'EN / 中文'}
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button 
-          className="lg:hidden text-white"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          )}
-        </button>
+        {/* Mobile: Language switcher and Menu button */}
+        <div className="lg:hidden flex items-center gap-4">
+          <button 
+            onClick={toggleLang}
+            className="text-xs font-bold text-white/90 border border-white/30 px-3 py-1.5 rounded hover:border-gold/70 hover:text-gold transition-colors"
+          >
+            {currentLang === 'zh' ? 'EN / 中文' : 'EN / 中文'}
+          </button>
+          
+          <button 
+            className="text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Dropdown */}
@@ -98,15 +108,6 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
             >
               {t.register}
             </a>
-            <button 
-              onClick={() => {
-                toggleLang();
-                setIsMobileMenuOpen(false);
-              }}
-              className="block w-full text-sm font-bold text-white/90 border border-white/30 px-4 py-2 rounded hover:border-gold/70 hover:text-gold transition-colors uppercase"
-            >
-              {t.langToggle}
-            </button>
           </div>
         </div>
       )}

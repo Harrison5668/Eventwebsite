@@ -10,7 +10,7 @@ const Sponsorship: React.FC<Props> = ({ t, lang }) => {
   const tiers = [
     {
       name: lang === 'zh' ? '冠名赞助' : 'Title Sponsorship',
-      price: '$20,000',
+      price: '$40,000',
       benefits: lang === 'zh' ? [
         '主办方协助引入顶级投融资资源与关键产业伙伴',
         '品牌 Logo 线上线下重点展示，数十万级曝光',

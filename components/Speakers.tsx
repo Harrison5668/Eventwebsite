@@ -12,7 +12,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
   // Speaker data - ordered alphabetically by last name
   const speakers = [
     { 
-      name: lang === 'zh' ? '崔宝印' : 'Baoyin Cui', 
+      name: lang === 'zh' ? '北美崔哥' : 'Baoyin Cui', 
       title: lang === 'zh' ? '著名脱口秀艺人和文化评论人' : 'Renowned Stand-up Comedian & Cultural Commentator', 
       bio: lang === 'zh'
         ? '北美崔哥（崔宝印）：活跃在美加华人圈的著名脱口秀艺人和文化评论人，以幽默犀利的风格讲述中美文化差异、移民生活和社会现象。在抖音等中国短视频平台拥有约500万粉丝，通过地道北京口音与美式幽默结合的表演，成为北美华人社群里极具辨识度的跨文化观察者。'
@@ -37,7 +37,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
     },
     { 
       name: lang === 'zh' ? '程正昌' : 'Andrew Cherng', 
-      title: lang === 'zh' ? '熊猫餐饮集团联合创始人兼董事长' : 'Co-founder & Chairman, Panda Restaurant Group', 
+      title: lang === 'zh' ? 'Panda Express联合创始人&董事长' : 'Co-founder & Chairman, Panda Restaurant Group', 
       bio: lang === 'zh'
         ? '程正昌，熊猫餐饮集团联合创始人兼董事长。他将一间小餐馆发展成为横跨全球2500家门店的餐饮帝国，开创了中餐在美国的品牌化与大众化新时代，被誉为将中华美食推向全球的传奇人物。'
         : 'Andrew Cherng: co-founder and Chairman of Panda Restaurant Group. He transformed a single restaurant into a global dining empire with over 2,500 locations worldwide, pioneering the mainstream brandization of Chinese cuisine in the United States and earning recognition as a legendary figure in bringing Chinese food to the world.',
@@ -76,12 +76,12 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/ice-lin.png' 
     },
     { 
-      name: lang === 'zh' ? '孙溪唯' : 'Tammy Sun', 
-      title: lang === 'zh' ? 'AI Reinvent Ventures 创始人' : 'Founder, AI Reinvent Ventures', 
+      name: 'Diana Zhang', 
+      title: lang === 'zh' ? '亚太世界贸易商务联盟副会长' : 'Vice President, APAC World Trade Group', 
       bio: lang === 'zh'
-        ? '硅谷知名投资人，看Pre-IPO硬科技项目。'
-        : 'Tammy Sun is a renowned Silicon Valley investor, focusing on pre-IPO hard-tech projects.',
-      img: '/images/tammy-sun.png' 
+        ? '张红梅女士，现任亚太世界贸易商务联盟副会长，是长期活跃于美国硅谷的投资人。她曾联合创办北京大学公益孵化器与北大未名天使基金，现担任美国华人专家会常务理事、美国飞虎文化交流协会执行会长、亚太世贸商务联盟副会长及杭州世贸中心董事长，致力于推动中美商业交流、资本合作与跨国项目落地。'
+        : 'Diana Zhang currently serves as Vice President of APAC World Trade Group and is a long-term active investor in Silicon Valley. She co-founded the Peking University Public Welfare Incubator and the PKU Weiming Angel Fund. She also serves as Executive Director of the Chinese American Experts Association, Executive President of the Flying Tigers Cultural Exchange Association, Vice President of APAC World Trade Group, and Chairwoman of Hangzhou World Trade Center. She is dedicated to promoting business exchanges, capital cooperation, and cross-border project implementation between China and the United States.',
+      img: '/images/diana-zhang.png' 
     },
     { 
       name: lang === 'zh' ? '魏海鹰' : 'Haiying Wei', 
@@ -124,12 +124,12 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/heidi yu.jpg' 
     },
     { 
-      name: lang === 'zh' ? '张红梅' : 'Diana Zhang', 
-      title: lang === 'zh' ? '亚太世界贸易商务联盟副会长' : 'Vice President, APAC World Trade Group', 
+      name: lang === 'zh' ? '孙溪唯' : 'Tammy Sun', 
+      title: lang === 'zh' ? 'AI Reinvent Ventures 创始人' : 'Founder, AI Reinvent Ventures', 
       bio: lang === 'zh'
-        ? '张红梅女士，现任亚太世界贸易商务联盟副会长，是长期活跃于美国硅谷的投资人。她曾联合创办北京大学公益孵化器与北大未名天使基金，现担任美国华人专家会常务理事、美国飞虎文化交流协会执行会长、亚太世贸商务联盟副会长及杭州世贸中心董事长，致力于推动中美商业交流、资本合作与跨国项目落地。'
-        : 'Diana Zhang currently serves as Vice President of APAC World Trade Group and is a long-term active investor in Silicon Valley. She co-founded the Peking University Public Welfare Incubator and the PKU Weiming Angel Fund. She also serves as Executive Director of the Chinese American Experts Association, Executive President of the Flying Tigers Cultural Exchange Association, Vice President of APAC World Trade Group, and Chairwoman of Hangzhou World Trade Center. She is dedicated to promoting business exchanges, capital cooperation, and cross-border project implementation between China and the United States.',
-      img: '/images/diana-zhang.png' 
+        ? '硅谷知名投资人，看Pre-IPO硬科技项目。'
+        : 'Tammy Sun is a renowned Silicon Valley investor, focusing on pre-IPO hard-tech projects.',
+      img: '/images/tammy-sun.png' 
     }
   ];
 
@@ -147,7 +147,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       
       {/* Grid layout: 5 columns on large screens */}
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-0">
           {speakers.map((s, idx) => (
             <div 
               key={idx} 

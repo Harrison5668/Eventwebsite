@@ -32,28 +32,40 @@ export const translations = {
     },
     agenda: {
       title: '议程与内容',
-      subtitle: '2026年1月7日',
-      events: [
-        { time: '5:30 PM – 6:00 PM', title: '贵宾签名墙摄影留念', engTitle: 'Guest Signature Wall: Photo & Networking' },
-        { 
-          time: '6:00 PM – 6:30 PM', 
-          title: '主旨演讲',
+      subtitle: '在快狠准的演讲中填补中美信息差、链接顶级大佬',
+      date: '2026年1月7日（星期三）6:00pm-10:00pm',
+      items: [
+        {
+          title: '贵宾签到（1小时）',
+          color: '#E69900',
+          items: ['打卡签名墙&专业摄影师拍摄&社交晚餐']
+        },
+        {
+          title: '欢迎致辞（5分钟）',
+          subtitle: '内华达州政府代表｜筑巢引凤，聚力共赢',
+          color: '#E69900'
+        },
+        {
+          title: '闪电演讲（5分钟/每场）',
+          subtitle: 'FF全球总裁｜创新破界，增长无界',
+          color: '#E69900'
+        },
+        {
+          title: '快问快答（15分钟/每场）',
+          color: '#E69900',
           items: [
-            { title: '主旨演讲一：筑巢引凤，聚力共赢', desc: '内华达州政府代表解析内华达州作为美国科技枢纽的政策红利与产业生态，分享全球企业落地内华达州的独特优势' },
-            { title: '主旨演讲二：创新破界，增长无界', desc: 'FF 全球总裁代表分享技术驱动路径与全球生态重构实践' },
-            { title: '主旨演讲三：从 AI 前沿到商业落地', desc: '斯坦福大学 AI 教授解读人工智能的下一阶段机会' }
+            '著名企业家｜可复制的野蛮扩张之路',
+            'MCN巨头｜AI营销革命下抢夺有效流量之法',
+            '知名投资人｜借力AI/机器人/Web3等风口破局之道'
           ]
         },
-        { 
-          time: '6:30 PM – 7:30 PM', 
-          title: '圆桌论坛',
+        {
+          title: '开放麦&社交酒会（2h）',
+          color: '#E69900',
           items: [
-            { title: '圆桌论坛一：2026AI驱动的营销革命', desc: '探讨2026年AI如何以更高效率、更大规模获取有效流量的底层逻辑，重塑全球网红营销，实现指数级增长' },
-            { title: '圆桌论坛二：从人脉到订单', desc: '在新一代跨境支付体系加速落地的背景下，拆解进入美国线下商业渠道的关键路径，分享全球与区域性产业机遇、构建可信的企业商业形象的方法' },
-            { title: '圆桌论坛三：CES关键收获大点评', desc: '前沿技术去伪存真，下一轮增长风口判断，实现商业增长100X' }
+            '知名网红北美崔哥主持，参会者自主报名接力，每人1分钟时间讲清「我是谁/需要什么/能提供什么」，旨在促成最效率连接与实质性合作。'
           ]
-        },
-        { time: '7:30 PM – 9:00 PM', title: '晚宴与交流', desc: '基于会前采集的需求与资源信息，主办方将围绕不同产业链及关键环节进行定向匹配，推动高质量连接与实质性合作' }
+        }
       ]
     },
     speakers: {
@@ -67,7 +79,7 @@ export const translations = {
       subtitle: 'VENUE',
       name: '拉斯维加斯万丽酒店',
       address: 'Renaissance Las Vegas Hotel, 3400 Paradise Rd, Las Vegas, NV 89169',
-      distance: '主会场步行5分钟内可达',
+      distance: '没有理由拒绝一个距离主会场只要步行5分钟即可抵达的高质量活动',
       description: '万丽酒店位于拉斯维加斯会议中心对面，距离拉斯维加斯大道的赌场 1 英里，距离麦卡伦国际机场 3 英里。酒店拥有现代化的多功能会议厅和活动空间，同时提供先进的视听设备和专业会务服务。'
     },
     ecosystem: {
@@ -179,29 +191,41 @@ export const translations = {
       cta: 'Come with your challenges. Leave with actionable solutions.'
     },
     agenda: {
-      title: 'Agenda',
-      subtitle: 'Jan. 7, 2026',
-      events: [
-        { time: '5:30 PM – 6:00 PM', title: 'Guest Signature Wall: Photo & Networking' },
-        { 
-          time: '6:00 PM – 6:30 PM', 
-          title: 'Keynotes',
+      title: 'Agenda & Program',
+      subtitle: 'Bridging the information gap and connecting with top industry leaders through fast, sharp, and highly focused talks.',
+      date: 'Jan. 7, 2026 （Wednesday）6:00 PM – 10:00 PM',
+      items: [
+        {
+          title: 'Registration & Reception (1 Hour)',
+          color: '#E69900',
+          items: ['Photo backdrop · Professional photography · Networking dinner']
+        },
+        {
+          title: 'Opening Remarks (5 Minutes)',
+          subtitle: 'Representative of the State of Nevada | Why Nevada is becoming a strategic hub for global technology companies.',
+          color: '#E69900'
+        },
+        {
+          title: 'Lightning Talks (5 Minutes Each)',
+          subtitle: 'President, Faraday Future | Pushing the boundaries of innovation to drive sustainable growth',
+          color: '#E69900'
+        },
+        {
+          title: 'Featured Conversations (15 Minutes Each)',
+          color: '#E69900',
           items: [
-            { title: 'Keynote I: Why Nevada: Policy, Ecosystem, and the Next U.S. Tech Hub', desc: 'A Nevada state representative breaks down why Nevada is emerging as a strategic destination for global technology companies—sharing the unique advantages of Nevada as a landing destination for global enterprises.' },
-            { title: 'Keynote II: Breaking Boundaries: How Technology Actually Scales Globally', desc: 'A senior executive from Faraday Future shares real-world lessons on technology-driven growth, global expansion, and ecosystem rebuilding.' },
-            { title: 'Keynote III: From the AI Frontier to Real Adoption', desc: 'A Stanford AI professor explains what\'s next for AI—and where real commercial value will (and will not) materialize.' }
+            'Renowned Entrepreneur | The replicable playbook for aggressive, high-speed business expansion',
+            'MCN Leader | How to capture high-impact attention in the AI-driven marketing revolution',
+            'Prominent Investor | Leveraging AI, robotics, and Web3 to seize breakthrough opportunities'
           ]
         },
-        { 
-          time: '6:30 PM – 7:30 PM', 
-          title: 'Panels',
+        {
+          title: 'Open Mic & Networking Reception (2 Hours)',
+          color: '#E69900',
           items: [
-            { title: 'Roundtable 1: The AI-Driven Marketing Revolution', desc: 'Decoding how AI will scale efficient, high-intent traffic in 2026, and unlock exponential growth in global influencer marketing' },
-            { title: 'Roundtable 2: From Connections to Contracts', desc: 'Amid the accelerated rollout of next-generation cross-border payment systems, this session will break down the key paths to entering U.S. offline retail channels, share global and regional industry opportunities, and discuss methods for building a credible corporate commercial image.' },
-            { title: 'Roundtable 3: CES Deep Dive - What Really Matters', desc: 'Distill genuine insights from cutting-edge technologies, identify the next wave of growth opportunities, and achieve 100X commercial growth.' }
+            'Under the guidance of MC, attendees can pop up for one-minute introductions to share who they are, what they need, and what they can offer, fostering high-efficiency connections and tangible collaboration.'
           ]
-        },
-        { time: '7:30 PM – 9:00 PM', title: 'Dinner & Networking', desc: 'Targeted, pre-matched conversations based on real business needs and resource profiles—designed for outcomes, not small talk.' }
+        }
       ]
     },
     speakers: {
