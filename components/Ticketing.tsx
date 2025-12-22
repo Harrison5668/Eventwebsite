@@ -10,8 +10,27 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
   const [selectedTicket, setSelectedTicket] = useState<'early' | 'late'>('early');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Valid discount codes
-  const VALID_DISCOUNT_CODES = ['RWAWA'];
+  // Valid discount codes (case insensitive)
+  const VALID_DISCOUNT_CODES = [
+    'RWAWA',
+    'GPTDAO',
+    'GCSRF',
+    'MASTERTV',
+    'AI101LAB',
+    'APACWTG',
+    'AIRA',
+    'AIREINVENT',
+    'SVUSCCC',
+    'MIC',
+    'ENTRECONNECT',
+    'ONEPIECE',
+    'UPHONEST',
+    'ADVENTURES',
+    'BITSLAB',
+    'TARO',
+    'SEAMATE',
+    'WESHINE'
+  ];
 
   // Stripe payment links - normal and discounted
   const STRIPE_LINKS = {
