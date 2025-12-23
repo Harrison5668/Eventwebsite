@@ -21,7 +21,6 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
     const company = formData.get('company') as string;
-    const linkedin = formData.get('linkedin') as string;
     const needs = formData.get('needs') as string;
     
     // Validate required fields
@@ -38,7 +37,6 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
       name,
       email,
       company,
-      linkedin: linkedin || '',
       needs: needs || '',
       type: 'Contact Request',
       registrationDate: new Date().toLocaleDateString()
@@ -77,44 +75,52 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
-              {lang === 'zh' ? '报名购票' : 'Register & Purchase Ticket'}
-            </h2>
-            <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 leading-tight">{t.title}</h2>
+            <p className="text-gray-400 text-lg mb-12 leading-relaxed">
               {lang === 'zh' 
-                ? '请点击下方按钮前往 Luma 平台购买门票。门票支付成功后，我们将发送峰会具体位置信息。'
-                : 'Click the button below to purchase your ticket on Luma. Once payment is confirmed, we will send you the exact summit location.'}
+                ? '门票支付成功将发送峰会具体位置信息。欢迎带着挑战来，带着落地方案走。'
+                : 'Once your ticket payment is confirmed, the exact location of the summit will be sent to you. Come with your challenges, and leave with actionable solutions!'}
             </p>
             
-            {/* Purchase Ticket Button */}
-            <a 
-              href="https://luma.com/1btuwmgv"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block gold-btn px-12 py-5 rounded-full text-lg uppercase tracking-widest mb-12"
-            >
-              {lang === 'zh' ? '前往 Luma 购票' : 'Get Tickets on Luma'}
-            </a>
+            {/* Ticket Options Card */}
+            <div className="glass-card p-8 rounded-2xl border-gold/40 mb-8">
+              {/* Early Bird */}
+              <div className="flex items-center gap-3 mb-6 pb-6 border-b border-white/10">
+                <div className="text-gold text-lg">✓</div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold">{t.earlyBird}</h3>
+                  <p className="text-gray-500 text-xs">{t.earlyBirdDate}</p>
+                </div>
+                <div className="text-2xl font-black text-gold">{t.earlyBirdPrice}</div>
+              </div>
+              
+              {/* Standard Ticket */}
+              <div className="flex items-center gap-3 mb-6 pb-6 border-b border-white/10">
+                <div className="text-gold text-lg">✓</div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold">{t.lateBird}</h3>
+                  <p className="text-gray-500 text-xs">{t.lateBirdDate}</p>
+                </div>
+                <div className="text-2xl font-black text-gold">{t.lateBirdPrice}</div>
+              </div>
 
-            {/* Features List */}
-            <div className="glass-card p-8 rounded-2xl border-gold/40">
-              <h3 className="text-xl font-bold mb-6 text-gold">
-                {lang === 'zh' ? '峰会权益' : 'What\'s Included'}
-              </h3>
+              {/* Features List */}
               <ul className="space-y-3 text-sm text-gray-300">
-                {(lang === 'zh' ? [
-                  '所有主题演讲与闭门分享',
-                  '社交晚宴与鸡尾酒会',
-                  '峰会资料包与参会者通讯录'
-                ] : [
-                  'Full keynote sessions',
-                  'Networking & cocktail reception',
-                  'Summit materials'
-                ]).map((f: string, idx: number) => (
+                {t.features.map((f: string, idx: number) => (
                   <li key={idx} className="flex items-center"><span className="text-gold mr-3">✓</span> {f}</li>
                 ))}
               </ul>
             </div>
+
+            {/* Purchase Button */}
+            <a 
+              href="https://luma.com/1btuwmgv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center gold-btn px-12 py-5 rounded-full text-lg uppercase tracking-widest"
+            >
+              {lang === 'zh' ? 'register & purchase ticket' : 'register & purchase ticket'}
+            </a>
           </div>
 
           <div className="glass-card p-12 rounded-[3rem]">
@@ -157,15 +163,6 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
                 <input 
                   name="company"
                   required 
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50" 
-                />
-              </div>
-              <div>
-                <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">
-                  {lang === 'zh' ? 'LinkedIn（可选）' : 'LinkedIn (Optional)'}
-                </label>
-                <input 
-                  name="linkedin"
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50" 
                 />
               </div>
