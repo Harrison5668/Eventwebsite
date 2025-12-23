@@ -60,14 +60,6 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/viola-he.jpg' 
     },
     { 
-      name: lang === 'zh' ? '李尚龙' : 'Shanglong Li', 
-      title: lang === 'zh' ? '千万级大V AI博主' : 'Major AI Influencer', 
-      bio: lang === 'zh'
-        ? '李尚龙是拥有千万级粉丝的AI领域意见领袖。'
-        : 'Shanglong Li is an AI influencer with a follower base in the millions.',
-      img: '/images/shanglong-li.jpg' 
-    },
-    { 
       name: lang === 'zh' ? '林哲冰' : 'Zhebing Lin', 
       title: lang === 'zh' ? 'Magic Ice Cube 创始人；胡润 Under 30' : 'Founder, Magic Ice Cube; Hurun Under 30', 
       bio: lang === 'zh'
@@ -138,6 +130,14 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
         ? '硅谷知名投资人，看Pre-IPO硬科技项目。'
         : 'Tammy Sun is a renowned Silicon Valley investor, focusing on pre-IPO hard-tech projects.',
       img: '/images/tammy-sun.png' 
+    },
+    { 
+      name: lang === 'zh' ? '涂劲军' : 'Jingjun Tu', 
+      title: lang === 'zh' ? '深蓝财经创始人' : 'Founder, Shenlan Finance', 
+      bio: lang === 'zh'
+        ? '涂劲军是深蓝财经创始人，同时也是财通社核心创始人与控股股东，他拥有资深财经媒体从业背景，早年任职华西都市报、每日经济新闻深耕调查财经领域，2011年创办深蓝财经并将其打造为国内头部财经新媒体平台，2019年创立财通社打造7×24小时全球财经快讯平台，还布局深蓝咨询等财经服务板块，深耕财经资讯传播与产业研究领域；作为行业资深从业者，他担任粤港澳大湾区财经新媒体领域核心行业代表，聚焦经济韧性、产业协同与新质生产力发展，提出广深港三地分工协作打造湾区版"南湾+硅谷"等专业观点，是国内财经新媒体领域兼具资深媒体经验与产业视野的核心创业者与行业推动者。'
+        : 'Jingjun Tu is the founder of Shenlan Finance and the core founder and controlling shareholder of Cailianshe (China Finance News Agency). With extensive experience in financial media, he began his career at West China Metropolis Daily and National Business Daily, focusing on investigative financial journalism. In 2011, he founded Shenlan Finance and built it into one of China\'s leading financial new media platforms. In 2019, he established Cailianshe to create a 7×24-hour global financial news platform. He has also developed Shenlan Consulting and other financial service sectors, deeply engaged in financial information dissemination and industry research. As a senior industry practitioner, he serves as a core representative of the financial new media sector in the Guangdong-Hong Kong-Macao Greater Bay Area, focusing on economic resilience, industrial collaboration, and new productive forces development. He has proposed professional insights such as building a Bay Area version of "South Bay + Silicon Valley" through tripartite collaboration among Guangzhou, Shenzhen, and Hong Kong. He is a core entrepreneur and industry promoter in China\'s financial new media field with both senior media experience and industrial vision.',
+      img: '/images/tujingjun.jpg' 
     }
   ];
 
