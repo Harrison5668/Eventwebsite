@@ -73,17 +73,17 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
       </div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div>
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <div className="flex flex-col">
             <h2 className="text-4xl md:text-5xl font-black mb-4 leading-tight">{t.title}</h2>
-            <p className="text-gray-400 text-lg mb-12 leading-relaxed">
+            <p className={`text-gray-400 mb-8 leading-relaxed ${lang === 'zh' ? 'text-lg' : 'text-base'}`}>
               {lang === 'zh' 
                 ? '门票支付成功将发送峰会具体位置信息。欢迎带着挑战来，带着落地方案走。'
                 : 'Once your ticket payment is confirmed, the exact location of the summit will be sent to you. Come with your challenges, and leave with actionable solutions!'}
             </p>
             
             {/* Ticket Options Card */}
-            <div className="glass-card p-8 rounded-2xl border-gold/40 mb-8">
+            <div className="glass-card p-8 rounded-2xl border-gold/40 mb-6">
               {/* Early Bird */}
               <div className="flex items-center gap-3 mb-6 pb-6 border-b border-white/10">
                 <div className="text-gold text-lg">✓</div>
@@ -113,26 +113,29 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
             </div>
 
             {/* Purchase Button */}
+            <div className="mt-auto pt-6">
             <a 
               href="https://luma.com/1btuwmgv"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-center gold-btn px-12 py-5 rounded-full text-lg uppercase tracking-widest"
             >
-              {lang === 'zh' ? 'register & purchase ticket' : 'register & purchase ticket'}
+              {lang === 'zh' ? '立即报名' : 'register & purchase ticket'}
             </a>
+            </div>
           </div>
 
-          <div className="glass-card p-12 rounded-[3rem]">
-            <h3 className="text-2xl font-bold mb-6 text-center">
+          <div className="glass-card p-12 rounded-[3rem] flex flex-col">
+            <h3 className="text-2xl font-bold mb-4 text-center">
               {lang === 'zh' ? '联系我们' : 'Contact Us'}
             </h3>
-            <p className="text-gray-400 text-sm mb-8 text-center leading-relaxed">
+            <p className="text-gray-400 text-sm mb-6 text-center leading-relaxed">
               {lang === 'zh' 
                 ? '如有任何问题或特殊需求，请填写下方表单，我们的团队会尽快与您联系。'
                 : 'Have questions or special requests? Fill out the form below and our team will reach out to you shortly.'}
             </p>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
+              <div className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">
@@ -176,16 +179,19 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50"
                 />
               </div>
+              </div>
               
+              <div className="mt-auto pt-6">
               <button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="w-full gold-btn py-5 rounded-full text-lg uppercase tracking-widest mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full gold-btn py-5 rounded-full text-lg uppercase tracking-widest disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting 
                   ? (lang === 'zh' ? '发送中...' : 'Sending...') 
                   : (lang === 'zh' ? '提交咨询' : 'Contact Us')}
               </button>
+              </div>
             </form>
           </div>
         </div>

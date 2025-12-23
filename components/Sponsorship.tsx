@@ -78,7 +78,7 @@ const Sponsorship: React.FC<Props> = ({ t, lang }) => {
     },
     {
       name: lang === 'zh' ? '青铜赞助' : 'Bronze Sponsor',
-      price: '$1,000',
+      price: '$2,000',
       subtitle: '',
       benefits: lang === 'zh' ? [
         'Logo展示于现场签名墙与大会手册',
