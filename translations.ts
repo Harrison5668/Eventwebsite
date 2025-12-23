@@ -9,6 +9,7 @@ export const translations = {
       resources: '资源',
       sponsorship: '赞助',
       team: '团队',
+      photos: '照片',
       register: '立即报名',
       langToggle: 'EN / 中文'
     },
@@ -60,7 +61,7 @@ export const translations = {
           ]
         },
         {
-          title: '开放麦&社交酒会（2h）',
+          title: '开放麦&社交酒会（2小时）',
           color: '#E69900',
           items: [
             '知名网红北美崔哥主持，参会者自主报名接力，每人1分钟时间讲清「我是谁/需要什么/能提供什么」，旨在促成最效率连接与实质性合作。'
@@ -131,6 +132,12 @@ export const translations = {
       chineseMedia: '中文主流媒体合作伙伴',
       internationalMedia: '国际媒体发行渠道'
     },
+    photos: {
+      title: '照片',
+      subtitle: '记录每一个高光时刻',
+      description: '活动将由ERA Moment赞助专业摄影团队进行全程拍摄，并提供现场照片实时回传与分享，让珍贵的交流、思想碰撞与重要瞬间，得以被高质量地保存与传播。ERA Moment是一家全球性活动内容与 AI 驱动的营销服务平台，专注服务高端活动与品牌传播需求。',
+      button: '查看照片'
+    },
     ticketing: {
       title: '抢占先机',
       copy: '门票支付成功即视为报名成功。我们将为您自动发送确认邮件，包含活动详细日程与地点信息。',
@@ -169,6 +176,7 @@ export const translations = {
       resources: 'Resources',
       sponsorship: 'Sponsorship',
       team: 'Team',
+      photos: 'Photos',
       register: 'Register',
       langToggle: '中文 / EN'
     },
@@ -290,6 +298,12 @@ export const translations = {
       mediaSubtitle: '200+ renowned global media partners promoting this summit, featuring leading outlets:',
       chineseMedia: 'CHINESE MEDIA PARTNERS',
       internationalMedia: 'INTERNATIONAL MEDIA CHANNELS'
+    },
+    photos: {
+      title: 'Photos',
+      subtitle: 'Capturing Every Highlight Moment',
+      description: 'Backed by ERA Moment, the event features full on-site coverage from a professional photography team, with real-time photo delivery and sharing. High-quality preservation and sharing of meaningful exchanges, inspiring ideas and key moments are thus ensured. ERA Moment is a global event content and AI-driven marketing services platform dedicated to high-end events and brand communication.',
+      button: 'View Photos'
     },
     ticketing: {
       title: 'Seize the Opportunity',

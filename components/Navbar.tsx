@@ -18,6 +18,7 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
     { label: t.resources, href: '#ecosystem' },
     { label: t.sponsorship, href: '#sponsorship' },
     { label: t.team, href: '#partners' },
+    { label: t.photos, href: '#photos' },
   ];
 
   const handleMobileMenuClick = (href: string) => {

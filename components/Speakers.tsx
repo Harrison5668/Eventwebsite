@@ -85,7 +85,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
     },
     { 
       name: lang === 'zh' ? '魏海鹰' : 'Haiying Wei', 
-      title: lang === 'zh' ? '香港寰宇投资董事长' : 'Chairman, Horizon International Investment, Hong Kong', 
+      title: lang === 'zh' ? '香港寰宇投资董事长' : 'Chairman, Huanyu Investment Group', 
       bio: lang === 'zh'
         ? '魏海鹰构建了横跨制造、投资、金融等领域的产业矩阵，旗下香港寰宇投资（集团）有限公司为香港联交所上市公司（股份代号 1046），中山市金日铝业有限公司作为核心制造企业，聚焦新型合金材料领域，实力雄厚。同时身兼广东省十届、十一届政协委员，中山潮人海外联谊会会长、美国南加州华人社团大联盟荣誉主席等职，持续搭建海内外经贸与文化交流桥梁。'
         : 'Haiying Wei has built an industrial matrix spanning manufacturing, investment, and finance. His company, Horizon International Investment (Group) Limited, is listed on the Hong Kong Stock Exchange (Stock Code: 1046). The core manufacturing enterprise, Zhongshan Jinri Aluminum Co., Ltd., focuses on new alloy materials. He also serves as a member of the 10th and 11th Guangdong CPPCC, President of the Zhongshan Chaozhou Overseas Association, and Honorary Chairman of the Southern California Chinese Associations Alliance. He continuously builds bridges for trade and cultural exchange between China and overseas markets.',
@@ -98,6 +98,14 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
         ? '王紫：名人传媒与Master TV MCN的联合创始人，拥有超过20年横跨娱乐、媒体、营销与公关领域的丰富经验。他长期活跃于中美及港台娱乐与名人事务的前沿，擅长策划并执行国际级名人、明星、企业精英的公关、合作与品牌推广项目。王紫被誉为"名人的智囊"，在推动中美文化交流、促成国际大型活动（如格莱美、艾美奖中国代表团首次参与）方面创造了多个"首次"。近年来，他专注于直播电商、短视频营销、AI视频制作、名人加密币发行等新兴领域，并联合创办了具有全球影响力的"网红经济联盟"及"贝美好莱坞网红奖"。在其领导下，公司不仅是TikTok官方合作服务商，更构建了覆盖全美六大短视频平台及一线电商的整合营销网络，持续为品牌与名人提供从顶层公关到销售转化的全方位服务。'
         : 'Ray Wang：Co-founder of Celebrity Media and Master TV MCN, with 20+ years\' experience across entertainment, media, marketing, and PR. A veteran of China, the U.S., Hong Kong, and Taiwan\'s celebrity industry, he specializes in PR campaigns, collaborations, and brand promotion for top-tier international celebrities and corporate elites. Known as a "celebrity think tank," Wang pioneered Sino-U.S. cultural exchanges, including Chinese delegations\' historic participation in the Grammy and Emmy Awards. Recently, he has focused on live-streaming e-commerce, short-video marketing, AI video production, and celebrity-themed crypto projects. He also co-founded the global Influencer Economy Alliance and Bemy Hollywood Influencer Awards. Under his leadership, the company—an official TikTok service partner—has built an integrated marketing network across the top six U.S. short-video and e-commerce platforms, offering end-to-end services from PR strategy to sales conversion.',
       img: '/images/wangzi.jpg' 
+    },
+    { 
+      name: 'Phillip Ruffin', 
+      title: lang === 'zh' ? 'Treasure Island Casino 老板' : 'Owner, Treasure Island Casino', 
+      bio: lang === 'zh'
+        ? 'Phillip Ruffin 是拉斯维加斯最具传奇色彩的赌场与地产大亨之一。从德州加油站生意起家，他在行业低谷期果断出手，先后低价收购 Frontier、Treasure Island 等标志性赌场资产，并在周期反转中实现数十亿美元级别的价值跃迁。他以"逆周期收购 + 极致现金流管理"闻名，是拉斯维加斯少数仍保持高度独立控制权的赌场老板之一，同时也是 Trump International Las Vegas 的联合所有者，被视为老派资本主义与赌城黄金时代的代表人物。'
+        : 'Phillip Ruffin is one of the most legendary casino and real estate moguls in Las Vegas. Starting from a gas station business in Texas, he made bold acquisitions during industry downturns, purchasing iconic casino properties such as Frontier and Treasure Island at bargain prices, and achieving billions of dollars in value appreciation during market recoveries. Known for "counter-cyclical acquisitions + extreme cash flow management," he is one of the few Las Vegas casino owners who maintains highly independent control. He is also a co-owner of Trump International Las Vegas and is regarded as a representative figure of old-school capitalism and the golden era of Vegas.',
+      img: '/images/Phillip Ruffin.png' 
     },
     { 
       name: lang === 'zh' ? '杨依依' : 'Elaine Yang', 

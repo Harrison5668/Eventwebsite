@@ -9,6 +9,7 @@ import Venue from './components/Venue';
 import Ecosystem from './components/Ecosystem';
 import Sponsorship from './components/Sponsorship';
 import Partners from './components/Partners';
+import Photos from './components/Photos';
 import Ticketing from './components/Ticketing';
 import Footer from './components/Footer';
 import { translations } from './translations';
@@ -32,6 +33,7 @@ const App: React.FC = () => {
         <Ecosystem t={t.ecosystem} lang={lang} />
         <Sponsorship t={t.sponsorship} lang={lang} />
         <Partners t={t.partners} lang={lang} />
+        <Photos t={t.photos} />
         <Ticketing t={t.ticketing} lang={lang} />
       </main>
       <Footer t={t.footer} lang={lang} />
