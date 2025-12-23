@@ -33,7 +33,7 @@ const Sponsorship: React.FC<Props> = ({ t, lang }) => {
       borderColor: 'border-gold'
     },
     {
-      name: lang === 'zh' ? '铂金赞助商' : 'Platinum Sponsor',
+      name: lang === 'zh' ? '铂金赞助' : 'Platinum Sponsor',
       price: '$25,000',
       subtitle: lang === 'zh' ? '（限2席）' : '(Limited to 2)',
       benefits: lang === 'zh' ? [
