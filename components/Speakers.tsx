@@ -105,7 +105,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       bio: lang === 'zh'
         ? 'Phillip Ruffin 是拉斯维加斯最具传奇色彩的赌场与地产大亨之一。从德州加油站生意起家，他在行业低谷期果断出手，先后低价收购 Frontier、Treasure Island 等标志性赌场资产，并在周期反转中实现数十亿美元级别的价值跃迁。他以"逆周期收购 + 极致现金流管理"闻名，是拉斯维加斯少数仍保持高度独立控制权的赌场老板之一，同时也是 Trump International Las Vegas 的联合所有者，被视为老派资本主义与赌城黄金时代的代表人物。'
         : 'Phillip Ruffin is one of the most legendary casino and real estate moguls in Las Vegas. Starting from a gas station business in Texas, he made bold acquisitions during industry downturns, purchasing iconic casino properties such as Frontier and Treasure Island at bargain prices, and achieving billions of dollars in value appreciation during market recoveries. Known for "counter-cyclical acquisitions + extreme cash flow management," he is one of the few Las Vegas casino owners who maintains highly independent control. He is also a co-owner of Trump International Las Vegas and is regarded as a representative figure of old-school capitalism and the golden era of Vegas.',
-      img: '/images/Phillip Ruffin.png' 
+      img: '/images/Phillip Ruffin.jpg' 
     },
     { 
       name: lang === 'zh' ? '杨依依' : 'Elaine Yang', 
