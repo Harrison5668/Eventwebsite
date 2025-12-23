@@ -109,24 +109,29 @@ const Sponsorship: React.FC<Props> = ({ t, lang }) => {
         </p>
         
         {/* 2x2 Grid Layout */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-12">
+        <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto mb-12">
           {tiers.map((tier, idx) => (
             <div 
               key={idx} 
-              className={`relative overflow-hidden rounded-3xl border-2 ${tier.borderColor} bg-gradient-to-br ${tier.color} backdrop-blur-sm p-8 text-left`}
+              className={`relative overflow-hidden rounded-2xl border-2 ${tier.borderColor} bg-gradient-to-br ${tier.color} backdrop-blur-sm p-6 text-left`}
             >
-              {/* Header */}
-              <div className="mb-6">
-                <h3 className="text-2xl font-black text-white mb-1">
-                  {tier.name} {tier.subtitle && <span className="text-base font-normal text-gray-400">{tier.subtitle}</span>}
-                </h3>
-                <div className="text-4xl font-black text-gold">{tier.price}</div>
+              {/* Header with Price in Top Right */}
+              <div className="flex items-start justify-between mb-5">
+                <div className="flex-1">
+                  <h3 className="text-xl font-black text-white">
+                    {tier.name}
+                  </h3>
+                  {tier.subtitle && (
+                    <span className="text-xs text-gray-400">{tier.subtitle}</span>
+                  )}
+                </div>
+                <div className="text-3xl font-black text-gold ml-4">{tier.price}</div>
               </div>
               
               {/* Benefits List */}
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {tier.benefits.map((b, bIdx) => (
-                  <li key={bIdx} className="text-sm text-gray-300 flex items-start leading-relaxed">
+                  <li key={bIdx} className="text-xs text-gray-300 flex items-start leading-relaxed">
                     <span className="text-gold mr-2 mt-0.5 flex-shrink-0">•</span>
                     <span>{b}</span>
                   </li>
