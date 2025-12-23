@@ -12,8 +12,8 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
   // Speaker data - ordered alphabetically by last name
   const speakers = [
     { 
-      name: lang === 'zh' ? '北美崔哥' : 'Baoyin Cui', 
-      title: lang === 'zh' ? '著名脱口秀艺人和文化评论人' : 'Renowned Stand-up Comedian & Cultural Commentator', 
+      name: lang === 'zh' ? '北美崔哥' : 'Brother Sway', 
+      title: lang === 'zh' ? '著名脱口秀艺人和文化评论人' : 'Famous A-list comedian talk show host among any Chinese in the world', 
       bio: lang === 'zh'
         ? '北美崔哥（崔宝印）：活跃在美加华人圈的著名脱口秀艺人和文化评论人，以幽默犀利的风格讲述中美文化差异、移民生活和社会现象。在抖音等中国短视频平台拥有约500万粉丝，通过地道北京口音与美式幽默结合的表演，成为北美华人社群里极具辨识度的跨文化观察者。'
         : 'Cui Baoyin: a well-known stand-up comedian and cultural commentator active in the Chinese communities across North America. He humorously and incisively explores cultural differences between China and the U.S., immigrant life, and social phenomena. With 5 million followers across all platforms, his performances—blending authentic Beijing accents with American-style humor—have made him a highly recognizable cross-cultural observer within the North American Chinese community.',
@@ -93,7 +93,7 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
     },
     { 
       name: lang === 'zh' ? '王紫' : 'Ray Wang', 
-      title: lang === 'zh' ? '名人传媒与Master TV MCN联合创始人' : 'Co-founder, Celebrity Media & Master TV MCN', 
+      title: lang === 'zh' ? '全球网红经济联盟联席主席' : 'Co-Chairman, Global Influencer Economy Alliance', 
       bio: lang === 'zh'
         ? '王紫：名人传媒与Master TV MCN的联合创始人，拥有超过20年横跨娱乐、媒体、营销与公关领域的丰富经验。他长期活跃于中美及港台娱乐与名人事务的前沿，擅长策划并执行国际级名人、明星、企业精英的公关、合作与品牌推广项目。王紫被誉为"名人的智囊"，在推动中美文化交流、促成国际大型活动（如格莱美、艾美奖中国代表团首次参与）方面创造了多个"首次"。近年来，他专注于直播电商、短视频营销、AI视频制作、名人加密币发行等新兴领域，并联合创办了具有全球影响力的"网红经济联盟"及"贝美好莱坞网红奖"。在其领导下，公司不仅是TikTok官方合作服务商，更构建了覆盖全美六大短视频平台及一线电商的整合营销网络，持续为品牌与名人提供从顶层公关到销售转化的全方位服务。'
         : 'Ray Wang：Co-founder of Celebrity Media and Master TV MCN, with 20+ years\' experience across entertainment, media, marketing, and PR. A veteran of China, the U.S., Hong Kong, and Taiwan\'s celebrity industry, he specializes in PR campaigns, collaborations, and brand promotion for top-tier international celebrities and corporate elites. Known as a "celebrity think tank," Wang pioneered Sino-U.S. cultural exchanges, including Chinese delegations\' historic participation in the Grammy and Emmy Awards. Recently, he has focused on live-streaming e-commerce, short-video marketing, AI video production, and celebrity-themed crypto projects. He also co-founded the global Influencer Economy Alliance and Bemy Hollywood Influencer Awards. Under his leadership, the company—an official TikTok service partner—has built an integrated marketing network across the top six U.S. short-video and e-commerce platforms, offering end-to-end services from PR strategy to sales conversion.',
