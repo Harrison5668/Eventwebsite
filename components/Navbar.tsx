@@ -50,7 +50,12 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
               {item.label}
             </a>
           ))}
-          <a href="#ticketing" className="gold-btn px-6 py-2 rounded-full text-[10px] font-bold">
+          <a 
+            href="https://luma.com/1btuwmgv" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="gold-btn px-6 py-2 rounded-full text-[10px] font-bold"
+          >
             {t.register}
           </a>
           <button 
@@ -102,8 +107,9 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
               </a>
             ))}
             <a 
-              href="#ticketing" 
-              onClick={() => handleMobileMenuClick('#ticketing')}
+              href="https://luma.com/1btuwmgv"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block gold-btn px-6 py-3 rounded-full text-xs font-bold text-center"
             >
               {t.register}

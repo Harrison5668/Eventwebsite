@@ -7,68 +7,8 @@ interface Props {
 }
 
 const Ticketing: React.FC<Props> = ({ t, lang }) => {
-  const [selectedTicket, setSelectedTicket] = useState<'early' | 'late'>('early');
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  // Valid discount codes (case insensitive)
-  const DISCOUNT_CODES = {
-    // 85% discount codes
-    '85OFF': [
-      'RWAWA',
-      'GPTDAO',
-      'GCSRF',
-      'MASTERTV',
-      'AI101LAB',
-      'APACWTG',
-      'AIRA',
-      'AIREINVENT',
-      'SVUSCCC',
-      'MIC',
-      'ENTRECONNECT',
-      'ONEPIECE',
-      'UPHONEST',
-      'ADVENTURES',
-      'BITSLAB',
-      'TARO',
-      'SEAMATE',
-      'WESHINE'
-    ],
-    // Free codes (limited to 5 uses each)
-    'FREE': [
-      'RWAWA-FREE',
-      'GPTDAO-FREE',
-      'GCSRF-FREE',
-      'MASTERTV-FREE',
-      'AI101LAB-FREE',
-      'APACWTG-FREE',
-      'AIRA-FREE',
-      'AIREINVENT-FREE',
-      'SVUSCCC-FREE',
-      'MIC-FREE',
-      'ENTRECONNECT-FREE',
-      'ONEPIECE-FREE',
-      'UPHONEST-FREE',
-      'ADVENTURES-FREE',
-      'BITSLAB-FREE',
-      'TARO-FREE',
-      'SEAMATE-FREE',
-      'WESHINE-FREE'
-    ]
-  };
-
-  // Stripe payment links - normal, discounted, and free
-  const STRIPE_LINKS = {
-    early: {
-      normal: 'https://buy.stripe.com/5kQ5kw9OS8bVeuBcJrf7i00',
-      discounted: 'https://buy.stripe.com/fZu00c3qugIrdqxbFnf7i02',
-      free: 'https://buy.stripe.com/00wbIU0ei2RBfyF8tbf7i04'
-    },
-    late: {
-      normal: 'https://buy.stripe.com/cNidR29OScsb0DLdNvf7i01',
-      discounted: 'https://buy.stripe.com/5kQfZae582RB86dcJrf7i03',
-      free: 'https://buy.stripe.com/00wbIU0ei2RBfyF8tbf7i04'
-    }
-  };
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   // Google Apps Script Web App URL
   const GOOGLE_SHEETS_API = 'https://script.google.com/macros/s/AKfycbx2uJ6uKx92be9JequLuurbjaM0LqFWrRfvdOLtXTdi1GM9ayWT5L7kdYyRlsUrVKg0/exec';
@@ -83,7 +23,6 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
     const company = formData.get('company') as string;
     const linkedin = formData.get('linkedin') as string;
     const needs = formData.get('needs') as string;
-    const discountCode = (formData.get('discountCode') as string || '').trim().toUpperCase();
     
     // Validate required fields
     if (!name || !email || !company) {
@@ -91,96 +30,42 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
       return;
     }
     
-    // Check discount code type
-    let discountType: 'normal' | 'discounted' | 'free' = 'normal';
-    let isValidCode = false;
-    
-    if (discountCode) {
-      if (DISCOUNT_CODES['85OFF'].includes(discountCode)) {
-        discountType = 'discounted';
-        isValidCode = true;
-      } else if (DISCOUNT_CODES['FREE'].includes(discountCode)) {
-        discountType = 'free';
-        isValidCode = true;
-      } else {
-        // Invalid code
-        const proceed = confirm(
-          lang === 'zh' 
-            ? `折扣码 "${discountCode}" 无效。是否继续以原价购买？` 
-            : `Discount code "${discountCode}" is invalid. Proceed with regular price?`
-        );
-        if (!proceed) return;
-      }
-    }
-    
     setIsSubmitting(true);
     
-    try {
-      // For free codes, check usage count first
-      if (discountType === 'free') {
-        try {
-          const checkResponse = await fetch(`${GOOGLE_SHEETS_API}?code=${encodeURIComponent(discountCode)}`);
-          const checkResult = await checkResponse.json();
-          
-          if (checkResult.usageCount >= 5) {
-            alert(
-              lang === 'zh'
-                ? `抱歉！免费折扣码 "${discountCode}" 已达到使用上限（5次）。\n\n请使用其他折扣码或选择付费票种。`
-                : `Sorry! Free discount code "${discountCode}" has reached its usage limit (5 times).\n\nPlease use another code or choose a paid ticket.`
-            );
-            setIsSubmitting(false);
-            return;
-          }
-        } catch (error) {
-          console.error('Error checking discount code usage:', error);
-          // Continue anyway if check fails
-        }
-      }
-      
-      // Save data to Google Sheets
-      const registrationData = {
-        timestamp: new Date().toISOString(),
-        name,
-        email,
-        company,
-        linkedin: linkedin || '',
-        needs: needs || '',
-        ticketType: selectedTicket === 'early' ? 'Early Bird' : 'Standard Ticket',
-        discountCode: isValidCode ? discountCode : '',
-        discountType: discountType === 'free' ? 'Free' : discountType === 'discounted' ? '85% Off' : 'Full Price',
-        paymentStatus: discountType === 'free' ? 'Free Registration' : 'Pending',
-        registrationDate: new Date().toLocaleDateString()
-      };
-      
-      // Use no-cors mode for Google Apps Script and wait for completion
-      await fetch(GOOGLE_SHEETS_API, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(registrationData)
-      });
-      
-      console.log('Registration data sent to Google Sheets:', registrationData);
-      
-      // Small delay to ensure data is saved
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      // Redirect to appropriate Stripe checkout (including free tickets)
-      const paymentLink = STRIPE_LINKS[selectedTicket][discountType as 'normal' | 'discounted' | 'free'];
-      
-      window.location.href = paymentLink;
-      
-    } catch (error) {
-      console.error('Error during registration:', error);
-      
-      // Redirect anyway without showing alert
-      const paymentLink = STRIPE_LINKS[selectedTicket][discountType as 'normal' | 'discounted' | 'free'];
-      window.location.href = paymentLink;
-    } finally {
+    // Save data to Google Sheets
+    const contactData = {
+      timestamp: new Date().toISOString(),
+      name,
+      email,
+      company,
+      linkedin: linkedin || '',
+      needs: needs || '',
+      type: 'Contact Request',
+      registrationDate: new Date().toLocaleDateString()
+    };
+    
+    // Send to Google Sheets (no-cors mode)
+    fetch(GOOGLE_SHEETS_API, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(contactData)
+    }).then(() => {
+      console.log('Contact request sent to Google Sheets:', contactData);
+    }).catch((error) => {
+      console.error('Error sending contact request:', error);
+    });
+    
+    // Show success modal after a short delay
+    setTimeout(() => {
       setIsSubmitting(false);
-    }
+      setShowSuccessModal(true);
+      
+      // Reset form
+      (e.target as HTMLFormElement).reset();
+    }, 500);
   };
 
   return (
@@ -192,55 +77,40 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-black mb-4 leading-tight">{t.title}</h2>
-            <p className="text-gray-400 text-lg mb-12 leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 leading-tight">
+              {lang === 'zh' ? '报名购票' : 'Register & Purchase Ticket'}
+            </h2>
+            <p className="text-gray-400 text-lg mb-8 leading-relaxed">
               {lang === 'zh' 
-                ? '门票支付成功将发送峰会具体位置信息。欢迎带着挑战来，带着落地方案走。'
-                : 'Once your ticket payment is confirmed, the exact location of the summit will be sent to you. Come with your challenges, and leave with actionable solutions!'}
+                ? '请点击下方按钮前往 Luma 平台购买门票。门票支付成功后，我们将发送峰会具体位置信息。'
+                : 'Click the button below to purchase your ticket on Luma. Once payment is confirmed, we will send you the exact summit location.'}
             </p>
             
-            {/* Unified Ticket Card */}
-            <div className="glass-card p-8 rounded-2xl border-gold/40">
-              {/* Radio Selection */}
-              <div className="flex gap-6 mb-6">
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="ticket"
-                    value="early"
-                    checked={selectedTicket === 'early'}
-                    onChange={() => setSelectedTicket('early')}
-                    className="w-5 h-5 text-gold focus:ring-gold"
-                  />
-                  <div>
-                    <h3 className="text-lg font-bold">{t.earlyBird}</h3>
-                    <p className="text-gray-500 text-xs">{t.earlyBirdDate}</p>
-                  </div>
-                  <div className="text-2xl font-black text-gold ml-auto">{t.earlyBirdPrice}</div>
-                </label>
-              </div>
-              
-              <div className="flex gap-6 mb-6">
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="radio"
-                    name="ticket"
-                    value="late"
-                    checked={selectedTicket === 'late'}
-                    onChange={() => setSelectedTicket('late')}
-                    className="w-5 h-5 text-gold focus:ring-gold"
-                  />
-                  <div>
-                    <h3 className="text-lg font-bold">{t.lateBird}</h3>
-                    <p className="text-gray-500 text-xs">{t.lateBirdDate}</p>
-                  </div>
-                  <div className="text-2xl font-black text-gold ml-auto">{t.lateBirdPrice}</div>
-                </label>
-              </div>
+            {/* Purchase Ticket Button */}
+            <a 
+              href="https://luma.com/1btuwmgv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block gold-btn px-12 py-5 rounded-full text-lg uppercase tracking-widest mb-12"
+            >
+              {lang === 'zh' ? '前往 Luma 购票' : 'Get Tickets on Luma'}
+            </a>
 
-              {/* Features List */}
+            {/* Features List */}
+            <div className="glass-card p-8 rounded-2xl border-gold/40">
+              <h3 className="text-xl font-bold mb-6 text-gold">
+                {lang === 'zh' ? '峰会权益' : 'What\'s Included'}
+              </h3>
               <ul className="space-y-3 text-sm text-gray-300">
-                {t.features.map((f: string, idx: number) => (
+                {(lang === 'zh' ? [
+                  '所有主题演讲与闭门分享',
+                  '社交晚宴与鸡尾酒会',
+                  '峰会资料包与参会者通讯录'
+                ] : [
+                  'Full keynote sessions',
+                  'Networking & cocktail reception',
+                  'Summit materials'
+                ]).map((f: string, idx: number) => (
                   <li key={idx} className="flex items-center"><span className="text-gold mr-3">✓</span> {f}</li>
                 ))}
               </ul>
@@ -248,10 +118,20 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
           </div>
 
           <div className="glass-card p-12 rounded-[3rem]">
+            <h3 className="text-2xl font-bold mb-6 text-center">
+              {lang === 'zh' ? '联系我们' : 'Contact Us'}
+            </h3>
+            <p className="text-gray-400 text-sm mb-8 text-center leading-relaxed">
+              {lang === 'zh' 
+                ? '如有任何问题或特殊需求，请填写下方表单，我们的团队会尽快与您联系。'
+                : 'Have questions or special requests? Fill out the form below and our team will reach out to you shortly.'}
+            </p>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">{t.form.name}</label>
+                  <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">
+                    {lang === 'zh' ? '姓名（必填）' : 'Full Name (Required)'}
+                  </label>
                   <input 
                     name="name"
                     required 
@@ -259,7 +139,9 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">{t.form.email}</label>
+                  <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">
+                    {lang === 'zh' ? '邮箱（必填）' : 'Email (Required)'}
+                  </label>
                   <input 
                     name="email"
                     required 
@@ -269,7 +151,9 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
                 </div>
               </div>
               <div>
-                <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">{t.form.company}</label>
+                <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">
+                  {lang === 'zh' ? '公司/职位（必填）' : 'Company / Role (Required)'}
+                </label>
                 <input 
                   name="company"
                   required 
@@ -277,28 +161,22 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
                 />
               </div>
               <div>
-                <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">{t.form.linkedin}</label>
+                <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">
+                  {lang === 'zh' ? 'LinkedIn（可选）' : 'LinkedIn (Optional)'}
+                </label>
                 <input 
                   name="linkedin"
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50" 
                 />
               </div>
               <div>
-                <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">{t.form.needs}</label>
-                <input 
-                  name="needs"
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50"
-                />
-              </div>
-              
-              <div>
                 <label className="block text-[10px] font-black text-gray-500 uppercase mb-2">
-                  {lang === 'zh' ? '折扣码（可选）' : 'Discount Code (Optional)'}
+                  {lang === 'zh' ? '参会需求（可选）' : 'What can we help you? (Optional)'}
                 </label>
-                <input 
-                  name="discountCode"
-                  placeholder={lang === 'zh' ? '如有折扣码请输入' : 'Enter discount code if you have one'}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50 placeholder:text-gray-600" 
+                <textarea 
+                  name="needs"
+                  rows={4}
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 outline-none focus:border-gold/50"
                 />
               </div>
               
@@ -308,13 +186,40 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
                 className="w-full gold-btn py-5 rounded-full text-lg uppercase tracking-widest mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting 
-                  ? (lang === 'zh' ? '处理中...' : 'Processing...') 
-                  : t.form.submit}
+                  ? (lang === 'zh' ? '发送中...' : 'Sending...') 
+                  : (lang === 'zh' ? '提交咨询' : 'Contact Us')}
               </button>
             </form>
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-6">
+          <div className="bg-[#050505] border border-gold/30 rounded-3xl p-12 max-w-md w-full text-center">
+            <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold mb-4">
+              {lang === 'zh' ? '已收到您的需求' : 'We Received Your Request'}
+            </h3>
+            <p className="text-gray-400 leading-relaxed mb-8">
+              {lang === 'zh' 
+                ? '感谢您的咨询！我们的团队已收到您的信息，会尽快安排专人与您联系。'
+                : 'Thank you for reaching out! Our team has received your information and will contact you shortly.'}
+            </p>
+            <button 
+              onClick={() => setShowSuccessModal(false)}
+              className="gold-btn px-8 py-3 rounded-full text-sm uppercase tracking-widest"
+            >
+              {lang === 'zh' ? '关闭' : 'Close'}
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
