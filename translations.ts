@@ -128,7 +128,7 @@ export const translations = {
       coOrganizers: '联合主办',
       communityPartners: '社群合作伙伴',
       mediaTitle: '媒体宣传',
-      mediaSubtitle: '200+全球知名媒体合作宣传此次峰会，其中头部媒体包括：',
+      mediaSubtitle: '全平台曝光，覆盖主流社交平台、十余家华语权威媒体，形成线上线下联动的媒体传播矩阵。',
       chineseMedia: '中文主流媒体合作伙伴',
       internationalMedia: '国际媒体发行渠道'
     },
@@ -295,7 +295,7 @@ export const translations = {
       coOrganizers: 'Co-Organizers',
       communityPartners: 'Community Partners',
       mediaTitle: 'Media Coverage',
-      mediaSubtitle: '200+ renowned global media partners promoting this summit, featuring leading outlets:',
+      mediaSubtitle: 'Full platform exposure, covering mainstream social media platforms and more than ten authoritative Chinese-language media outlets, forming an integrated online and offline media communication matrix.',
       chineseMedia: 'CHINESE MEDIA PARTNERS',
       internationalMedia: 'INTERNATIONAL MEDIA CHANNELS'
     },
