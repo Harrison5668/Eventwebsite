@@ -39,7 +39,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
             </p>
             <div className="flex items-center justify-center">
               <img 
-                src={lang === 'zh' ? '/host/host5.png' : '/host/host2.png'} 
+                src="/host/222.png" 
                 alt="Strategic Partners" 
                 className="w-4/5 h-auto object-contain" 
               />
