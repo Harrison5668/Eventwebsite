@@ -37,35 +37,37 @@ export const translations = {
       date: '2026年1月7日（星期三）6:00pm-10:00pm',
       items: [
         {
-          title: '贵宾签到（1小时）',
-          color: '#E69900',
-          items: ['打卡签名墙&专业摄影师拍摄&社交晚餐']
-        },
-        {
-          title: '欢迎致辞（5分钟）',
-          subtitle: '内华达州政府代表｜筑巢引凤，聚力共赢',
+          title: '迎接贵宾光临（1小时）',
+          subtitle: '专业摄影师拍摄打卡背景墙+社交茶歇',
           color: '#E69900'
         },
         {
-          title: '闪电演讲（5分钟/每场）',
-          subtitle: 'FF全球总裁｜创新破界，增长无界',
+          title: '主题演讲（5分钟）',
+          subtitle: '内华达州副州长Stavros Anthony发言',
+          color: '#E69900',
+          items: [
+            '为什么内华达州是美国注册新公司最多的州？',
+            '为什么美国2025第三和第四季度创造了经济增长奇迹？'
+          ]
+        },
+        {
+          title: '法拉第未来副总裁陈喆',
+          subtitle: 'FFAI如何填补美国的汽车空白',
           color: '#E69900'
         },
         {
-          title: '快问快答（15分钟/每场）',
-          color: '#E69900',
-          items: [
-            '著名企业家｜可复制的野蛮扩张之路',
-            'MCN巨头｜AI营销革命下抢夺有效流量之法',
-            '知名投资人｜借力AI/机器人/Web3等风口破局之道'
-          ]
+          title: '3个与顶级专家短而精快问快答圆桌对话（每场15分钟）',
+          subtitle: '对话一：AI驱动的营销革命下，有效流量抢夺诀窍\n对话二：从链接人物和渠道到大笔成交的转化奥秘\n对话三：2026全球商业环境中的崭新机会',
+          color: '#E69900'
         },
         {
-          title: '开放麦&社交酒会（2小时）',
-          color: '#E69900',
-          items: [
-            '知名网红北美崔哥主持，参会者自主报名接力，每人1分钟时间讲清「我是谁/需要什么/能提供什么」，旨在促成最效率连接与实质性合作。'
-          ]
+          title: 'LeaderXport × BossHub 2026年CES全球创新奖颁奖典礼（10分钟）',
+          color: '#E69900'
+        },
+        {
+          title: '由主持人导引的高热度精英社交+开放酒吧（2小时）',
+          subtitle: '清晰表达你的需求、提供的服务和商业意图，现场建立精准的互补性的链接。',
+          color: '#E69900'
         }
       ]
     },
@@ -204,40 +206,42 @@ export const translations = {
       date: 'Jan. 7, 2026 （Wednesday）6:00 PM – 10:00 PM',
       items: [
         {
-          title: 'Registration & Reception (1 Hour)',
-          color: '#E69900',
-          items: ['Photo backdrop · Professional photography · Networking dinner']
-        },
-        {
-          title: 'Opening Remarks (5 Minutes)',
-          subtitle: 'Representative of the State of Nevada | Why Nevada is becoming a strategic hub for global technology companies.',
+          title: 'Welcome & Reception (1 hour)',
+          subtitle: 'Professional photographer at the signature wall for check-ins & networking finger food',
           color: '#E69900'
         },
         {
-          title: 'Lightning Talks (5 Minutes Each)',
-          subtitle: 'President, Faraday Future | Pushing the boundaries of innovation to drive sustainable growth',
+          title: 'Keynote Speech (5 minutes)',
+          subtitle: 'Address by Nevada Lieutenant Governor Stavros Anthony',
+          color: '#E69900',
+          items: [
+            'Why is Nevada the No.1 state in the U.S. for new business registrations?',
+            'Why did the U.S. create an economic growth miracle in Q3 and Q4 of 2025?'
+          ]
+        },
+        {
+          title: 'Zhe Chen, Vice President of Faraday Future',
+          subtitle: 'How FFAI Is Filling the Gaps in the U.S. Automotive Industry',
           color: '#E69900'
         },
         {
-          title: 'Featured Conversations (15 Minutes Each)',
-          color: '#E69900',
-          items: [
-            'Renowned Entrepreneur | The replicable playbook for aggressive, high-speed business expansion',
-            'MCN Leader | How to capture high-impact attention in the AI-driven marketing revolution',
-            'Prominent Investor | Leveraging AI, robotics, and Web3 to seize breakthrough opportunities'
-          ]
+          title: '3 rapid-fire roundtables (15 minutes each)',
+          subtitle: 'roundtable 1: insider tips for capturing high-quality traffic in the ai-driven marketing revolution\nroundtable 2: the conversion secrets from connecting people and channels to closing big deals\nroundtable 3: fresh opportunities in the 2026 global business landscape',
+          color: '#E69900'
         },
         {
-          title: 'Open Mic & Networking Reception (2 Hours)',
-          color: '#E69900',
-          items: [
-            'Under the guidance of MC, attendees can pop up for one-minute introductions to share who they are, what they need, and what they can offer, fostering high-efficiency connections and tangible collaboration.'
-          ]
+          title: 'LeaderXport × BossHub｜2026 CES Global Innovation Awards Ceremony (10 minutes)',
+          color: '#E69900'
+        },
+        {
+          title: 'Host-Guided High-Energy Elite Networking + Complimentary Open Bar (2 hours)',
+          subtitle: 'Clearly express your needs, offerings, and business intentions while building high-efficiency connections.',
+          color: '#E69900'
         }
       ]
     },
     speakers: {
-      title: 'Speakers',
+      title: 'Special Guests or Speakers',
       subtitle: 'ESTEEMED SPEAKERS',
       more: 'Full Bio +',
       less: 'Close -'

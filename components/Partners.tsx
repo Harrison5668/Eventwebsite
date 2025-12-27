@@ -55,7 +55,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
 
         {/* Single Media Image */}
         <div className="flex items-center justify-center">
-          <img src="/media/media.png" alt="Media Partners" className="w-2/5 h-auto object-contain" />
+          <img src="/media/media.png" alt="Media Partners" className="w-4/5 h-auto object-contain" />
         </div>
       </div>
     </section>

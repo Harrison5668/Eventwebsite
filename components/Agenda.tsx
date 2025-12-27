@@ -49,7 +49,7 @@ const Agenda: React.FC<Props> = ({ t }) => {
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                   
                   {item.subtitle && (
-                    <p className="text-gold text-sm font-medium mb-3">{item.subtitle}</p>
+                    <div className="text-gold text-sm font-medium mb-3 whitespace-pre-line">{item.subtitle}</div>
                   )}
                   
                   {item.items && (
