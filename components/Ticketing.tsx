@@ -73,7 +73,7 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
       </div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
           <div className="flex flex-col">
             <h2 className="text-4xl md:text-5xl font-black mb-4 leading-tight">{t.title}</h2>
             <p className={`text-gray-400 mb-8 leading-relaxed ${lang === 'zh' ? 'text-lg' : 'text-base'}`}>
@@ -83,17 +83,7 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
             </p>
             
             {/* Ticket Options Card */}
-            <div className="glass-card p-8 rounded-2xl border-gold/40 mb-6">
-              {/* Early Bird */}
-              <div className="flex items-center gap-3 mb-6 pb-6 border-b border-white/10">
-                <div className="text-gold text-lg">✓</div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold">{t.earlyBird}</h3>
-                  <p className="text-gray-500 text-xs">{t.earlyBirdDate}</p>
-                </div>
-                <div className="text-2xl font-black text-gold">{t.earlyBirdPrice}</div>
-              </div>
-              
+            <div className="glass-card p-8 rounded-2xl border-gold/40 flex-grow flex flex-col">
               {/* Standard Ticket */}
               <div className="flex items-center gap-3 mb-6 pb-6 border-b border-white/10">
                 <div className="text-gold text-lg">✓</div>
@@ -110,18 +100,18 @@ const Ticketing: React.FC<Props> = ({ t, lang }) => {
                   <li key={idx} className="flex items-center"><span className="text-gold mr-3">✓</span> {f}</li>
                 ))}
               </ul>
-            </div>
 
-            {/* Purchase Button */}
-            <div className="mt-auto pt-6">
-            <a 
-              href="https://luma.com/1btuwmgv"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-center gold-btn px-12 py-5 rounded-full text-lg uppercase tracking-widest"
-            >
-              {lang === 'zh' ? '立即报名' : 'register & purchase ticket'}
-            </a>
+              {/* Purchase Button */}
+              <div className="mt-auto pt-5">
+                <a 
+                  href="https://luma.com/1btuwmgv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center gold-btn px-12 py-5 rounded-full text-lg uppercase tracking-widest"
+                >
+                  {lang === 'zh' ? '立即报名' : 'register & purchase ticket'}
+                </a>
+              </div>
             </div>
           </div>
 
