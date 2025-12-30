@@ -15,7 +15,7 @@ import Footer from './components/Footer';
 import { translations } from './translations';
 
 const App: React.FC = () => {
-  const [lang, setLang] = useState<'zh' | 'en'>('en');
+  const [lang, setLang] = useState<'zh' | 'en'>('zh');
   const t = translations[lang];
 
   const toggleLang = () => {

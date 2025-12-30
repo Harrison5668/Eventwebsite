@@ -63,7 +63,7 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
             onClick={toggleLang}
             className="text-xs font-bold text-white/90 border border-white/30 px-3 py-1 rounded hover:border-gold/70 hover:text-gold transition-colors uppercase"
           >
-            {currentLang === 'zh' ? 'EN / 中文' : 'EN / 中文'}
+            {currentLang === 'zh' ? '中文 / EN' : 'EN / 中文'}
           </button>
         </div>
 
@@ -73,7 +73,7 @@ const Navbar: React.FC<Props> = ({ t, toggleLang, currentLang }) => {
             onClick={toggleLang}
             className="text-xs font-bold text-white/90 border border-white/30 px-3 py-1.5 rounded hover:border-gold/70 hover:text-gold transition-colors"
           >
-            {currentLang === 'zh' ? 'EN / 中文' : 'EN / 中文'}
+            {currentLang === 'zh' ? '中文 / EN' : 'EN / 中文'}
           </button>
           
           <button 
