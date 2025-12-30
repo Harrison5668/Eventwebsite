@@ -147,7 +147,7 @@ export const translations = {
       earlyBirdPrice: '$99',
       earlyBirdDate: '2025.12.31前',
       lateBird: '标准票',
-      lateBirdPrice: '$188',
+      lateBirdPrice: '$199',
       lateBirdDate: '2026.1.1-1.7',
       features: ['全程重磅演讲议程', '资源对接与交流晚会', '峰会资料包'],
       form: {
@@ -316,7 +316,7 @@ export const translations = {
       earlyBirdPrice: '$99',
       earlyBirdDate: 'Before Dec 31, 2025',
       lateBird: 'Standard Ticket',
-      lateBirdPrice: '$188',
+      lateBirdPrice: '$199',
       lateBirdDate: 'Jan 1-7, 2026',
       features: ['Full keynote sessions', 'Networking & cocktail reception', 'Summit materials'],
       form: {
