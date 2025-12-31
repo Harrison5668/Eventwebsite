@@ -84,12 +84,12 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/应持荣Roy Ying.jpg' 
     },
     { 
-      name: 'Tammy Sun', 
-      title: lang === 'zh' ? 'AI Reinvent Ventures 创始人' : 'Founder, AI Reinvent Ventures', 
+      name: 'Anthony Chow', 
+      title: lang === 'zh' ? 'Newegg Commerce新蛋商务首席执行官' : 'CEO, Newegg Commerce', 
       bio: lang === 'zh'
-        ? 'AI Reinvent Ventures 的业务包括美元基金的 LP 投资、数字资产资管以及 AI 全球新媒体，通过构建全球化投资，加速 AI 创新与资本的重塑。'
-        : 'AI Reinvent Ventures\' business includes LP investments in USD funds, digital asset management, and AI global new media, accelerating the transformation of AI innovation and capital through building global investment portfolios.',
-      img: '/images/tammy-sun.png' 
+        ? '自 2020 年起负责制定公司战略、领导全球业务并推动企业转型和增长。在他的领导下，Newegg 重塑了平台运营模式，实现经营结构优化，并成功在纳斯达克上市，他也积极推动公司创新与市场扩展。'
+        : 'Since 2020, Anthony Chow has been responsible for formulating company strategy, leading global operations, and driving enterprise transformation and growth. Under his leadership, Newegg has reshaped its platform operating model, optimized its business structure, and successfully listed on NASDAQ. He actively promotes company innovation and market expansion.',
+      img: '/images/Anthony Chow.jpg' 
     },
     { 
       name: 'Jerry Yang', 
@@ -228,6 +228,14 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/Jannie袁锦仪.jpg' 
     },
     { 
+      name: 'Tammy Sun', 
+      title: lang === 'zh' ? 'AI Reinvent Ventures 创始人' : 'Founder, AI Reinvent Ventures', 
+      bio: lang === 'zh'
+        ? 'AI Reinvent Ventures 的业务包括美元基金的 LP 投资、数字资产资管以及 AI 全球新媒体，通过构建全球化投资，加速 AI 创新与资本的重塑。'
+        : 'AI Reinvent Ventures\' business includes LP investments in USD funds, digital asset management, and AI global new media, accelerating the transformation of AI innovation and capital through building global investment portfolios.',
+      img: '/images/tammy-sun.png' 
+    },
+    { 
       name: lang === 'zh' ? '陈嘉海' : 'Harrison Chen', 
       title: lang === 'zh' ? 'PurpleCloudAI联合创始人' : 'Co-founder, PurpleCloudAI', 
       bio: lang === 'zh'
@@ -241,11 +249,8 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
     <section id="speakers" className="py-16 bg-[#030303]">
       <div className="max-w-7xl mx-auto text-center px-6">
         <h2 className="text-4xl font-black mb-4">{t.title}</h2>
-        <p className="text-gold text-sm font-medium mb-2">
+        <p className="text-gold text-sm font-medium mb-16">
           {lang === 'zh' ? '行业头部大佬的实战经验、信息差分享' : 'Practical experience and insider insights from industry leaders.'}
-        </p>
-        <p className="text-gray-500 text-xs mb-16">
-          {lang === 'zh' ? '按姓氏首字母排序' : 'Sorted alphabetically by last name.'}
         </p>
       </div>
       
