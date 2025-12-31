@@ -37,13 +37,16 @@ export const translations = {
       date: '2026年1月7日（星期三）6:00pm-10:00pm',
       items: [
         {
-          title: '迎接贵宾光临（1小时）',
+          title: '迎接贵宾光临（40分钟）',
           subtitle: '专业摄影师拍摄打卡背景墙+社交茶歇',
           color: '#E69900'
         },
         {
-          title: '主题演讲（5分钟）',
-          subtitle: '内华达州副州长Stavros Anthony发言',
+          title: '主办方代表开幕致辞（7分钟）',
+          color: '#E69900'
+        },
+        {
+          title: '政府代表欢迎致辞（5分钟）',
           color: '#E69900',
           items: [
             '为什么内华达州是美国注册新公司最多的州？',
@@ -51,22 +54,30 @@ export const translations = {
           ]
         },
         {
-          title: '法拉第未来副总裁陈喆',
-          subtitle: 'FFAI如何填补美国的汽车空白',
+          title: '赞助方主旨演讲（7分钟）',
+          subtitle: 'FFAI如何填补美国汽车的空白',
           color: '#E69900'
         },
         {
-          title: '3个与顶级专家短而精快问快答圆桌对话（每场15分钟）',
-          subtitle: '对话一：AI驱动的营销革命下，有效流量抢夺诀窍\n对话二：从链接人物和渠道到大笔成交的转化奥秘\n对话三：2026全球商业环境中的崭新机会',
+          title: '与顶级专家短而精的圆桌对话（每场20分钟）',
+          color: '#E69900',
+          items: [
+            '对话一：规模化、标准化与文化｜餐饮品牌长期成功的关键抉择; 机器人能开展餐馆革命吗？',
+            '对话二：企业出海机遇与挑战｜从海外制造到美国本地化布局',
+            '对话三：Al+ Web3引领的新消费与服务模式：企业如何将 AI 与 Web3转化为可落地、可盈利的产品和服务'
+          ]
+        },
+        {
+          title: 'LeaderXport × BossHub全球创新奖颁奖典礼',
           color: '#E69900'
         },
         {
-          title: 'LeaderXport × BossHub 2026年CES全球创新奖颁奖典礼（10分钟）',
+          title: '由主持人导引的高热度精英社交（1小时）',
+          subtitle: '邀请精选的20位企业家进行推介，每人3分钟，特邀中美文化大使荷兰莉、著名脱口秀演员北美崔哥担纲，全程直播、专业摄影师拍摄视频留存。',
           color: '#E69900'
         },
         {
-          title: '由主持人导引的高热度精英社交+开放酒吧（2小时）',
-          subtitle: '清晰表达你的需求、提供的服务和商业意图，现场建立精准的互补性的链接。',
+          title: '社交酒会（1小时）',
           color: '#E69900'
         }
       ]
@@ -206,13 +217,16 @@ export const translations = {
       date: 'Jan. 7, 2026 （Wednesday）6:00 PM – 10:00 PM',
       items: [
         {
-          title: 'Welcome & Reception (1 hour)',
-          subtitle: 'Professional photographer at the signature wall for check-ins & networking finger food',
+          title: 'Welcome & Reception (40 minutes)',
+          subtitle: 'Professional photographer at the signature wall for check-ins & networking refreshments',
           color: '#E69900'
         },
         {
-          title: 'Keynote Speech (5 minutes)',
-          subtitle: 'Address by Nevada Lieutenant Governor Stavros Anthony',
+          title: 'Opening Remarks by Organizer Representative (7 minutes)',
+          color: '#E69900'
+        },
+        {
+          title: 'Welcome Address by Government Representative (5 minutes)',
           color: '#E69900',
           items: [
             'Why is Nevada the No.1 state in the U.S. for new business registrations?',
@@ -220,22 +234,30 @@ export const translations = {
           ]
         },
         {
-          title: 'Zhe Chen, Vice President of Faraday Future',
+          title: 'Keynote Speech by Sponsor (7 minutes)',
           subtitle: 'How FFAI Is Filling the Gaps in the U.S. Automotive Industry',
           color: '#E69900'
         },
         {
-          title: '3 rapid-fire roundtables (15 minutes each)',
-          subtitle: 'roundtable 1: insider tips for capturing high-quality traffic in the ai-driven marketing revolution\nroundtable 2: the conversion secrets from connecting people and channels to closing big deals\nroundtable 3: fresh opportunities in the 2026 global business landscape',
+          title: 'Focused Roundtable Dialogues with Top Experts (20 minutes each)',
+          color: '#E69900',
+          items: [
+            'Dialogue 1: Scale, Standardization & Culture | Key Decisions for Long-Term Success in Restaurant Brands; Can Robots Launch a Restaurant Revolution?',
+            'Dialogue 2: Opportunities and Challenges in Global Expansion | From Overseas Manufacturing to U.S. Localization',
+            'Dialogue 3: New Consumer and Service Models Led by AI + Web3: How Enterprises Can Transform AI and Web3 into Viable, Profitable Products and Services'
+          ]
+        },
+        {
+          title: 'LeaderXport × BossHub Global Innovation Awards Ceremony',
           color: '#E69900'
         },
         {
-          title: 'LeaderXport × BossHub｜2026 CES Global Innovation Awards Ceremony (10 minutes)',
+          title: 'Host-Guided High-Energy Elite Networking (1 hour)',
+          subtitle: '20 selected entrepreneurs will pitch for 3 minutes each, with special cultural ambassadors Kimberly Holland and renowned comedian Beige Cuige as hosts, fully live-streamed with professional video coverage.',
           color: '#E69900'
         },
         {
-          title: 'Host-Guided High-Energy Elite Networking + Complimentary Open Bar (2 hours)',
-          subtitle: 'Clearly express your needs, offerings, and business intentions while building high-efficiency connections.',
+          title: 'Cocktail Reception (1 hour)',
           color: '#E69900'
         }
       ]
