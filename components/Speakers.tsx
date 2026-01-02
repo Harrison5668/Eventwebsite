@@ -239,8 +239,8 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       name: 'John Chen', 
       title: lang === 'zh' ? 'AIU.WIKI 创始人｜前中国社会科学院研究员' : 'Founder, AIU.WIKI | Former Researcher, Chinese Academy of Social Sciences', 
       bio: lang === 'zh'
-        ? '将在会议介绍发明，题目：64进制专利解决AI大模型的2次方魔咒。'
-        : 'Will present his invention at the conference: Base-64 Patent Solves the Power-of-Two Curse in AI Large Models.',
+        ? '前中国社会科学院研究员，长期从事人工智能、知识体系与社会治理相关研究。他致力于探索 AI 如何重构人类认知结构与知识协作方式，并发起 AIU.WIKI 项目，打造面向未来的开放式 AI 知识平台，推动人工智能在公共认知、社会创新与跨学科研究中的应用与落地。'
+        : 'Former researcher at the Chinese Academy of Social Sciences with long-term focus on artificial intelligence, knowledge systems, and social governance. He is dedicated to exploring how AI reconstructs human cognitive structures and knowledge collaboration methods. He initiated the AIU.WIKI project to build a future-oriented open AI knowledge platform, promoting the application and implementation of artificial intelligence in public cognition, social innovation, and interdisciplinary research.',
       img: '/images/JOHN CHEN.jpg' 
     },
     { 
