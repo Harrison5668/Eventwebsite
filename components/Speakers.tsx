@@ -236,6 +236,14 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/tammy-sun.png' 
     },
     { 
+      name: 'John Chen', 
+      title: lang === 'zh' ? 'AIU.WIKI 创始人｜前中国社会科学院研究员' : 'Founder, AIU.WIKI | Former Researcher, Chinese Academy of Social Sciences', 
+      bio: lang === 'zh'
+        ? '将在会议介绍发明，题目：64进制专利解决AI大模型的2次方魔咒。'
+        : 'Will present his invention at the conference: Base-64 Patent Solves the Power-of-Two Curse in AI Large Models.',
+      img: '/images/JOHN CHEN.jpg' 
+    },
+    { 
       name: lang === 'zh' ? '陈嘉海' : 'Harrison Chen', 
       title: lang === 'zh' ? 'PurpleCloudAI联合创始人' : 'Co-founder, PurpleCloudAI', 
       bio: lang === 'zh'
