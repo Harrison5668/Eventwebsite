@@ -42,7 +42,7 @@ export const translations = {
           color: '#E69900'
         },
         {
-          title: '主办方代表开幕致辞（7分钟）',
+          title: '主办方代表开幕致辞（5分钟）',
           color: '#E69900'
         },
         {
@@ -54,8 +54,8 @@ export const translations = {
           ]
         },
         {
-          title: '赞助方主旨演讲（7分钟）',
-          subtitle: 'FFAI如何填补美国汽车的空白',
+          title: '赞助方主旨演讲（10分钟）',
+          subtitle: '法拉第未来副总裁陈喆｜FF全球EAI产业桥梁战略：以智能电动车和具身智能生态开拓美国蓝海市场',
           color: '#E69900'
         },
         {
@@ -72,12 +72,13 @@ export const translations = {
           color: '#E69900'
         },
         {
-          title: '由主持人导引的高热度精英社交（1小时）',
+          title: '由主持人导引的高热度精英开放麦（1小时）',
           subtitle: '邀请精选的20位企业家进行推介，每人3分钟，特邀中美文化大使荷兰莉、著名脱口秀演员北美崔哥担纲，全程直播、专业摄影师拍摄视频留存。',
           color: '#E69900'
         },
         {
           title: '社交酒会（1小时）',
+          subtitle: '与全球顶级商业领袖深度交流，加速您的战略增长并开启具有变革性的机遇！',
           color: '#E69900'
         }
       ]
@@ -222,7 +223,7 @@ export const translations = {
           color: '#E69900'
         },
         {
-          title: 'Opening Remarks by Organizer Representative (7 minutes)',
+          title: 'Opening Remarks by Organizer Representative (5 minutes)',
           color: '#E69900'
         },
         {
@@ -234,8 +235,8 @@ export const translations = {
           ]
         },
         {
-          title: 'Keynote Speech by Sponsor (7 minutes)',
-          subtitle: 'How FFAI Is Filling the Gaps in the U.S. Automotive Industry',
+          title: 'Keynote Speech by Sponsor (10 minutes)',
+          subtitle: 'Faraday Future VP Zhe Chen | FF Global EAI Industrial Bridge Strategy: Opening the U.S. Blue Ocean Market with Smart Electric Vehicles and Embodied Intelligence Ecosystem',
           color: '#E69900'
         },
         {
@@ -252,12 +253,13 @@ export const translations = {
           color: '#E69900'
         },
         {
-          title: 'Host-Guided High-Energy Elite Networking (1 hour)',
+          title: 'Host-Guided High-Energy Elite Open Mic (1 hour)',
           subtitle: '20 selected entrepreneurs will pitch for 3 minutes each, with special cultural ambassadors Kimberly Holland and renowned comedian Beige Cuige as hosts, fully live-streamed with professional video coverage.',
           color: '#E69900'
         },
         {
           title: 'Cocktail Reception (1 hour)',
+          subtitle: 'Connect deeply with world-class business leaders, accelerate your strategic growth, and unlock transformative opportunities!',
           color: '#E69900'
         }
       ]

@@ -228,14 +228,6 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/Jannie袁锦仪.jpg' 
     },
     { 
-      name: 'Tammy Sun', 
-      title: lang === 'zh' ? 'AI Reinvent Ventures 创始人' : 'Founder, AI Reinvent Ventures', 
-      bio: lang === 'zh'
-        ? 'AI Reinvent Ventures 的业务包括美元基金的 LP 投资、数字资产资管以及 AI 全球新媒体，通过构建全球化投资，加速 AI 创新与资本的重塑。'
-        : 'AI Reinvent Ventures\' business includes LP investments in USD funds, digital asset management, and AI global new media, accelerating the transformation of AI innovation and capital through building global investment portfolios.',
-      img: '/images/tammy-sun.png' 
-    },
-    { 
       name: 'John Chen', 
       title: lang === 'zh' ? 'AIU.WIKI 创始人｜前中国社会科学院研究员' : 'Founder, AIU.WIKI | Former Researcher, Chinese Academy of Social Sciences', 
       bio: lang === 'zh'
