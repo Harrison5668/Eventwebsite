@@ -244,6 +244,14 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/JOHN CHEN.jpg' 
     },
     { 
+      name: 'Carter Qiu', 
+      title: lang === 'zh' ? 'Omninal & POSX 创始人' : 'Founder, Omninal & POSX', 
+      bio: lang === 'zh'
+        ? 'Carter Qiu，连续创业者，现任 Omninal 与 POSX 创始人。专注于加密支付、稳定币结算与商户金融基础设施，致力于将区块链技术落地到真实商业场景。其项目以"合规优先、商户为本、美国先行"为核心策略，构建连接线下 POS、线上支付与消费激励的全球化支付网络。'
+        : 'Carter Qiu is a serial entrepreneur and founder of Omninal & POSX. He focuses on crypto payments, stablecoin settlements, and merchant financial infrastructure, dedicated to bringing blockchain technology into real business scenarios. His projects follow the core strategy of "compliance first, merchant-centric, US-first," building a global payment network that connects offline POS, online payments, and consumer incentives.',
+      img: '/images/Carter Qiu.jpg' 
+    },
+    { 
       name: lang === 'zh' ? '陈嘉海' : 'Harrison Chen', 
       title: lang === 'zh' ? 'PurpleCloudAI联合创始人' : 'Co-founder, PurpleCloudAI', 
       bio: lang === 'zh'
