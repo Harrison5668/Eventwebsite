@@ -12,7 +12,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
       <div className="max-w-7xl mx-auto">
         {/* Organizer Section - Changed to vertical layout */}
         <div className="space-y-12 mb-8">
-          {/* Top - host3 (EN) or host4 (ZH) */}
+          {/* Top - 主办方.jpg for both languages */}
           <div>
             <h4 className="text-2xl font-black text-white mb-4 text-center">{t.organizers}</h4>
             <p className="text-gold text-sm font-medium mb-8 text-center leading-relaxed">
@@ -22,14 +22,14 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
             </p>
             <div className="flex items-center justify-center">
               <img 
-                src={lang === 'zh' ? '/host/host4.png' : '/host/host3.png'} 
+                src="/host/主办方.jpg" 
                 alt="Host Organizations" 
                 className="w-4/5 h-auto object-contain" 
               />
             </div>
           </div>
           
-          {/* Bottom - host2 (EN) or host5 (ZH) */}
+          {/* Bottom - 合作伙伴.png for both languages */}
           <div>
             <h4 className="text-2xl font-black text-white mb-4 text-center">{t.communityPartners}</h4>
             <p className="text-gold text-sm font-medium mb-8 text-center leading-relaxed">
@@ -39,7 +39,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
             </p>
             <div className="flex items-center justify-center">
               <img 
-                src="/host/222.png" 
+                src="/host/合作伙伴.png" 
                 alt="Strategic Partners" 
                 className="w-4/5 h-auto object-contain" 
               />
