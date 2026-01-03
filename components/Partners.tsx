@@ -22,7 +22,7 @@ const Partners: React.FC<Props> = ({ t, lang }) => {
             </p>
             <div className="flex items-center justify-center">
               <img 
-                src="/host/主办方.jpg" 
+                src="/host/主办方.png" 
                 alt="Host Organizations" 
                 className="w-4/5 h-auto object-contain" 
               />

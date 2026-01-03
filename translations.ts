@@ -68,7 +68,7 @@ export const translations = {
           ]
         },
         {
-          title: 'LeaderXport × BossHub全球创新奖颁奖典礼',
+          title: 'LeaderXport × BossHub全球创新奖颁奖典礼（10分钟）',
           color: '#E69900'
         },
         {
@@ -249,7 +249,7 @@ export const translations = {
           ]
         },
         {
-          title: 'LeaderXport × BossHub Global Innovation Awards Ceremony',
+          title: 'LeaderXport × BossHub Global Innovation Awards Ceremony (10 minutes)',
           color: '#E69900'
         },
         {
