@@ -68,6 +68,14 @@ const Speakers: React.FC<Props> = ({ t, lang }) => {
       img: '/images/caijijun.jpg' 
     },
     { 
+      name: lang === 'zh' ? '宝二爷' : 'Bao Erye', 
+      title: lang === 'zh' ? 'Web3华语顶流OG' : 'Leading Chinese Web3 OG', 
+      bio: lang === 'zh'
+        ? '宝二爷（真名郭宏才）是中国最早的比特币布道者之一、加密行业知名意见领袖。早年创业并完成多次退出，2013 年起深度参与比特币与区块链生态建设，以直言敢言、立场鲜明著称。长期活跃于全球加密社区，关注比特币、去中心化金融及加密资产的社会影响，对行业趋势与风险具有强烈判断力与号召力。'
+        : 'Bao Erye (real name Guo Hongcai) is one of China\'s earliest Bitcoin evangelists and a prominent thought leader in the crypto industry. An entrepreneur with multiple successful exits, he has been deeply involved in Bitcoin and blockchain ecosystem development since 2013. Known for his outspoken and uncompromising stance, he remains highly active in the global crypto community, focusing on Bitcoin, decentralized finance, and the social impact of crypto assets. He possesses strong judgment and influence over industry trends and risks.',
+      img: '/images/宝二爷.jpg' 
+    },
+    { 
       name: 'Rebecca Wang', 
       title: lang === 'zh' ? 'RWAWA 联合创始人' : 'Co-founder, RWAWA', 
       bio: lang === 'zh'
